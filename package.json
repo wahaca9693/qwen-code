@@ -1,6 +1,6 @@
 {
-  "name": "@qwen-code/qwen-code",
-  "version": "0.15.10",
+  "name": "@zero-agent/zero",
+  "version": "0.1.0",
   "engines": {
     "node": ">=22.0.0"
   },
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QwenLM/qwen-code.git"
+    "url": "git+https://github.com/zero-agent/zero.git"
   },
   "config": {
-    "sandboxImageUri": "ghcr.io/qwenlm/qwen-code:0.15.10"
+    "sandboxImageUri": "ghcr.io/zero-agent/zero:0.1.0"
   },
   "scripts": {
     "start": "cross-env node scripts/start.js",
@@ -38,19 +38,19 @@
     "test:scripts": "vitest run --config ./scripts/tests/vitest.config.ts",
     "test:e2e": "cross-env VERBOSE=true KEEP_OUTPUT=true npm run test:integration:sandbox:none",
     "test:integration:all": "npm run test:integration:sandbox:none && npm run test:integration:sandbox:docker && npm run test:integration:sandbox:podman",
-    "test:integration:sandbox:none": "cross-env QWEN_SANDBOX=false vitest run --root ./integration-tests",
-    "test:integration:sandbox:docker": "cross-env QWEN_SANDBOX=docker npm run build:sandbox && QWEN_SANDBOX=docker vitest run --root ./integration-tests",
-    "test:integration:sandbox:podman": "cross-env QWEN_SANDBOX=podman vitest run --root ./integration-tests",
-    "test:integration:sdk:sandbox:none": "cross-env QWEN_SANDBOX=false vitest run --root ./integration-tests --poolOptions.threads.maxThreads 2 sdk-typescript",
-    "test:integration:sdk:sandbox:docker": "cross-env QWEN_SANDBOX=docker npm run build:sandbox && QWEN_SANDBOX=docker vitest run --root ./integration-tests --poolOptions.threads.maxThreads 2 sdk-typescript",
+    "test:integration:sandbox:none": "cross-env ZERO_SANDBOX=false vitest run --root ./integration-tests",
+    "test:integration:sandbox:docker": "cross-env ZERO_SANDBOX=docker npm run build:sandbox && ZERO_SANDBOX=docker vitest run --root ./integration-tests",
+    "test:integration:sandbox:podman": "cross-env ZERO_SANDBOX=podman vitest run --root ./integration-tests",
+    "test:integration:sdk:sandbox:none": "cross-env ZERO_SANDBOX=false vitest run --root ./integration-tests --poolOptions.threads.maxThreads 2 sdk-typescript",
+    "test:integration:sdk:sandbox:docker": "cross-env ZERO_SANDBOX=docker npm run build:sandbox && ZERO_SANDBOX=docker vitest run --root ./integration-tests --poolOptions.threads.maxThreads 2 sdk-typescript",
     "test:sdk:python": "python3 -m pytest -c packages/sdk-python/pyproject.toml packages/sdk-python/tests -q",
-    "test:integration:cli:sandbox:none": "cross-env QWEN_SANDBOX=false vitest run --root ./integration-tests cli",
-    "test:integration:cli:sandbox:docker": "cross-env QWEN_SANDBOX=docker npm run build:sandbox && QWEN_SANDBOX=docker vitest run --root ./integration-tests cli",
-    "test:integration:interactive:sandbox:none": "cross-env QWEN_SANDBOX=false vitest run --root ./integration-tests interactive",
-    "test:integration:interactive:sandbox:docker": "cross-env QWEN_SANDBOX=docker npm run build:sandbox && QWEN_SANDBOX=docker vitest run --root ./integration-tests interactive",
+    "test:integration:cli:sandbox:none": "cross-env ZERO_SANDBOX=false vitest run --root ./integration-tests cli",
+    "test:integration:cli:sandbox:docker": "cross-env ZERO_SANDBOX=docker npm run build:sandbox && ZERO_SANDBOX=docker vitest run --root ./integration-tests cli",
+    "test:integration:interactive:sandbox:none": "cross-env ZERO_SANDBOX=false vitest run --root ./integration-tests interactive",
+    "test:integration:interactive:sandbox:docker": "cross-env ZERO_SANDBOX=docker npm run build:sandbox && ZERO_SANDBOX=docker vitest run --root ./integration-tests interactive",
     "test:terminal-bench": "cross-env VERBOSE=true KEEP_OUTPUT=true vitest run --config ./vitest.terminal-bench.config.ts --root ./integration-tests",
     "test:terminal-bench:oracle": "cross-env VERBOSE=true KEEP_OUTPUT=true vitest run --config ./vitest.terminal-bench.config.ts --root ./integration-tests -t 'oracle'",
-    "test:terminal-bench:qwen": "cross-env VERBOSE=true KEEP_OUTPUT=true vitest run --config ./vitest.terminal-bench.config.ts --root ./integration-tests -t 'qwen'",
+    "test:terminal-bench:zero": "cross-env VERBOSE=true KEEP_OUTPUT=true vitest run --config ./vitest.terminal-bench.config.ts --root ./integration-tests -t 'zero'",
     "lint": "eslint . --ext .ts,.tsx && eslint integration-tests",
     "lint:fix": "eslint . --fix && eslint integration-tests --fix",
     "lint:ci": "eslint . --ext .ts,.tsx --max-warnings 0 && eslint integration-tests --max-warnings 0",
@@ -82,7 +82,7 @@
     "normalize-package-data": "^7.0.1"
   },
   "bin": {
-    "qwen": "dist/cli.js"
+    "zero": "dist/cli.js"
   },
   "files": [
     "dist/",

@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,7 +19,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const PACKAGE_NAME = '@qwen-code/sdk';
+const PACKAGE_NAME = '@zero-agent/sdk';
 const TAG_PREFIX = 'sdk-typescript-v';
 
 function getVersionFromNPM(distTag) {

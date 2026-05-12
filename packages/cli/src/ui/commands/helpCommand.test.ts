@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -54,6 +54,6 @@ describe('helpCommand', () => {
     expect(helpCommand.name).toBe('help');
     expect(helpCommand.kind).toBe(CommandKind.BUILT_IN);
     expect(helpCommand.argumentHint).toBeUndefined();
-    expect(helpCommand.description).toBe('for help on Qwen Code');
+    expect(helpCommand.description).toBe('for help on ZERO Agent');
   });
 });

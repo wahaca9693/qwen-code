@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@ import { settingsCommand } from './extensions/settings.js';
 
 export const extensionsCommand: CommandModule = {
   command: 'extensions <command>',
-  describe: 'Manage Qwen Code extensions.',
+  describe: 'Manage ZERO Agent extensions.',
   builder: (yargs) =>
     yargs
       .command(installCommand)

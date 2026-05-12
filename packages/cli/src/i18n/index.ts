@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen team
+ * Copyright 2026 Qwen team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { writeStderrLine } from '../utils/stdioHelpers.js';
-import { Storage } from '@qwen-code/qwen-code-core';
+import { Storage } from '@zero-agent/zero-core';
 import {
   type SupportedLanguage,
   SUPPORTED_LANGUAGES,

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,7 +11,7 @@ import type { HookDefinition, HookEventName } from '../hooks/types.js';
  * - 'project': Stored in `.qwen/skills/` within the project directory
  * - 'user': Stored in `~/.qwen/skills/` in the user's home directory
  * - 'extension': Provided by an installed extension
- * - 'bundled': Built-in skills shipped with qwen-code
+ * - 'bundled': Built-in skills shipped with zero
  */
 export type SkillLevel = 'project' | 'user' | 'extension' | 'bundled';
 
@@ -50,7 +50,7 @@ export interface SkillConfig {
   /**
    * Optional model override for this skill's execution.
    * Uses the same selector syntax as subagent model selectors:
-   * bare model ID (e.g., `qwen-coder-plus`), `authType:modelId`
+   * bare model ID (e.g., `zeror-plus`), `authType:modelId`
    * for cross-provider, or omitted/`inherit` to use the session model.
    */
   model?: string;

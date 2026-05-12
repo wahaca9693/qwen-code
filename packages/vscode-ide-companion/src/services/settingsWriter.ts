@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  *
  * Settings writer for VSCode extension.
@@ -9,7 +9,7 @@
 
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { AuthType, Storage } from '@qwen-code/qwen-code-core';
+import { AuthType, Storage } from '@zero-agent/zero-core';
 import {
   CODING_PLAN_ENV_KEY,
   CodingPlanRegion,

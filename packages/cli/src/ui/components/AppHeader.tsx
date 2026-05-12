@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { useMemo } from 'react';
 import { Box } from 'ink';
-import { AuthType } from '@qwen-code/qwen-code-core';
+import { AuthType } from '@zero-agent/zero-core';
 import { findProviderByCredentials } from '../../auth/allProviders.js';
 import { resolveMetadataKey } from '../../auth/providerConfig.js';
 import { Header, AuthDisplayType } from './Header.js';

@@ -1,6 +1,6 @@
-# Qwen Code Docs Site
+# ZERO Agent Docs Site
 
-A documentation website for Qwen Code built with [Next.js](https://nextjs.org/) and [Nextra](https://nextra.site/).
+A documentation website for ZERO Agent built with [Next.js](https://nextjs.org/) and [Nextra](https://nextra.site/).
 
 ## Getting Started
 
@@ -51,4 +51,4 @@ docs-site/
 
 ## License
 
-MIT © Qwen Team
+MIT © ZERO Team

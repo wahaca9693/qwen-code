@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import { theme } from '../../semantic-colors.js';
 import { formatDuration } from '../../utils/formatters.js';
 import { getArenaStatusLabel } from '../../utils/displayUtils.js';
 import type { ArenaAgentCardData } from '../../types.js';
-import type { ArenaDiffSummary } from '@qwen-code/qwen-code-core';
+import type { ArenaDiffSummary } from '@zero-agent/zero-core';
 
 // ─── Helpers ────────────────────────────────────────────────
 

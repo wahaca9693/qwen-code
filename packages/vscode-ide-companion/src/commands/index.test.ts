@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -127,7 +127,7 @@ describe('registerNewCommands', () => {
     await getRegisteredHandler(focusChatCommand)();
 
     expect(executeCommand).toHaveBeenCalledWith(
-      'qwen-code.chatView.secondary.focus',
+      'zero.chatView.secondary.focus',
     );
   });
 
@@ -145,7 +145,7 @@ describe('registerNewCommands', () => {
     await getRegisteredHandler(focusChatCommand)();
 
     expect(executeCommand).toHaveBeenCalledWith(
-      'qwen-code.chatView.sidebar.focus',
+      'zero.chatView.sidebar.focus',
     );
   });
 });

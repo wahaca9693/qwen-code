@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,17 +15,17 @@ import {
 
 type Logger = (message: string) => void;
 
-export const runQwenCodeCommand = 'qwen-code.runQwenCode';
+export const runQwenCodeCommand = 'zero.runQwenCode';
 export const showDiffCommand = 'qwenCode.showDiff';
-export const openChatCommand = 'qwen-code.openChat';
+export const openChatCommand = 'zero.openChat';
 export const openNewChatTabCommand = 'qwenCode.openNewChatTab';
-export const authCommand = 'qwen-code.auth';
-export const focusChatCommand = 'qwen-code.focusChat';
-export const newConversationCommand = 'qwen-code.newConversation';
-export const showLogsCommand = 'qwen-code.showLogs';
+export const authCommand = 'zero.auth';
+export const focusChatCommand = 'zero.focusChat';
+export const newConversationCommand = 'zero.newConversation';
+export const showLogsCommand = 'zero.showLogs';
 
 /**
- * Register all Qwen Code chat-related commands.
+ * Register all ZERO Agent chat-related commands.
  *
  * `openChat` and `newConversation` always open an editor tab, while
  * `focusChat` focuses the secondary sidebar (preferred) or primary sidebar.
@@ -140,7 +140,7 @@ export function registerNewCommands(
         outputChannel.show(true);
       } else {
         vscode.window.showWarningMessage(
-          'Qwen Code Companion log channel is not available.',
+          'ZERO Agent Companion log channel is not available.',
         );
       }
     }),

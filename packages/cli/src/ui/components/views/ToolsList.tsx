@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -24,7 +24,7 @@ export const ToolsList: React.FC<ToolsListProps> = ({
 }) => (
   <Box flexDirection="column">
     <Text bold color={theme.text.primary}>
-      {t('Available Qwen Code CLI tools:')}
+      {t('Available ZERO Agent CLI tools:')}
     </Text>
     <Box height={1} />
     {tools.length > 0 ? (

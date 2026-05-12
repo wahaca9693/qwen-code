@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import { ExtensionsManagerDialog } from './ExtensionsManagerDialog.js';
 import { UIStateContext } from '../../contexts/UIStateContext.js';
 import { KeypressProvider } from '../../contexts/KeypressContext.js';
 import type { UIState } from '../../contexts/UIStateContext.js';
-import type { Config, Extension } from '@qwen-code/qwen-code-core';
+import type { Config, Extension } from '@zero-agent/zero-core';
 import { ExtensionUpdateState } from '../../state/extensions.js';
 
 const createMockExtension = (

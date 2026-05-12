@@ -6,7 +6,7 @@
 
 **Architecture:** Preserve ACP `rawOutput` through the VSCode session/update pipeline into `ToolCallData`, then let the shared web UI router detect `task_execution` payloads and render a dedicated `AgentToolCall` component. Keep the change shared in `packages/webui` so VSCode and `ChatViewer` stay aligned.
 
-**Tech Stack:** TypeScript, React, Vitest, shared `@qwen-code/webui` tool-call components.
+**Tech Stack:** TypeScript, React, Vitest, shared `@zero-agent/webui` tool-call components.
 
 ### Task 1: Lock in the failing data-flow behavior
 
@@ -55,7 +55,7 @@ Expected: failure because the router only keys off `kind` and no dedicated agent
 **Step 1: Implement the minimal data model changes**
 
 - Add optional `rawOutput` to the VSCode session/webview tool-call types.
-- Forward `rawOutput` in `QwenSessionUpdateHandler`.
+- Forward `rawOutput` in `ZEROSessionUpdateHandler`.
 - Store/merge `rawOutput` in `useToolCalls`.
 - Expose `rawOutput` in shared web UI tool-call data types.
 

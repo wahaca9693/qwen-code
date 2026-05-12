@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import * as vscode from 'vscode';
 import type {
   File,
   IdeContext,
-} from '@qwen-code/qwen-code-core/src/ide/types.js';
+} from '@zero-agent/zero-core/src/ide/types.js';
 import {
   isFileUri,
   isNotebookFileUri,

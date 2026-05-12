@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -207,7 +207,7 @@ vi.mock('./components/AccountInfoDialog.js', () => ({
   AccountInfoDialog: () => null,
 }));
 
-vi.mock('@qwen-code/webui', () => ({
+vi.mock('@zero/webui', () => ({
   AssistantMessage: () => null,
   UserMessage: () => null,
   ThinkingMessage: () => null,

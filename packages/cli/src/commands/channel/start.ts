@@ -1,15 +1,15 @@
 import * as path from 'node:path';
 import type { CommandModule } from 'yargs';
 import { ProxyAgent, setGlobalDispatcher } from 'undici';
-import { normalizeProxyUrl, Storage } from '@qwen-code/qwen-code-core';
+import { normalizeProxyUrl, Storage } from '@zero-agent/zero-core';
 import { loadSettings } from '../../config/settings.js';
 import { writeStderrLine, writeStdoutLine } from '../../utils/stdioHelpers.js';
-import { AcpBridge, SessionRouter } from '@qwen-code/channel-base';
+import { AcpBridge, SessionRouter } from '@zero-agent/channel-base';
 import type {
   ChannelBase,
   ChannelPlugin,
   ToolCallEvent,
-} from '@qwen-code/channel-base';
+} from '@zero-agent/channel-base';
 import { getPlugin, registerPlugin } from './channel-registry.js';
 import { findCliEntryPath, parseChannelConfig } from './config-utils.js';
 import {
@@ -162,7 +162,7 @@ function checkDuplicateInstance(): void {
     writeStderrLine(
       `Error: Channel service is already running (PID ${existing.pid}, started ${existing.startedAt}).`,
     );
-    writeStderrLine('Use "qwen channel stop" to stop it first.');
+    writeStderrLine('Use "ZERO channel stop" to stop it first.');
     process.exit(1);
   }
 }

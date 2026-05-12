@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,7 +11,7 @@ import { t } from '../../i18n/index.js';
 export const settingsCommand: SlashCommand = {
   name: 'settings',
   get description() {
-    return t('View and edit Qwen Code settings');
+    return t('View and edit ZERO Agent settings');
   },
   kind: CommandKind.BUILT_IN,
   supportedModes: ['interactive'] as const,

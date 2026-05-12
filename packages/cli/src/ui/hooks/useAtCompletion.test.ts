@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,12 +13,12 @@ import type {
   Config,
   FileSearch,
   FileSystemStructure,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import {
   FileSearchFactory,
   createTmpDir,
   cleanupTmpDir,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { useState } from 'react';
 import type { Suggestion } from '../components/SuggestionsDisplay.js';
 

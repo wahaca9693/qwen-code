@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,8 +10,8 @@ import { type CommandContext } from './types.js';
 import { createMockCommandContext } from '../../test-utils/mockCommandContext.js';
 import { MessageType } from '../types.js';
 import { formatDuration } from '../utils/formatters.js';
-import { MAIN_SOURCE } from '@qwen-code/qwen-code-core';
-import type { ModelMetricsCore, ModelMetrics } from '@qwen-code/qwen-code-core';
+import { MAIN_SOURCE } from '@zero-agent/zero-core';
+import type { ModelMetricsCore, ModelMetrics } from '@zero-agent/zero-core';
 
 const toModelMetrics = (core: ModelMetricsCore): ModelMetrics => ({
   ...core,

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import { useCallback } from 'react';
 import type { VSCodeAPI } from './useVSCode.js';
 import { getRandomLoadingMessage } from '../../constants/loadingMessages.js';
 import type { ImageAttachment } from './useImage.js';
-import { ZERO_WIDTH_SPACE, stripZeroWidthSpaces } from '@qwen-code/webui';
+import { ZERO_WIDTH_SPACE, stripZeroWidthSpaces } from '@zero/webui';
 
 interface UseMessageSubmitProps {
   vscode: VSCodeAPI;
@@ -120,7 +120,7 @@ export const useMessageSubmit = ({
           data: {},
         });
         try {
-          messageHandling.setWaitingForResponse('Authenticating Qwen Code...');
+          messageHandling.setWaitingForResponse('Authenticating ZERO Agent...');
         } catch (_err) {
           // Best-effort UI hint; ignore if hook not available
         }

@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This file provides guidance to Qwen Code when working with code in this
+This file provides guidance to ZERO Agent when working with code in this
 repository.
 
 ## Common Commands
@@ -73,7 +73,7 @@ Or combined in one command:
 
 ```bash
 cd integration-tests && \
-  cross-env QWEN_SANDBOX=false npx vitest run cli interactive
+  cross-env ZERO_SANDBOX=false npx vitest run cli interactive
 ```
 
 **Gotcha:** In interactive tests, always call `session.idle()` between sends —

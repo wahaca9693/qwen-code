@@ -13,7 +13,7 @@ import {
   type SDKMessage,
   type SDKSystemMessage,
   type SDKAssistantMessage,
-} from '@qwen-code/sdk';
+} from '@zero-agent/sdk';
 import {
   SDKTestHelper,
   extractText,
@@ -131,7 +131,7 @@ describe('Single-Turn Query (E2E)', () => {
         // Validate content contains either the requested greeting or self-description.
         expect(assistantText.length).toBeGreaterThan(0);
         expect(assistantText.toLowerCase()).toMatch(
-          /hello|hi|greetings|qwen code|assistant/,
+          /hello|hi|greetings|ZERO code|assistant/,
         );
 
         // Validate message types

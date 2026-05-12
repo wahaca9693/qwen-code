@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -113,10 +113,10 @@ const {
   mockClipboardWriteText: vi.fn(),
 }));
 
-vi.mock('@qwen-code/qwen-code-core', async () => {
+vi.mock('@zero-agent/zero-core', async () => {
   const actual = await vi.importActual<
-    typeof import('@qwen-code/qwen-code-core')
-  >('@qwen-code/qwen-code-core');
+    typeof import('@zero-agent/zero-core')
+  >('@zero-agent/zero-core');
   return {
     ...actual,
     Storage: {
@@ -385,7 +385,7 @@ async function setupAttachedProvider(options?: {
       onDidChangeVisibility: vi.fn(() => ({ dispose: vi.fn() })),
       onDidDispose: vi.fn(() => ({ dispose: vi.fn() })),
     } as never,
-    'qwen-code.chatView.sidebar',
+    'zero.chatView.sidebar',
   );
 
   return { webview, postMessage, provider, messageHandler };
@@ -464,7 +464,7 @@ describe('WebViewProvider.attachToView', () => {
         onDidChangeVisibility: vi.fn(() => ({ dispose: vi.fn() })),
         onDidDispose: vi.fn(() => ({ dispose: vi.fn() })),
       } as never,
-      'qwen-code.chatView.sidebar',
+      'zero.chatView.sidebar',
     );
 
     const roots = (
@@ -727,7 +727,7 @@ describe('WebViewProvider.attachToView', () => {
         onDidChangeVisibility: vi.fn(() => ({ dispose: vi.fn() })),
         onDidDispose: vi.fn(() => ({ dispose: vi.fn() })),
       } as never,
-      'qwen-code.chatView.sidebar',
+      'zero.chatView.sidebar',
     );
 
     await messageHandler?.({
@@ -774,7 +774,7 @@ describe('WebViewProvider.attachToView', () => {
         onDidChangeVisibility: vi.fn(() => ({ dispose: vi.fn() })),
         onDidDispose: vi.fn(() => ({ dispose: vi.fn() })),
       } as never,
-      'qwen-code.chatView.sidebar',
+      'zero.chatView.sidebar',
     );
 
     const agentManager = mockQwenAgentManagerInstances.at(-1);
@@ -863,7 +863,7 @@ describe('WebViewProvider.attachToView', () => {
         onDidChangeVisibility: vi.fn(() => ({ dispose: vi.fn() })),
         onDidDispose: vi.fn(() => ({ dispose: vi.fn() })),
       } as never,
-      'qwen-code.chatView.sidebar',
+      'zero.chatView.sidebar',
     );
 
     const agentManager = (
@@ -929,7 +929,7 @@ describe('WebViewProvider.attachToView', () => {
         onDidChangeVisibility: vi.fn(() => ({ dispose: vi.fn() })),
         onDidDispose: vi.fn(() => ({ dispose: vi.fn() })),
       } as never,
-      'qwen-code.chatView.sidebar',
+      'zero.chatView.sidebar',
     );
 
     const agentManager = (
@@ -1050,7 +1050,7 @@ describe('WebViewProvider settings sync', () => {
     );
   });
 
-  it('ignores non-auth qwen-code setting changes', async () => {
+  it('ignores non-auth zero setting changes', async () => {
     const provider = new WebViewProvider(
       { subscriptions: [] } as never,
       { fsPath: '/extension-root' } as never,
@@ -1067,12 +1067,12 @@ describe('WebViewProvider settings sync', () => {
     const configChangeHandler = mockConfigChangeHandlers.at(-1);
     expect(configChangeHandler).toBeDefined();
 
-    await configChangeHandler?.(createConfigChangeEvent('qwen-code'));
+    await configChangeHandler?.(createConfigChangeEvent('zero'));
 
     expect(syncSpy).not.toHaveBeenCalled();
   });
 
-  it('reacts to auth-related qwen-code setting changes', async () => {
+  it('reacts to auth-related zero setting changes', async () => {
     const provider = new WebViewProvider(
       { subscriptions: [] } as never,
       { fsPath: '/extension-root' } as never,
@@ -1090,7 +1090,7 @@ describe('WebViewProvider settings sync', () => {
     expect(configChangeHandler).toBeDefined();
 
     await configChangeHandler?.(
-      createConfigChangeEvent('qwen-code', 'qwen-code.apiKey'),
+      createConfigChangeEvent('zero', 'zero.apiKey'),
     );
 
     expect(syncSpy).toHaveBeenCalledTimes(1);
@@ -1126,7 +1126,7 @@ describe('WebViewProvider settings sync', () => {
     expect(configChangeHandler).toBeDefined();
 
     await configChangeHandler?.(
-      createConfigChangeEvent('qwen-code', 'qwen-code.apiKey'),
+      createConfigChangeEvent('zero', 'zero.apiKey'),
     );
 
     // Should clear persisted auth
@@ -1176,7 +1176,7 @@ describe('WebViewProvider settings sync', () => {
 
     // Changing codingPlanRegion should NOT trigger de-auth
     await configChangeHandler?.(
-      createConfigChangeEvent('qwen-code', 'qwen-code.codingPlanRegion'),
+      createConfigChangeEvent('zero', 'zero.codingPlanRegion'),
     );
 
     expect(mockClearPersistedAuth).not.toHaveBeenCalled();
@@ -1355,7 +1355,7 @@ describe('Notification & dot indicator', () => {
 
     // Notification should be shown
     expect(mockShowInformationMessage).toHaveBeenCalledWith(
-      'Qwen Code: Waiting for your input.',
+      'ZERO Agent: Waiting for your input.',
       'Show',
     );
   });
@@ -1436,7 +1436,7 @@ describe('Notification & dot indicator', () => {
 
     // Notification with tool name
     expect(mockShowInformationMessage).toHaveBeenCalledWith(
-      'Qwen Code: Needs your permission to use Bash.',
+      'ZERO Agent: Needs your permission to use Bash.',
       'Show',
     );
   });
@@ -1623,7 +1623,7 @@ describe('Notification & dot indicator', () => {
 
     // User is in VS Code but not looking at the panel — should notify
     expect(mockShowInformationMessage).toHaveBeenCalledWith(
-      'Qwen Code: Waiting for your input.',
+      'ZERO Agent: Waiting for your input.',
       'Show',
     );
   });
@@ -1646,7 +1646,7 @@ describe('Notification & dot indicator', () => {
 
     // User left VS Code — should notify even though panel is visible
     expect(mockShowInformationMessage).toHaveBeenCalledWith(
-      'Qwen Code: Waiting for your input.',
+      'ZERO Agent: Waiting for your input.',
       'Show',
     );
   });
@@ -1677,7 +1677,7 @@ describe('Notification & dot indicator', () => {
 
     // Notification without tool name (generic message)
     expect(mockShowInformationMessage).toHaveBeenCalledWith(
-      'Qwen Code: Waiting for your input.',
+      'ZERO Agent: Waiting for your input.',
       'Show',
     );
   });

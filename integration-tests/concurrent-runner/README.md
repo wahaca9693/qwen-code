@@ -1,6 +1,6 @@
-# Qwen Concurrent Runner
+# ZERO Concurrent Runner
 
-A Python tool for executing multiple Qwen CLI tasks across different models concurrently using isolated git worktrees.
+A Python tool for executing multiple ZERO CLI tasks across different models concurrently using isolated git worktrees.
 
 ## Overview
 
@@ -113,7 +113,7 @@ outputs/
 1. **Generate Matrix**: Create N×M run combinations (tasks × models)
 2. **Create Worktree**: Git worktree add from source repo
 3. **Initialize**: npm install && npm run build
-4. **Execute**: Run qwen CLI with captured output (logs go to run-specific folder)
+4. **Execute**: Run zero CLI with captured output (logs go to run-specific folder)
 5. **Cleanup**: Remove git worktree (always executed)
 
 ## Status Values
@@ -121,7 +121,7 @@ outputs/
 - `queued`: Waiting to start
 - `preparing`: Creating git worktree
 - `initializing`: Running npm install + build
-- `running`: Executing qwen CLI
+- `running`: Executing zero CLI
 - `succeeded`: Completed successfully
 - `failed`: Error occurred
 

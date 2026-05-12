@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ const ACTIONLINT_VERSION = '1.7.7';
 const SHELLCHECK_VERSION = '0.11.0';
 const YAMLLINT_VERSION = '1.35.1';
 
-const TEMP_DIR = join(tmpdir(), 'qwen-code-linters');
+const TEMP_DIR = join(tmpdir(), 'zero-linters');
 
 function getPlatformArch() {
   const platform = process.platform;

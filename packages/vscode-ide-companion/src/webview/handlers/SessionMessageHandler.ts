@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,7 +16,7 @@ import {
 } from '../utils/imageHandler.js';
 import { isAuthenticationRequiredError } from '../../utils/authErrors.js';
 import { getErrorMessage } from '../../utils/errorMessage.js';
-import { stripZeroWidthSpaces } from '@qwen-code/webui';
+import { stripZeroWidthSpaces } from '@zero/webui';
 import {
   exportSessionToFile,
   parseExportSlashCommand,
@@ -336,7 +336,7 @@ export class SessionMessageHandler extends BaseMessageHandler {
       if (this.authHandler) {
         await this.authHandler();
       } else {
-        await vscode.commands.executeCommand('qwen-code.auth');
+        await vscode.commands.executeCommand('zero.auth');
       }
       return true;
     }
@@ -360,7 +360,7 @@ export class SessionMessageHandler extends BaseMessageHandler {
       if (this.authHandler) {
         await this.authHandler();
       } else {
-        await vscode.commands.executeCommand('qwen-code.auth');
+        await vscode.commands.executeCommand('zero.auth');
       }
       return 'auth';
     }
@@ -582,7 +582,7 @@ export class SessionMessageHandler extends BaseMessageHandler {
 
       if (!this.agentManager.isConnected) {
         await this.promptAuth(
-          'You need to configure your provider to use Qwen Code.',
+          'You need to configure your provider to use ZERO Agent.',
         );
         return;
       }
@@ -600,7 +600,7 @@ export class SessionMessageHandler extends BaseMessageHandler {
           const errorMsg = this.getErrorMessage(createErr);
           if (this.shouldPromptAuth(createErr)) {
             await this.promptAuth(
-              'Your session has expired or is invalid. Please configure your provider to continue using Qwen Code.',
+              'Your session has expired or is invalid. Please configure your provider to continue using ZERO Agent.',
             );
             return;
           }
@@ -768,7 +768,7 @@ export class SessionMessageHandler extends BaseMessageHandler {
 
       // Show non-modal notification with Configure button
       await this.promptAuth(
-        'You need to configure your provider to use Qwen Code.',
+        'You need to configure your provider to use ZERO Agent.',
       );
       return;
     }
@@ -787,7 +787,7 @@ export class SessionMessageHandler extends BaseMessageHandler {
         const errorMsg = this.getErrorMessage(createErr);
         if (this.shouldPromptAuth(createErr)) {
           await this.promptAuth(
-            'Your session has expired or is invalid. Please configure your provider to continue using Qwen Code.',
+            'Your session has expired or is invalid. Please configure your provider to continue using ZERO Agent.',
           );
           return;
         }
@@ -900,7 +900,7 @@ export class SessionMessageHandler extends BaseMessageHandler {
       ) {
         // Show a more user-friendly error message for expired sessions
         await this.promptAuth(
-          'Your session has expired or is invalid. Please configure your provider to continue using Qwen Code.',
+          'Your session has expired or is invalid. Please configure your provider to continue using ZERO Agent.',
         );
 
         // Send a specific error to the webview for better UI handling
@@ -1435,7 +1435,7 @@ export class SessionMessageHandler extends BaseMessageHandler {
         });
         return;
       }
-      // Matches SESSION_TITLE_MAX_LENGTH from @qwen-code/qwen-code-core/sessionService
+      // Matches SESSION_TITLE_MAX_LENGTH from @zero-agent/zero-core/sessionService
       if (trimmedTitle.length > 200) {
         this.sendToWebView({
           type: 'error',

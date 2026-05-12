@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,13 +10,13 @@ import { act } from 'react';
 import { renderHook, waitFor } from '@testing-library/react';
 import { useGitBranchName } from './useGitBranchName.js';
 import { fs, vol } from 'memfs'; // For mocking fs
-import { isCommandAvailable, execCommand } from '@qwen-code/qwen-code-core';
+import { isCommandAvailable, execCommand } from '@zero-agent/zero-core';
 
-// Mock @qwen-code/qwen-code-core
-vi.mock('@qwen-code/qwen-code-core', async () => {
+// Mock @zero-agent/zero-core
+vi.mock('@zero-agent/zero-core', async () => {
   const original = await vi.importActual<
-    typeof import('@qwen-code/qwen-code-core')
-  >('@qwen-code/qwen-code-core');
+    typeof import('@zero-agent/zero-core')
+  >('@zero-agent/zero-core');
   return {
     ...original,
     execCommand: vi.fn(),

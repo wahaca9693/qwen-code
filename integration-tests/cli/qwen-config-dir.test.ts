@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -131,7 +131,7 @@ describe('QWEN_HOME environment variable', () => {
      *
      * TestRig sets cwd to testDir when spawning the child process, so a
      * relative path like "./custom-qwen" resolves to
-     * <testDir>/custom-qwen inside the subprocess.
+     * <testDir>/custom-ZERO inside the subprocess.
      */
     it('1c: relative QWEN_HOME path is resolved against subprocess cwd', async () => {
       rig.setup('qwen-home-1c-relative-path');

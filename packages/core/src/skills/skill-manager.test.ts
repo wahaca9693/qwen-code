@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -159,8 +159,8 @@ describe('SkillManager', () => {
         return { name: 'regular-skill', description: 'A regular skill' };
       }
       if (yamlString.includes('name: shared-skill')) {
-        const desc = yamlString.includes('From qwen dir')
-          ? 'From qwen dir'
+        const desc = yamlString.includes('From ZERO dir')
+          ? 'From ZERO dir'
           : yamlString.includes('From agent dir')
             ? 'From agent dir'
             : 'A shared skill';
@@ -685,7 +685,7 @@ Skill 3 content`);
     });
 
     it('should deduplicate same-name skills across provider dirs within a level', async () => {
-      // Override readdir to return the same skill name from both .qwen and .agents dirs
+      // Override readdir to return the same skill name from both .ZERO and .agents dirs
       vi.mocked(fs.readdir).mockReset();
       const projectQwenDir = path.join('/test/project', '.qwen', 'skills');
       const projectAgentDir = path.join('/test/project', '.agents', 'skills');
@@ -722,7 +722,7 @@ Skill 3 content`);
         const pathStr = String(filePath);
         if (pathStr.includes('.qwen') && pathStr.includes('shared-skill')) {
           return Promise.resolve(
-            `---\nname: shared-skill\ndescription: From qwen dir\n---\nQwen content`,
+            `---\nname: shared-skill\ndescription: From ZERO dir\n---\nQwen content`,
           );
         }
         if (pathStr.includes('.agents') && pathStr.includes('shared-skill')) {
@@ -738,10 +738,10 @@ Skill 3 content`);
         force: true,
       });
 
-      // Only one instance should remain, from .qwen (first in PROVIDER_CONFIG_DIRS)
+      // Only one instance should remain, from .ZERO (first in PROVIDER_CONFIG_DIRS)
       expect(skills).toHaveLength(1);
       expect(skills[0].name).toBe('shared-skill');
-      expect(skills[0].description).toBe('From qwen dir');
+      expect(skills[0].description).toBe('From ZERO dir');
     });
 
     it('should handle empty directories', async () => {

@@ -1,11 +1,11 @@
 ---
 name: tmux-real-user-testing
-description: This skill should be used when the user asks to "用 tmux 做真实测试", "保存 tmux 日志", "像真实用户一样测试 Qwen", "生成可复查的 TUI 测试报告", "测试 slash command 交互", or requests a tmux-based real user E2E run with complete readable logs. It guides real TUI usage with step-by-step capture-pane snapshots rather than ANSI raw pipe logs.
+description: This skill should be used when the user asks to "用 tmux 做真实测试", "保存 tmux 日志", "像真实用户一样测试 ZERO", "生成可复查的 TUI 测试报告", "测试 slash command 交互", or requests a tmux-based real user E2E run with complete readable logs. It guides real TUI usage with step-by-step capture-pane snapshots rather than ANSI raw pipe logs.
 ---
 
 # tmux Real User Testing
 
-Run Qwen Code in a real tmux TUI session as a user would: navigate dialogs,
+Run ZERO Agent in a real tmux TUI session as a user would: navigate dialogs,
 trigger slash commands, exercise workflows, and save a readable log that
 maintainers can review. Prefer this workflow when the goal is not just a pass/fail
 assertion, but a narrative artifact showing what happened on screen.
@@ -244,7 +244,7 @@ Ask before deleting logs or reverting settings. Do not sanitize by default if th
 user explicitly requests complete logs. If logs may be shared externally, offer a
 separate sanitized copy rather than modifying the original.
 
-Mention likely side effects before starting: OAuth may open a browser, write Qwen
+Mention likely side effects before starting: OAuth may open a browser, write ZERO
 settings, set API key config, and update model provider entries.
 
 ## Common pitfalls

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,7 @@ import type {
   ToolRegistry,
   ServerGeminiStreamEvent,
   SessionMetrics,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { CLIUserMessage } from './nonInteractive/types.js';
 import {
   executeToolCall,
@@ -21,7 +21,7 @@ import {
   FatalInputError,
   ApprovalMode,
   SendMessageType,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { Part } from '@google/genai';
 import { runNonInteractive } from './nonInteractiveCli.js';
 import { vi, type Mock, type MockInstance } from 'vitest';
@@ -40,9 +40,9 @@ import {
 
 // Mock core modules
 vi.mock('./ui/hooks/atCommandProcessor.js');
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const original =
-    await importOriginal<typeof import('@qwen-code/qwen-code-core')>();
+    await importOriginal<typeof import('@zero-agent/zero-core')>();
 
   class MockChatRecordingService {
     initialize = vi.fn();
@@ -336,7 +336,7 @@ describe('runNonInteractive', () => {
 
   it('on EPIPE, destroys stdout and returns normally instead of process.exit', async () => {
     // Regression: process.exit(0) on EPIPE bypassed runExitCleanup → flush()
-    // and dropped queued JSONL writes for `qwen -p ... | head -1` patterns.
+    // and dropped queued JSONL writes for `ZERO -p ... | head -1` patterns.
     // process.exit is mocked to throw in beforeEach, so reaching the
     // assertion also proves the bypass route is gone.
     setupMetricsMock();
@@ -3372,10 +3372,10 @@ describe('runNonInteractive', () => {
     it('emits structuredResult to stdout in OutputFormat.TEXT mode', async () => {
       // The other --json-schema tests pin OutputFormat.JSON /
       // OutputFormat.STREAM_JSON. TEXT is the default for headless runs
-      // (`qwen -p "..."` without --output-format), so it needs its own
+      // (`ZERO -p "..."` without --output-format), so it needs its own
       // pin: a regression that diverged the TEXT adapter's
       // structuredResult handling from the JSON / stream-json paths
-      // would only surface to users running plain `qwen -p`.
+      // would only surface to users running plain `ZERO -p`.
       (mockConfig.getJsonSchema as Mock).mockReturnValue({
         type: 'object',
         properties: { summary: { type: 'string' } },

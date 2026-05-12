@@ -1,18 +1,18 @@
 # Authentication
 
-Qwen Code supports three authentication methods. Pick the one that matches how you want to run the CLI:
+ZERO Agent supports three authentication methods. Pick the one that matches how you want to run the CLI:
 
-- **Qwen OAuth**: sign in with your `qwen.ai` account in a browser. **Free tier discontinued on 2026-04-15** — switch to another method.
+- **ZERO OAuth**: sign in with your `qwen.ai` account in a browser. **Free tier discontinued on 2026-04-15** — switch to another method.
 - **Alibaba Cloud Coding Plan**: use an API key from Alibaba Cloud. Paid subscription with diverse model options and higher quotas.
 - **API Key**: bring your own API key. Flexible to your own needs — supports OpenAI, Anthropic, Gemini, and other compatible endpoints.
 
-## Option 1: Qwen OAuth (Discontinued)
+## Option 1: ZERO OAuth (Discontinued)
 
 > [!warning]
 >
-> The Qwen OAuth free tier was discontinued on 2026-04-15. Existing cached tokens may continue working briefly, but new requests will be rejected. Please switch to Alibaba Cloud Coding Plan, [OpenRouter](https://openrouter.ai), [Fireworks AI](https://app.fireworks.ai), or another provider. Run `qwen` and use `/auth` to configure.
+> The ZERO OAuth free tier was discontinued on 2026-04-15. Existing cached tokens may continue working briefly, but new requests will be rejected. Please switch to Alibaba Cloud Coding Plan, [OpenRouter](https://openrouter.ai), [Fireworks AI](https://app.fireworks.ai), or another provider. Run `qwen` and use `/auth` to configure.
 
-- **How it works**: on first start, Qwen Code opens a browser login page. After you finish, credentials are cached locally so you usually won't need to log in again.
+- **How it works**: on first start, ZERO Agent opens a browser login page. After you finish, credentials are cached locally so you usually won't need to log in again.
 - **Requirements**: a `qwen.ai` account + internet access (at least for the first login).
 - **Benefits**: no API key management, automatic credential refresh.
 - **Cost & quota**: the free tier has been discontinued as of 2026-04-15.
@@ -34,9 +34,9 @@ Then run `/auth` and choose the OAuth provider from the interactive dialog.
 
 Use this if you want predictable costs with diverse model options and higher usage quotas.
 
-- **How it works**: Subscribe to the Coding Plan with a fixed monthly fee, then configure Qwen Code to use the dedicated endpoint and your subscription API key.
+- **How it works**: Subscribe to the Coding Plan with a fixed monthly fee, then configure ZERO Agent to use the dedicated endpoint and your subscription API key.
 - **Requirements**: Obtain an active Coding Plan subscription from [Alibaba Cloud ModelStudio(Beijing)](https://bailian.console.aliyun.com/cn-beijing?tab=coding-plan#/efm/coding-plan-index) or [Alibaba Cloud ModelStudio(intl)](https://modelstudio.console.alibabacloud.com/?tab=coding-plan#/efm/coding-plan-index), depending on the region of your account.
-- **Benefits**: Diverse model options, higher usage quotas, predictable monthly costs, access to a wide range of models (Qwen, GLM, Kimi, Minimax and more).
+- **Benefits**: Diverse model options, higher usage quotas, predictable monthly costs, access to a wide range of models (ZERO, GLM, Kimi, Minimax and more).
 - **Cost & quota**: View Aliyun ModelStudio Coding Plan documentation[Beijing](https://bailian.console.aliyun.com/cn-beijing/?tab=doc#/doc/?type=model&url=3005961)[intl](https://modelstudio.console.alibabacloud.com/?tab=doc#/doc/?type=model&url=2840914).
 
 Alibaba Cloud Coding Plan is available in two regions:
@@ -48,13 +48,13 @@ Alibaba Cloud Coding Plan is available in two regions:
 
 ### Interactive setup
 
-Enter `qwen` in the terminal to launch Qwen Code, then run the `/auth` command and select **Alibaba Cloud Coding Plan**. Choose your region, then enter your `sk-sp-xxxxxxxxx` key.
+Enter `qwen` in the terminal to launch ZERO Agent, then run the `/auth` command and select **Alibaba Cloud Coding Plan**. Choose your region, then enter your `sk-sp-xxxxxxxxx` key.
 
 After authentication, use the `/model` command to switch between all Alibaba Cloud Coding Plan supported models (including qwen3.5-plus, qwen3-coder-plus, qwen3-coder-next, qwen3-max, glm-4.7, and kimi-k2.5).
 
 ### Headless or scripted setup
 
-For CI, containers, or scripts, configure Coding Plan with environment variables or `settings.json` instead of the removed `qwen auth coding-plan` command.
+For CI, containers, or scripts, configure Coding Plan with environment variables or `settings.json` instead of the removed `zero auth coding-plan` command.
 
 ```bash
 export BAILIAN_CODING_PLAN_API_KEY="sk-sp-xxxxxxxxx"
@@ -115,7 +115,7 @@ The simplest way to get started with API Key authentication is to put everything
         "id": "qwen3-coder-plus",
         "name": "qwen3-coder-plus",
         "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "description": "Qwen3-Coder via Dashscope",
+        "description": "ZERO3-Coder via Dashscope",
         "envKey": "DASHSCOPE_API_KEY"
       }
     ]
@@ -140,8 +140,8 @@ What each field does:
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `modelProviders`             | Declares which models are available and how to connect to them. Keys (`openai`, `anthropic`, `gemini`) represent the API protocol.              |
 | `env`                        | Stores API keys directly in `settings.json` as a fallback (lowest priority — shell `export` and `.env` files take precedence).                  |
-| `security.auth.selectedType` | Tells Qwen Code which protocol to use on startup (e.g. `openai`, `anthropic`, `gemini`). Without this, you'd need to run `/auth` interactively. |
-| `model.name`                 | The default model to activate when Qwen Code starts. Must match one of the `id` values in your `modelProviders`.                                |
+| `security.auth.selectedType` | Tells ZERO Agent which protocol to use on startup (e.g. `openai`, `anthropic`, `gemini`). Without this, you'd need to run `/auth` interactively. |
+| `model.name`                 | The default model to activate when ZERO Agent starts. Must match one of the `id` values in your `modelProviders`.                                |
 
 After saving the file, just run `qwen` — no interactive `/auth` setup needed.
 
@@ -149,7 +149,7 @@ After saving the file, just run `qwen` — no interactive `/auth` setup needed.
 >
 > The sections below explain each part in more detail. If the quick example above works for you, feel free to skip ahead to [Security notes](#security-notes).
 
-The key concept is **Model Providers** (`modelProviders`): Qwen Code supports multiple API protocols, not just OpenAI. You configure which providers and models are available by editing `~/.qwen/settings.json`, then switch between them at runtime with the `/model` command.
+The key concept is **Model Providers** (`modelProviders`): ZERO Agent supports multiple API protocols, not just OpenAI. You configure which providers and models are available by editing `~/.qwen/settings.json`, then switch between them at runtime with the `/model` command.
 
 #### Supported protocols
 
@@ -220,7 +220,7 @@ For the full `modelProviders` schema and advanced options like `generationConfig
 
 #### Step 2: Set environment variables
 
-Qwen Code reads API keys from environment variables (specified by `envKey` in your model config). There are multiple ways to provide them, listed below from **highest to lowest priority**:
+ZERO Agent reads API keys from environment variables (specified by `envKey` in your model config). There are multiple ways to provide them, listed below from **highest to lowest priority**:
 
 **1. Shell environment / `export` (highest priority)**
 
@@ -243,11 +243,11 @@ export GEMINI_API_KEY="AIza..."
 
 **2. `.env` files**
 
-Qwen Code auto-loads the **first** `.env` file it finds (variables are **not merged** across multiple files). Only variables not already present in `process.env` are loaded.
+ZERO Agent auto-loads the **first** `.env` file it finds (variables are **not merged** across multiple files). Only variables not already present in `process.env` are loaded.
 
 Search order (from the current directory, walking upward toward `/`):
 
-1. `.qwen/.env` (preferred — keeps Qwen Code variables isolated from other tools)
+1. `.qwen/.env` (preferred — keeps ZERO Agent variables isolated from other tools)
 2. `.env`
 
 If nothing is found, it falls back to your **home directory**:
@@ -257,7 +257,7 @@ If nothing is found, it falls back to your **home directory**:
 
 > [!tip]
 >
-> `.qwen/.env` is recommended over `.env` to avoid conflicts with other tools. Some variables (like `DEBUG` and `DEBUG_MODE`) are excluded from project-level `.env` files to avoid interfering with Qwen Code behavior.
+> `.qwen/.env` is recommended over `.env` to avoid conflicts with other tools. Some variables (like `DEBUG` and `DEBUG_MODE`) are excluded from project-level `.env` files to avoid interfering with ZERO Agent behavior.
 
 **3. `settings.json` → `env` field (lowest priority)**
 
@@ -286,7 +286,7 @@ This is the approach used in the [one-file setup example](#recommended-one-file-
 
 #### Step 3: Switch models with `/model`
 
-After launching Qwen Code, use the `/model` command to switch between all configured models. Models are grouped by protocol:
+After launching ZERO Agent, use the `/model` command to switch between all configured models. Models are grouped by protocol:
 
 ```
 /model
@@ -299,16 +299,16 @@ You can also switch models directly with a command-line argument, which is conve
 ```bash
 # In one terminal
 
-qwen --model "qwen3-coder-plus"
+zero --model "qwen3-coder-plus"
 
 # In another terminal
 
-qwen --model "qwen3.5-plus"
+zero --model "qwen3.5-plus"
 ```
 
-## Removed `qwen auth` CLI command
+## Removed `zero auth` CLI command
 
-The standalone `qwen auth` CLI command has been removed. Use these replacements instead:
+The standalone `zero auth` CLI command has been removed. Use these replacements instead:
 
 | Previous use case                | Replacement                                                                                 |
 | -------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -316,10 +316,10 @@ The standalone `qwen auth` CLI command has been removed. Use these replacements 
 | Coding Plan setup                | Use `/auth`, or set `BAILIAN_CODING_PLAN_API_KEY` with the Coding Plan base URL             |
 | OpenRouter setup                 | Use `/auth`, or set `OPENROUTER_API_KEY` and `OPENAI_BASE_URL=https://openrouter.ai/api/v1` |
 | API-key or custom provider setup | Configure `~/.qwen/settings.json`, `.env`, or provider-specific environment variables       |
-| Check current authentication     | Run `/doctor` inside Qwen Code                                                              |
+| Check current authentication     | Run `/doctor` inside ZERO Agent                                                              |
 | OAuth browser flow               | Run `qwen` interactively and use `/auth`; OAuth cannot be configured with env vars alone    |
 
-Legacy invocations such as `qwen auth status` now print a removal notice with these migration paths.
+Legacy invocations such as `zero auth status` now print a removal notice with these migration paths.
 
 ## Security notes
 

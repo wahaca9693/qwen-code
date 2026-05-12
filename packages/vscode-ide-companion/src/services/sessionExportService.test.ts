@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -31,7 +31,7 @@ const {
   mockShowSaveDialog: vi.fn(),
 }));
 
-vi.mock('@qwen-code/qwen-code-core', () => {
+vi.mock('@zero-agent/zero-core', () => {
   class SessionService {
     constructor(_cwd: string) {}
 
@@ -45,7 +45,7 @@ vi.mock('@qwen-code/qwen-code-core', () => {
   };
 });
 
-vi.mock('@qwen-code/qwen-code/export', () => ({
+vi.mock('@zero/zero/export', () => ({
   collectSessionData: mockCollectSessionData,
   normalizeSessionData: mockNormalizeSessionData,
   toHtml: mockToHtml,

@@ -58,7 +58,7 @@
  *   npx tsx subagent-flicker-regression.ts
  *
  * Useful env:
- *   QWEN_TUI_E2E_REPO=/path/to/qwen-code
+ *   QWEN_TUI_E2E_REPO=/path/to/zero
  *   QWEN_TUI_E2E_OUT=/tmp/qwen-tui-subagent-flicker
  *   QWEN_TUI_E2E_MAX_CLEAR_PAIRS=10       (default: 10)
  *   QWEN_TUI_E2E_MAX_CLEAR_SCREEN=20      (default: 20)
@@ -509,7 +509,7 @@ async function main(): Promise<void> {
   );
   console.error('[fake-openai] baseUrl =', fakeServer.baseUrl);
 
-  // Sandbox HOME to keep ~/.qwen settings out of the run.
+  // Sandbox HOME to keep ~/.ZERO settings out of the run.
   const homeDir = join(outputDir, 'home');
   mkdirSync(homeDir, { recursive: true });
 

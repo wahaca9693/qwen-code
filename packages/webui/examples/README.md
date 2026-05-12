@@ -1,6 +1,6 @@
 # Examples
 
-This directory contains example implementations demonstrating various ways to use the `@qwen-code/webui` library.
+This directory contains example implementations demonstrating various ways to use the `@zero-agent/webui` library.
 
 ## Available Examples
 

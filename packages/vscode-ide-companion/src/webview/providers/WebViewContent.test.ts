@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -35,7 +35,7 @@ describe('WebViewContent', () => {
     const html = WebViewContent.generate(webview as never, fakeExtensionUri);
 
     expect(html).toContain('<!DOCTYPE html>');
-    expect(html).toContain('Qwen Code');
+    expect(html).toContain('ZERO Agent');
     expect(html).toContain(webview.cspSource);
     expect(webview.asWebviewUri).toHaveBeenCalled();
   });

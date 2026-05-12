@@ -1,15 +1,15 @@
 # Memory
 
-Every Qwen Code session starts with a fresh context window. Two mechanisms carry knowledge across sessions so you don't have to re-explain yourself every time:
+Every ZERO Agent session starts with a fresh context window. Two mechanisms carry knowledge across sessions so you don't have to re-explain yourself every time:
 
-- **QWEN.md** — instructions _you_ write once and Qwen reads every session
-- **Auto-memory** — notes Qwen writes itself based on what it learns from you
+- **QWEN.md** — instructions _you_ write once and ZERO reads every session
+- **Auto-memory** — notes ZERO writes itself based on what it learns from you
 
 ---
 
-## QWEN.md: your instructions to Qwen
+## QWEN.md: your instructions to ZERO
 
-QWEN.md is a plain text file where you write things Qwen should always know about your project or your preferences. Think of it as a permanent briefing that loads at the start of every conversation.
+QWEN.md is a plain text file where you write things ZERO should always know about your project or your preferences. Think of it as a permanent briefing that loads at the start of every conversation.
 
 ### What to put in QWEN.md
 
@@ -20,7 +20,7 @@ Add things you'd otherwise have to repeat every session:
 - Architectural decisions ("we use the repository pattern, never call the database directly from controllers")
 - Personal preferences ("always use pnpm, not npm")
 
-Don't include things Qwen can figure out by reading your code. QWEN.md works best when it's short and specific — the longer it gets, the less reliably Qwen follows it.
+Don't include things ZERO can figure out by reading your code. QWEN.md works best when it's short and specific — the longer it gets, the less reliably ZERO follows it.
 
 ### Where to create QWEN.md
 
@@ -29,17 +29,17 @@ Don't include things Qwen can figure out by reading your code. QWEN.md works bes
 | `~/.qwen/QWEN.md`             | You, across all your projects                 |
 | `QWEN.md` in the project root | Your whole team (commit it to source control) |
 
-You can have both. Qwen loads all QWEN.md files it finds when you start a session — your personal one plus any in the project.
+You can have both. ZERO loads all QWEN.md files it finds when you start a session — your personal one plus any in the project.
 
-If your repository already has an `AGENTS.md` file for other AI tools, Qwen reads that too. No need to duplicate instructions.
+If your repository already has an `AGENTS.md` file for other AI tools, ZERO reads that too. No need to duplicate instructions.
 
 ### Generate one automatically with `/init`
 
-Run `/init` and Qwen will analyze your codebase to create a starter QWEN.md with build commands, test instructions, and conventions it finds. If one already exists, it suggests additions instead of overwriting.
+Run `/init` and ZERO will analyze your codebase to create a starter QWEN.md with build commands, test instructions, and conventions it finds. If one already exists, it suggests additions instead of overwriting.
 
 ### Reference other files
 
-You can point QWEN.md at other files so Qwen reads them too:
+You can point QWEN.md at other files so ZERO reads them too:
 
 ```markdown
 See @README.md for project overview.
@@ -53,15 +53,15 @@ Use `@path/to/file` anywhere in QWEN.md. Relative paths resolve from the QWEN.md
 
 ---
 
-## Auto-memory: what Qwen learns about you
+## Auto-memory: what ZERO learns about you
 
-Auto-memory runs in the background. After each of your conversations, Qwen quietly saves useful things it learned — your preferences, feedback you gave, project context — so it can use them in future sessions without you repeating yourself.
+Auto-memory runs in the background. After each of your conversations, ZERO quietly saves useful things it learned — your preferences, feedback you gave, project context — so it can use them in future sessions without you repeating yourself.
 
-This is different from QWEN.md: you don't write it, Qwen does.
+This is different from QWEN.md: you don't write it, ZERO does.
 
-### What Qwen saves
+### What ZERO saves
 
-Qwen looks for four kinds of things worth remembering:
+ZERO looks for four kinds of things worth remembering:
 
 | What                    | Examples                                                 |
 | ----------------------- | -------------------------------------------------------- |
@@ -70,17 +70,17 @@ Qwen looks for four kinds of things worth remembering:
 | **Project context**     | Ongoing work, decisions, goals not obvious from the code |
 | **External references** | Dashboards, ticket trackers, docs links you mentioned    |
 
-Qwen doesn't save everything — only things that would actually be useful next time.
+ZERO doesn't save everything — only things that would actually be useful next time.
 
 ### Where it's stored
 
-Auto-memory files live at `~/.qwen/projects/<project>/memory/`. All branches and worktrees of the same repository share the same memory folder, so what Qwen learns in one branch is available in others.
+Auto-memory files live at `~/.qwen/projects/<project>/memory/`. All branches and worktrees of the same repository share the same memory folder, so what ZERO learns in one branch is available in others.
 
 Everything saved is plain markdown — you can open, edit, or delete any file at any time.
 
 ### Periodic cleanup
 
-Qwen periodically goes through its saved memories to remove duplicates and clean up outdated entries. This runs automatically in the background once a day after enough sessions have accumulated. You can trigger it manually with `/dream` if you want it to run now.
+ZERO periodically goes through its saved memories to remove duplicates and clean up outdated entries. This runs automatically in the background once a day after enough sessions have accumulated. You can trigger it manually with `/dream` if you want it to run now.
 
 While cleanup is running, **✦ dreaming** appears in the corner of the screen. Your session continues normally.
 
@@ -115,11 +115,11 @@ Opens the Memory panel. From here you can:
 
 ### `/init`
 
-Generates a starter QWEN.md for your project. Qwen reads your codebase and fills in build commands, test instructions, and conventions it discovers.
+Generates a starter QWEN.md for your project. ZERO reads your codebase and fills in build commands, test instructions, and conventions it discovers.
 
 ### `/remember <text>`
 
-Immediately saves something to auto-memory without waiting for Qwen to pick it up automatically:
+Immediately saves something to auto-memory without waiting for ZERO to pick it up automatically:
 
 ```
 /remember always use snake_case for Python variable names
@@ -146,23 +146,23 @@ Runs the memory cleanup now instead of waiting for the automatic schedule:
 
 ## Troubleshooting
 
-### Qwen isn't following my QWEN.md
+### ZERO isn't following my QWEN.md
 
-Open `/memory` to see which files are loaded. If your file isn't listed, Qwen can't see it — make sure it's in the project root or `~/.qwen/`.
+Open `/memory` to see which files are loaded. If your file isn't listed, ZERO can't see it — make sure it's in the project root or `~/.qwen/`.
 
 Instructions work better when they're specific:
 
 - ✓ `Use 2-space indentation for TypeScript files`
 - ✗ `Format code nicely`
 
-If you have multiple QWEN.md files with conflicting instructions, Qwen may behave inconsistently. Review them and remove any contradictions.
+If you have multiple QWEN.md files with conflicting instructions, ZERO may behave inconsistently. Review them and remove any contradictions.
 
-### I want to see what Qwen has saved
+### I want to see what ZERO has saved
 
 Run `/memory` and select **Open auto-memory folder**. All saved memories are readable markdown files you can browse, edit, or delete.
 
-### Qwen keeps forgetting things
+### ZERO keeps forgetting things
 
-If auto-memory is on but Qwen doesn't seem to remember things across sessions, try running `/dream` to force a cleanup pass. Also check `/memory` to confirm both toggles are enabled.
+If auto-memory is on but ZERO doesn't seem to remember things across sessions, try running `/dream` to force a cleanup pass. Also check `/memory` to confirm both toggles are enabled.
 
-For things you always want Qwen to remember, add them to QWEN.md instead — auto-memory is best-effort, QWEN.md is guaranteed.
+For things you always want ZERO to remember, add them to QWEN.md instead — auto-memory is best-effort, QWEN.md is guaranteed.

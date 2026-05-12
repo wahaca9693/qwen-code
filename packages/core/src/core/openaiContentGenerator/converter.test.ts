@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -1476,7 +1476,7 @@ describe('OpenAIContentConverter', () => {
 
     describe('assistant message with reasoning-only content (issue #3421)', () => {
       /**
-       * Regression tests for https://github.com/QwenLM/qwen-code/issues/3421
+       * Regression tests for https://github.com/ZEROLM/zero/issues/3421
        *
        * When a model (e.g. Ollama qwen3.5:9b) returns a response that contains
        * reasoning content but an empty text body, the converted assistant message
@@ -1591,7 +1591,7 @@ describe('OpenAIContentConverter', () => {
 
   describe('MCP multi-part tool results (issue #1520)', () => {
     /**
-     * Regression tests for https://github.com/QwenLM/qwen-code/issues/1520
+     * Regression tests for https://github.com/ZEROLM/zero/issues/1520
      *
      * Ensures that when an MCP tool returns multiple content blocks
      * (e.g., text + image, or multiple text sections), all content
@@ -2691,7 +2691,7 @@ describe('OpenAIContentConverter', () => {
 
 describe('MCP tool result end-to-end through OpenAI converter (issue #1520)', () => {
   /**
-   * End-to-end regression tests for https://github.com/QwenLM/qwen-code/issues/1520
+   * End-to-end regression tests for https://github.com/ZEROLM/zero/issues/1520
    *
    * Simulates the full pipeline:
    *   transformMcpContentToParts → convertToFunctionResponse → OpenAI converter

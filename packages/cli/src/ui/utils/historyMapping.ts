@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Qwen Code
+ * Copyright 2026 ZERO Agent
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type { HistoryItem } from '../types.js';
 import type { Content } from '@google/genai';
-import { STARTUP_CONTEXT_MODEL_ACK } from '@qwen-code/qwen-code-core';
+import { STARTUP_CONTEXT_MODEL_ACK } from '@zero-agent/zero-core';
 import { isSlashCommand } from './commandUtils.js';
 
 /**

@@ -1,66 +1,66 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export const SERVICE_NAME = 'qwen-code';
+export const SERVICE_NAME = 'zero';
 
-export const EVENT_USER_PROMPT = 'qwen-code.user_prompt';
-export const EVENT_USER_RETRY = 'qwen-code.user_retry';
-export const EVENT_TOOL_CALL = 'qwen-code.tool_call';
-export const EVENT_API_REQUEST = 'qwen-code.api_request';
-export const EVENT_API_ERROR = 'qwen-code.api_error';
-export const EVENT_API_CANCEL = 'qwen-code.api_cancel';
-export const EVENT_API_RESPONSE = 'qwen-code.api_response';
-export const EVENT_CLI_CONFIG = 'qwen-code.config';
-export const EVENT_EXTENSION_DISABLE = 'qwen-code.extension_disable';
-export const EVENT_EXTENSION_ENABLE = 'qwen-code.extension_enable';
-export const EVENT_EXTENSION_INSTALL = 'qwen-code.extension_install';
-export const EVENT_EXTENSION_UNINSTALL = 'qwen-code.extension_uninstall';
-export const EVENT_EXTENSION_UPDATE = 'qwen-code.extension_update';
-export const EVENT_FLASH_FALLBACK = 'qwen-code.flash_fallback';
-export const EVENT_RIPGREP_FALLBACK = 'qwen-code.ripgrep_fallback';
-export const EVENT_NEXT_SPEAKER_CHECK = 'qwen-code.next_speaker_check';
-export const EVENT_SLASH_COMMAND = 'qwen-code.slash_command';
-export const EVENT_IDE_CONNECTION = 'qwen-code.ide_connection';
-export const EVENT_CHAT_COMPRESSION = 'qwen-code.chat_compression';
-export const EVENT_INVALID_CHUNK = 'qwen-code.chat.invalid_chunk';
-export const EVENT_CONTENT_RETRY = 'qwen-code.chat.content_retry';
+export const EVENT_USER_PROMPT = 'zero.user_prompt';
+export const EVENT_USER_RETRY = 'zero.user_retry';
+export const EVENT_TOOL_CALL = 'zero.tool_call';
+export const EVENT_API_REQUEST = 'zero.api_request';
+export const EVENT_API_ERROR = 'zero.api_error';
+export const EVENT_API_CANCEL = 'zero.api_cancel';
+export const EVENT_API_RESPONSE = 'zero.api_response';
+export const EVENT_CLI_CONFIG = 'zero.config';
+export const EVENT_EXTENSION_DISABLE = 'zero.extension_disable';
+export const EVENT_EXTENSION_ENABLE = 'zero.extension_enable';
+export const EVENT_EXTENSION_INSTALL = 'zero.extension_install';
+export const EVENT_EXTENSION_UNINSTALL = 'zero.extension_uninstall';
+export const EVENT_EXTENSION_UPDATE = 'zero.extension_update';
+export const EVENT_FLASH_FALLBACK = 'zero.flash_fallback';
+export const EVENT_RIPGREP_FALLBACK = 'zero.ripgrep_fallback';
+export const EVENT_NEXT_SPEAKER_CHECK = 'zero.next_speaker_check';
+export const EVENT_SLASH_COMMAND = 'zero.slash_command';
+export const EVENT_IDE_CONNECTION = 'zero.ide_connection';
+export const EVENT_CHAT_COMPRESSION = 'zero.chat_compression';
+export const EVENT_INVALID_CHUNK = 'zero.chat.invalid_chunk';
+export const EVENT_CONTENT_RETRY = 'zero.chat.content_retry';
 export const EVENT_CONTENT_RETRY_FAILURE =
-  'qwen-code.chat.content_retry_failure';
-export const EVENT_CONVERSATION_FINISHED = 'qwen-code.conversation_finished';
+  'zero.chat.content_retry_failure';
+export const EVENT_CONVERSATION_FINISHED = 'zero.conversation_finished';
 export const EVENT_MALFORMED_JSON_RESPONSE =
-  'qwen-code.malformed_json_response';
-export const EVENT_FILE_OPERATION = 'qwen-code.file_operation';
-export const EVENT_MODEL_SLASH_COMMAND = 'qwen-code.slash_command.model';
-export const EVENT_SUBAGENT_EXECUTION = 'qwen-code.subagent_execution';
-export const EVENT_SKILL_LAUNCH = 'qwen-code.skill_launch';
-export const EVENT_AUTH = 'qwen-code.auth';
-export const EVENT_USER_FEEDBACK = 'qwen-code.user_feedback';
+  'zero.malformed_json_response';
+export const EVENT_FILE_OPERATION = 'zero.file_operation';
+export const EVENT_MODEL_SLASH_COMMAND = 'zero.slash_command.model';
+export const EVENT_SUBAGENT_EXECUTION = 'zero.subagent_execution';
+export const EVENT_SKILL_LAUNCH = 'zero.skill_launch';
+export const EVENT_AUTH = 'zero.auth';
+export const EVENT_USER_FEEDBACK = 'zero.user_feedback';
 
 // Prompt Suggestion Events
-export const EVENT_PROMPT_SUGGESTION = 'qwen-code.prompt_suggestion';
-export const EVENT_SPECULATION = 'qwen-code.speculation';
+export const EVENT_PROMPT_SUGGESTION = 'zero.prompt_suggestion';
+export const EVENT_SPECULATION = 'zero.speculation';
 
 // Arena Events
-export const EVENT_ARENA_SESSION_STARTED = 'qwen-code.arena_session_started';
-export const EVENT_ARENA_AGENT_COMPLETED = 'qwen-code.arena_agent_completed';
-export const EVENT_ARENA_SESSION_ENDED = 'qwen-code.arena_session_ended';
+export const EVENT_ARENA_SESSION_STARTED = 'zero.arena_session_started';
+export const EVENT_ARENA_AGENT_COMPLETED = 'zero.arena_agent_completed';
+export const EVENT_ARENA_SESSION_ENDED = 'zero.arena_session_ended';
 
 // Performance Events
-export const EVENT_STARTUP_PERFORMANCE = 'qwen-code.startup.performance';
-export const EVENT_MEMORY_USAGE = 'qwen-code.memory.usage';
-export const EVENT_PERFORMANCE_BASELINE = 'qwen-code.performance.baseline';
-export const EVENT_PERFORMANCE_REGRESSION = 'qwen-code.performance.regression';
+export const EVENT_STARTUP_PERFORMANCE = 'zero.startup.performance';
+export const EVENT_MEMORY_USAGE = 'zero.memory.usage';
+export const EVENT_PERFORMANCE_BASELINE = 'zero.performance.baseline';
+export const EVENT_PERFORMANCE_REGRESSION = 'zero.performance.regression';
 
 // Managed Auto-Memory Events
-export const EVENT_MEMORY_EXTRACT = 'qwen-code.memory.extract';
-export const EVENT_MEMORY_DREAM = 'qwen-code.memory.dream';
-export const EVENT_MEMORY_RECALL = 'qwen-code.memory.recall';
+export const EVENT_MEMORY_EXTRACT = 'zero.memory.extract';
+export const EVENT_MEMORY_DREAM = 'zero.memory.dream';
+export const EVENT_MEMORY_RECALL = 'zero.memory.recall';
 
 // Session Tracing Span Names
-export const SPAN_INTERACTION = 'qwen-code.interaction';
-export const SPAN_LLM_REQUEST = 'qwen-code.llm_request';
-export const SPAN_TOOL = 'qwen-code.tool';
-export const SPAN_TOOL_EXECUTION = 'qwen-code.tool.execution';
+export const SPAN_INTERACTION = 'zero.interaction';
+export const SPAN_LLM_REQUEST = 'zero.llm_request';
+export const SPAN_TOOL = 'zero.tool';
+export const SPAN_TOOL_EXECUTION = 'zero.tool.execution';

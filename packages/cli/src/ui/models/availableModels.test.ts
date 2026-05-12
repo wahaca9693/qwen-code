@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import {
   getFilteredQwenModels,
   getOpenAIAvailableModelFromEnv,
 } from './availableModels.js';
-import { AuthType, type Config } from '@qwen-code/qwen-code-core';
+import { AuthType, type Config } from '@zero-agent/zero-core';
 
 describe('availableModels', () => {
   describe('Qwen models', () => {
@@ -77,7 +77,7 @@ describe('availableModels', () => {
       process.env = originalEnv;
     });
 
-    it('should return hard-coded qwen models for qwen-oauth', () => {
+    it('should return hard-coded ZERO models for qwen-oauth', () => {
       const models = getAvailableModelsForAuthType(AuthType.QWEN_OAUTH);
       expect(models.length).toBe(1);
       expect(models[0].id).toBe('coder-model');

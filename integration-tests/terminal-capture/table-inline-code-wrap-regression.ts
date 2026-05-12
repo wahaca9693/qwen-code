@@ -1,7 +1,7 @@
 #!/usr/bin/env npx tsx
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 

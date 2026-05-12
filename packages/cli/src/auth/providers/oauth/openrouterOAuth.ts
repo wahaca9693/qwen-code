@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import { createServer, type Server } from 'node:http';
 import { createHash, randomBytes } from 'node:crypto';
 import open from 'open';
 
-import { type ProviderModelConfig as ModelConfig } from '@qwen-code/qwen-code-core';
+import { type ProviderModelConfig as ModelConfig } from '@zero-agent/zero-core';
 
 export const OPENROUTER_ENV_KEY = 'OPENROUTER_API_KEY';
 export const OPENROUTER_DEFAULT_MODEL = 'z-ai/glm-4.5-air:free';
@@ -252,7 +252,7 @@ function createOAuthCallbackServer(
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.end(
-      '<html><body><h1>OpenRouter authentication complete.</h1><p>You can return to Qwen Code.</p></body></html>',
+      '<html><body><h1>OpenRouter authentication complete.</h1><p>You can return to ZERO Agent.</p></body></html>',
     );
     void finish('resolve', code);
   });
@@ -345,8 +345,8 @@ function buildOpenRouterHeaders() {
   return {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    'HTTP-Referer': 'https://github.com/QwenLM/qwen-code.git',
-    'X-OpenRouter-Title': 'Qwen Code',
+    'HTTP-Referer': 'https://github.com/ZEROLM/zero.git',
+    'X-OpenRouter-Title': 'ZERO Agent',
   };
 }
 

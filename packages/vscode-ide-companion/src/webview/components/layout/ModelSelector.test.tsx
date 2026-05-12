@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,7 +12,7 @@ import { createRoot, type Root } from 'react-dom/client';
 import type { ModelInfo } from '@agentclientprotocol/sdk';
 import { ModelSelector } from './ModelSelector.js';
 
-vi.mock('@qwen-code/webui', () => ({
+vi.mock('@zero/webui', () => ({
   PlanCompletedIcon: () => null,
 }));
 

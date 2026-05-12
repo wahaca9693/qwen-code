@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,20 +17,20 @@ import { t, getCurrentLanguage } from '../../i18n/index.js';
 export const docsCommand: SlashCommand = {
   name: 'docs',
   get description() {
-    return t('open full Qwen Code documentation in your browser');
+    return t('open full ZERO Agent documentation in your browser');
   },
   kind: CommandKind.BUILT_IN,
   supportedModes: ['interactive', 'non_interactive', 'acp'] as const,
   action: async (context: CommandContext) => {
     const langPath = getCurrentLanguage()?.startsWith('zh') ? 'zh' : 'en';
-    const docsUrl = `https://qwenlm.github.io/qwen-code-docs/${langPath}`;
+    const docsUrl = `https://qwenlm.github.io/zero-docs/${langPath}`;
 
     // Non-interactive/ACP: return URL directly, no browser, no addItem
     if (context.executionMode !== 'interactive') {
       return {
         type: 'message' as const,
         messageType: 'info' as const,
-        content: `Qwen Code documentation: ${docsUrl}`,
+        content: `ZERO Agent documentation: ${docsUrl}`,
       };
     }
 

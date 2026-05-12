@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -245,7 +245,7 @@ describe('Storage – runtime path methods use getRuntimeBaseDir', () => {
   });
 });
 
-describe('Storage – config paths remain at ~/.qwen regardless of runtime dir', () => {
+describe('Storage – config paths remain at ~/.ZERO regardless of runtime dir', () => {
   const originalEnv = process.env['QWEN_RUNTIME_DIR'];
   const globalQwenDir = Storage.getGlobalQwenDir();
 
@@ -329,7 +329,7 @@ describe('Storage – QWEN_HOME env var', () => {
     }
   });
 
-  it('defaults to ~/.qwen when QWEN_HOME is not set', () => {
+  it('defaults to ~/.ZERO when QWEN_HOME is not set', () => {
     delete process.env['QWEN_HOME'];
     const expected = path.join(os.homedir(), '.qwen');
     expect(Storage.getGlobalQwenDir()).toBe(expected);

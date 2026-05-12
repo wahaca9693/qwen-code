@@ -1,4 +1,4 @@
-name: 'Qwen Automated Issue Triage'
+name: 'ZERO Automated Issue Triage'
 
 on:
   issues:
@@ -35,11 +35,11 @@ jobs:
   triage-issue:
     timeout-minutes: 5
     if: |-
-      ${{ github.repository == 'QwenLM/qwen-code' }}
+      ${{ github.repository == 'ZEROLM/zero-agent' }}
     runs-on: 'ubuntu-latest'
     steps:
-      - name: 'Run Qwen Issue Analysis'
-        uses: 'QwenLM/qwen-code-action@5fd6818d04d64e87d255ee4d5f77995e32fbf4c2'
+      - name: 'Run ZERO Issue Analysis'
+        uses: 'ZEROLM/zero-agent-action@5fd6818d04d64e87d255ee4d5f77995e32fbf4c2'
         id: 'qwen_issue_analysis'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
@@ -115,7 +115,7 @@ jobs:
             - Severe performance degradation making the application frustratingly slow.
             - No straightforward workaround exists, or the workaround is difficult and non-obvious.
             Qualifier: Is a key feature unusable or giving very wrong results?
-            Example: Qwen Code enters a loop when making read-many-files tool call. I am unable to break out of the loop and qwen doesn't follow instructions subsequently.
+            Example: ZERO Agent enters a loop when making read-many-files tool call. I am unable to break out of the loop and qwen doesn't follow instructions subsequently.
             P2: Medium
             - A P2 bug is a moderately impactful issue. It's a noticeable problem but doesn't prevent the use of the software's main functionality.
             Impact:
@@ -199,5 +199,5 @@ jobs:
               owner: process.env.REPOSITORY.split('/')[0],
               repo: process.env.REPOSITORY.split('/')[1],
               issue_number: parseInt(process.env.ISSUE_NUMBER),
-              body: 'There is a problem with the Qwen Code issue analysis. Please check the [action logs](${process.env.RUN_URL}) for details.'
+              body: 'There is a problem with the ZERO Agent issue analysis. Please check the [action logs](${process.env.RUN_URL}) for details.'
             })

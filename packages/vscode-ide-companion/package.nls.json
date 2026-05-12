@@ -1,5 +1,5 @@
 {
-  "qwen-code.copyMessage.title": "Copy Message",
-  "qwen-code.copyAllMessages.title": "Copy All Messages",
-  "qwen-code.copyLastReply.title": "Copy Last Reply"
+  "zero-agent.copyMessage.title": "Copy Message",
+  "zero-agent.copyAllMessages.title": "Copy All Messages",
+  "zero-agent.copyLastReply.title": "Copy Last Reply"
 }

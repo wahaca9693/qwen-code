@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,7 +13,7 @@ import type {
   ModelMetricsCore,
   SessionMetrics,
 } from '../contexts/SessionContext.js';
-import { MAIN_SOURCE } from '@qwen-code/qwen-code-core';
+import { MAIN_SOURCE } from '@zero-agent/zero-core';
 import { DEFAULT_THEME, themeManager } from '../themes/theme-manager.js';
 
 // Wraps a core metrics object as a ModelMetrics with a single `main` source

@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,7 +13,7 @@ initStartupProfiler();
 
 import './src/gemini.js';
 import { main } from './src/gemini.js';
-import { FatalError } from '@qwen-code/qwen-code-core';
+import { FatalError } from '@zero-agent/zero-core';
 import { AlreadyReportedError } from './src/utils/errors.js';
 import { writeStderrLine } from './src/utils/stdioHelpers.js';
 

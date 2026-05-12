@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,7 @@ import type {
   AgentResultDisplay,
   SlashCommandRecordPayload,
   NotificationRecordPayload,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type {
   Content,
   GenerateContentResponseUsageMetadata,

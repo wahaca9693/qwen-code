@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -66,7 +66,7 @@ vi.mock('../../services/sessionExportService.js', () => ({
   exportSessionToFile: mockExportSessionToFile,
 }));
 
-vi.mock('@qwen-code/webui', () => ({
+vi.mock('@zero/webui', () => ({
   stripZeroWidthSpaces: (text: string) => text.replace(/\u200B/g, ''),
 }));
 

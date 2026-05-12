@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -51,7 +51,7 @@ function getRuntimeBaseDir() {
   return path.join(os.homedir(), '.qwen');
 }
 
-// Project-level .qwen directory in the workspace
+// Project-level .ZERO directory in the workspace
 const WORKSPACE_QWEN_DIR = path.join(projectRoot, '.qwen');
 
 // Telemetry artifacts are stored in a hashed directory under the runtime dir
@@ -72,12 +72,12 @@ export const WORKSPACE_SETTINGS_FILE = path.join(
 export function getJson(url) {
   const tmpFile = path.join(
     os.tmpdir(),
-    `qwen-code-releases-${Date.now()}.json`,
+    `zero-releases-${Date.now()}.json`,
   );
   try {
     const result = spawnSync(
       'curl',
-      ['-sL', '-H', 'User-Agent: qwen-code-dev-script', '-o', tmpFile, url],
+      ['-sL', '-H', 'User-Agent: zero-dev-script', '-o', tmpFile, url],
       { stdio: 'pipe', encoding: 'utf-8' },
     );
     if (result.status !== 0) {
@@ -281,7 +281,7 @@ export async function ensureBinary(
   }
 
   const downloadUrl = asset.browser_download_url;
-  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'qwen-code-telemetry-'));
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'zero-telemetry-'));
   const archivePath = path.join(tmpDir, asset.name);
 
   try {

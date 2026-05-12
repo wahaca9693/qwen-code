@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { ModelProvidersConfig } from '@qwen-code/qwen-code-core';
+import type { ModelProvidersConfig } from '@zero-agent/zero-core';
 import { getPersistScopeForModelSelection } from '../../config/modelProvidersScope.js';
 import {
   backupSettingsFile,

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -118,10 +118,10 @@ export function startInteractionSpan(
 
   const attributes: Attributes = {
     'session.id': config.getSessionId(),
-    'qwen-code.prompt_id': options.promptId,
-    'qwen-code.message_type': options.messageType,
-    'qwen-code.model': options.model,
-    'qwen-code.approval_mode': config.getApprovalMode(),
+    'zero.prompt_id': options.promptId,
+    'zero.message_type': options.messageType,
+    'zero.model': options.model,
+    'zero.approval_mode': config.getApprovalMode(),
     'interaction.sequence': interactionSequence,
   };
 
@@ -156,7 +156,7 @@ export function endInteractionSpan(
   const duration = Date.now() - spanCtx.startTime;
   spanCtx.span.setAttributes({
     'interaction.duration_ms': duration,
-    'qwen-code.turn_status': status,
+    'zero.turn_status': status,
   });
 
   if (status === 'error') {
@@ -188,8 +188,8 @@ export function startLLMRequestSpan(model: string, promptId: string): Span {
     : otelContext.active();
 
   const attributes: Attributes = {
-    'qwen-code.model': model,
-    'qwen-code.prompt_id': promptId,
+    'zero.model': model,
+    'zero.prompt_id': promptId,
     'llm_request.context': parentCtx ? 'interaction' : 'standalone',
   };
 

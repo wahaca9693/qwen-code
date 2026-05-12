@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -20,7 +20,7 @@ import {
   isTerminalStatus,
   type AgentInteractive,
   type AgentEventEmitter,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { StreamingState } from '../types.js';
 import { useTimer } from './useTimer.js';
 

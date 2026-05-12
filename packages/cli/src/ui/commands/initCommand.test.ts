@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -97,7 +97,7 @@ describe('initCommand', () => {
       expect.objectContaining({
         type: 'submit_prompt',
         content: expect.stringContaining(
-          'You are Qwen Code, an interactive CLI agent',
+          'You are ZERO Agent, an interactive CLI agent',
         ),
       }),
     );
@@ -143,7 +143,7 @@ describe('initCommand', () => {
       expect.objectContaining({
         type: 'submit_prompt',
         content: expect.stringContaining(
-          'You are Qwen Code, an interactive CLI agent',
+          'You are ZERO Agent, an interactive CLI agent',
         ),
       }),
     );

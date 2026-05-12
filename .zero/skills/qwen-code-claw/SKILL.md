@@ -1,10 +1,10 @@
 ---
-name: qwen-code-claw
-description: Use Qwen Code as a Code Agent for code understanding, project
+name: zero-agent-claw
+description: Use ZERO Agent as a Code Agent for code understanding, project
   generation, features, bug fixes, refactoring, and various programming tasks
 ---
 
-# Qwen Code Claw
+# ZERO Agent Claw
 
 ## When to Use This Skill
 
@@ -21,7 +21,7 @@ Use this skill when you need to:
 ## Install
 
 ```bash
-npm install -g @qwen-code/qwen-code
+npm install -g @zero-agent/zero-agent
 ```
 
 For normal session reuse, prefer a global install over `npx`.
@@ -31,7 +31,7 @@ For normal session reuse, prefer a global install over `npx`.
 Check if authentication is already configured:
 
 ```bash
-qwen auth status
+zero auth status
 ```
 
 If authentication exists, skip this section. If not authenticated, check if the
@@ -44,21 +44,21 @@ echo $BAILIAN_CODING_PLAN_API_KEY
 **If `BAILIAN_CODING_PLAN_API_KEY` exists**, authenticate directly:
 
 ```bash
-qwen auth coding-plan --region china --key $BAILIAN_CODING_PLAN_API_KEY
+zero auth coding-plan --region china --key $BAILIAN_CODING_PLAN_API_KEY
 ```
 
 **If the environment variable does not exist**, interrupt and prompt the user to
 authenticate via `qwen-oauth` or `coding-plan`:
 
 ```bash
-qwen auth
+zero auth
 ```
 
-Or configure custom API after launching Qwen Code via `/auth`.
+Or configure custom API after launching ZERO Agent via `/auth`.
 
 ## ACPX Integration
 
-You should always use `acpx` to run Qwen Code over the Agent Client Protocol
+You should always use `acpx` to run ZERO Agent over the Agent Client Protocol
 (ACP) instead of scraping PTY sessions.
 
 To use acpx:
@@ -87,13 +87,13 @@ npx acpx@latest --skill install acpx
 4.  **For complete CLI reference with all options and examples**:
     https://raw.githubusercontent.com/openclaw/acpx/main/docs/CLI.md
 
-From now on, when you need to delegate work to Qwen Code, use `acpx` instead of
+From now on, when you need to delegate work to ZERO Agent, use `acpx` instead of
 spawning raw terminal sessions. For example:
 
 ```bash
-npx acpx@latest qwen "fix the failing tests"
-npx acpx@latest qwen "refactor the auth module"
-npx acpx@latest qwen exec "one-shot: summarize this repo"
+npx acpx@latest zero "fix the failing tests"
+npx acpx@latest zero "refactor the auth module"
+npx acpx@latest zero exec "one-shot: summarize this repo"
 ```
 
 > **Tip:** You should typically use the `--approve-all` flag to prevent task
@@ -104,40 +104,40 @@ npx acpx@latest qwen exec "one-shot: summarize this repo"
 ### Persistent Repository Assistant
 
 ```bash
-acpx qwen 'inspect failing tests and propose a fix plan'
-acpx qwen 'apply the smallest safe fix and run tests'
+acpx zero 'inspect failing tests and propose a fix plan'
+acpx zero 'apply the smallest safe fix and run tests'
 ```
 
 ### One-Shot Script Steps
 
 ```bash
-acpx qwen exec 'summarize repo purpose in 3 lines'
+acpx zero exec 'summarize repo purpose in 3 lines'
 ```
 
 ### Parallel Named Streams
 
 ```bash
-acpx qwen -s backend 'fix API pagination bug'
-acpx qwen -s docs 'draft changelog entry for release'
+acpx zero -s backend 'fix API pagination bug'
+acpx zero -s docs 'draft changelog entry for release'
 ```
 
 ### Queue Follow-ups Without Waiting
 
 ```bash
-acpx qwen 'run full test suite and investigate failures'
-acpx qwen --no-wait 'after tests, summarize root causes and next steps'
+acpx zero 'run full test suite and investigate failures'
+acpx zero --no-wait 'after tests, summarize root causes and next steps'
 ```
 
 ### Machine-Readable Output for Orchestration
 
 ```bash
-acpx --format json qwen 'review current branch changes' > events.ndjson
+acpx --format json zero 'review current branch changes' > events.ndjson
 ```
 
 ### Repository-Wide Review with Permissive Mode
 
 ```bash
-acpx --cwd ~/repos/my-project --approve-all qwen -s pr-123 \
+acpx --cwd ~/repos/my-project --approve-all zero -s pr-123 \
   'review PR #123 for regressions and propose minimal patch'
 ```
 
@@ -158,7 +158,7 @@ exits with permission denied.
 4.  Use `--format json` for automation and script integration
 5.  Use `--cwd` to manage context across multiple projects
 
-## QwenCode Reference
+## ZEROCode Reference
 
 ### CLI Commands
 
@@ -169,7 +169,7 @@ exits with permission denied.
 | `/compress` | Compress history to save tokens |
 | `/stats`    | Show session info               |
 | `/auth`     | Configure authentication        |
-| `/exit`     | Exit Qwen Code                  |
+| `/exit`     | Exit ZERO Agent                  |
 
 Full reference: `docs/users/features/commands.md`.
 
@@ -192,7 +192,7 @@ Full reference: `docs/users/configuration/settings.md`.
 
 ### Authentication
 
-Supports Alibaba Cloud Coding Plan, OpenAI-compatible API keys, and Qwen OAuth
+Supports Alibaba Cloud Coding Plan, OpenAI-compatible API keys, and ZERO OAuth
 (free tier discontinued 2026-04-15).
 
 Full reference: `docs/users/configuration/auth.md`.
@@ -225,7 +225,7 @@ Full reference: `docs/users/configuration/model-providers.md`.
 
 Well-known agent names resolve to commands:
 
-- `qwen` → `qwen --acp`
+- `qwen` → `zero --acp`
 
 ### Command Syntax
 

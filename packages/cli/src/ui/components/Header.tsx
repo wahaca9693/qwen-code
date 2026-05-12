@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type React from 'react';
 import { Box, Text } from 'ink';
 import Gradient from 'ink-gradient';
-import { shortenPath, tildeifyPath } from '@qwen-code/qwen-code-core';
+import { shortenPath, tildeifyPath } from '@zero-agent/zero-core';
 import { theme } from '../semantic-colors.js';
 import { shortAsciiLogo } from './AsciiArt.js';
 import { getAsciiArtWidth, getCachedStringWidth } from '../utils/textUtils.js';
@@ -58,7 +58,7 @@ interface HeaderProps {
    */
   customAsciiArt?: { small?: string; large?: string };
   /**
-   * Sanitized replacement for the bold ">_ Qwen Code" title in the info
+   * Sanitized replacement for the bold ">_ ZERO Agent" title in the info
    * panel. The version suffix is always appended. When undefined or empty
    * the default title is used; the leading `>_` glyph is part of the
    * default brand and is dropped when a custom title is set.
@@ -204,10 +204,10 @@ export const Header: React.FC<HeaderProps> = ({
         width={showLogo ? availableInfoPanelWidth : undefined}
       >
         {/* Title line: customBannerTitle (already sanitized) or the default
-            ">_ Qwen Code" brand. Version suffix is always appended. */}
+            ">_ ZERO Agent" brand. Version suffix is always appended. */}
         <Text>
           <Text bold color={theme.text.accent}>
-            {customBannerTitle ? customBannerTitle : '>_ Qwen Code'}
+            {customBannerTitle ? customBannerTitle : '>_ ZERO Agent'}
           </Text>
           <Text color={theme.text.secondary}> (v{version})</Text>
         </Text>

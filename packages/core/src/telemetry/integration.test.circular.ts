@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -25,7 +25,7 @@ describe('Circular Reference Integration Test', () => {
     (QwenLogger as any).instance = undefined;
   });
 
-  it('should handle HttpsProxyAgent-like circular references in qwen logging', () => {
+  it('should handle HttpsProxyAgent-like circular references in ZERO logging', () => {
     // Create a mock config with proxy
     const mockConfig = {
       getTelemetryEnabled: () => true,

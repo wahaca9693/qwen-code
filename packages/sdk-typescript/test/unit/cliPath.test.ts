@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -57,7 +57,7 @@ describe('CLI Path Utilities', () => {
     it('should throw descriptive error when bundled CLI not found', () => {
       mockFs.existsSync.mockReturnValue(false);
 
-      expect(() => findBundledCliPath()).toThrow('Bundled qwen CLI not found');
+      expect(() => findBundledCliPath()).toThrow('Bundled ZERO CLI not found');
       expect(() => findBundledCliPath()).toThrow('Searched locations:');
     });
   });
@@ -84,7 +84,7 @@ describe('CLI Path Utilities', () => {
       it('should throw when bundled CLI not found', () => {
         mockFs.existsSync.mockReturnValue(false);
 
-        expect(() => prepareSpawnInfo()).toThrow('Bundled qwen CLI not found');
+        expect(() => prepareSpawnInfo()).toThrow('Bundled ZERO CLI not found');
       });
     });
 
@@ -119,7 +119,7 @@ describe('CLI Path Utilities', () => {
 
       it('should accept valid command names', () => {
         expect(() => prepareSpawnInfo('qwen')).not.toThrow();
-        expect(() => prepareSpawnInfo('qwen-code')).not.toThrow();
+        expect(() => prepareSpawnInfo('zero')).not.toThrow();
         expect(() => prepareSpawnInfo('qwen_code')).not.toThrow();
         expect(() => prepareSpawnInfo('qwen.exe')).not.toThrow();
         expect(() => prepareSpawnInfo('qwen123')).not.toThrow();

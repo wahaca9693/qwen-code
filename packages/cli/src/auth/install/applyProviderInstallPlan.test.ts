@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { AuthType } from '@qwen-code/qwen-code-core';
+import { AuthType } from '@zero-agent/zero-core';
 import { SettingScope } from '../../config/settings.js';
 import { applyProviderInstallPlan } from './applyProviderInstallPlan.js';
 import type { ProviderInstallPlan } from '../types.js';

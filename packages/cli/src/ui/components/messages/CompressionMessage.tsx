@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,7 @@ import type { CompressionProps } from '../../types.js';
 import Spinner from 'ink-spinner';
 import { theme } from '../../semantic-colors.js';
 import { SCREEN_READER_MODEL_PREFIX } from '../../textConstants.js';
-import { CompressionStatus } from '@qwen-code/qwen-code-core';
+import { CompressionStatus } from '@zero-agent/zero-core';
 import { t } from '../../../i18n/index.js';
 
 export interface CompressionDisplayProps {

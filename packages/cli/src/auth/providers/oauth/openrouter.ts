@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { AuthType, type ProviderModelConfig } from '@qwen-code/qwen-code-core';
+import { AuthType, type ProviderModelConfig } from '@zero-agent/zero-core';
 import type { ProviderConfig } from '../../providerConfig.js';
 import { buildInstallPlan } from '../../providerConfig.js';
 import {

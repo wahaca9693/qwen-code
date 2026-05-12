@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { getAutoMemoryRoot } from '@qwen-code/qwen-code-core';
+import { getAutoMemoryRoot } from '@zero-agent/zero-core';
 import { t } from '../../i18n/index.js';
 import type {
   CommandContext,

@@ -1,6 +1,6 @@
-# Qwen Code Agent Server Extension for Zed
+# ZERO Agent Agent Server Extension for Zed
 
-A [Zed](https://zed.dev) extension that integrates [Qwen Code](https://github.com/QwenLM/qwen-code) as an AI agent server using the [Agent Client Protocol (ACP)](https://agentclientprotocol.com).
+A [Zed](https://zed.dev) extension that integrates [ZERO Agent](https://github.com/ZEROLM/zero-agent) as an AI agent server using the [Agent Client Protocol (ACP)](https://agentclientprotocol.com).
 
 ## Features
 
@@ -14,20 +14,20 @@ A [Zed](https://zed.dev) extension that integrates [Qwen Code](https://github.co
 
 1. Open Zed Editor
 2. Open the Extensions panel (`cmd-shift-x` on macOS or `ctrl-shift-x` on Linux/Windows)
-3. Search for "Qwen Code"
+3. Search for "ZERO Agent"
 4. Click "Install"
-5. Switch to the **Agent Server** tab and ensure Qwen Code is enabled
+5. Switch to the **Agent Server** tab and ensure ZERO Agent is enabled
 
 Alternatively, you can install from the command line:
 
 ```bash
-zed --install-extension qwen-code
+zed --install-extension zero-agent
 ```
 
 ## Usage
 
 1. Open the Agent Panel in Zed (`cmd-shift-a` on macOS or `ctrl-shift-a` on Linux/Windows)
-2. Select "Qwen Code" from the agent list
+2. Select "ZERO Agent" from the agent list
 3. Start chatting with the AI assistant
 
 ### Tips
@@ -41,13 +41,13 @@ zed --install-extension qwen-code
 
 - Zed Editor (latest version recommended)
 - Internet connection for AI model access
-- Node.js >= 22 (for running Qwen Code agent server)
+- Node.js >= 22 (for running ZERO Agent agent server)
 
 ## Configuration
 
 ### Environment Variables
 
-When running as an agent server, Qwen Code will:
+When running as an agent server, ZERO Agent will:
 
 - Inherit environment variables from Zed
 - Read/create `~/.qwen` directory for runtime settings
@@ -58,9 +58,9 @@ For additional environment variables, configure them in your Zed settings:
 ```json
 {
   "agent_servers": {
-    "qwen-code": {
+    "zero-agent": {
       "env": {
-        "QWEN_LOG_LEVEL": "info",
+        "ZERO_LOG_LEVEL": "info",
         "YOUR_CUSTOM_VAR": "value"
       }
     }
@@ -92,19 +92,19 @@ If the agent server starts successfully but you experience problems during use:
 
 You can report issues at either:
 
-- [Qwen Code Issues](https://github.com/QwenLM/qwen-code/issues)
-- [Qwen Code Zed Extension Issues](https://github.com/QwenLM/qwen-code-zed-extension/issues)
+- [ZERO Agent Issues](https://github.com/ZEROLM/zero-agent/issues)
+- [ZERO Agent Zed Extension Issues](https://github.com/ZEROLM/zero-agent-zed-extension/issues)
 
 ## Documentation
 
-- [Qwen Code Documentation](https://qwenlm.github.io/qwen-code-docs/)
+- [ZERO Agent Documentation](https://zero-agent.github.io/zero-agent-docs/)
 - [Zed Agent Panel Guide](https://zed.dev/docs/ai/agent-panel)
 - [Agent Client Protocol](https://agentclientprotocol.com)
 
 ## Support
 
-- [Report Issues](https://github.com/QwenLM/qwen-code/issues)
-- [Qwen Code Discussions](https://github.com/QwenLM/qwen-code/discussions)
+- [Report Issues](https://github.com/ZEROLM/zero-agent/issues)
+- [ZERO Agent Discussions](https://github.com/ZEROLM/zero-agent/discussions)
 - [Zed Community](https://zed.dev/community)
 
 ## License
@@ -115,11 +115,11 @@ See [LICENSE](LICENSE) file for details.
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
 
-## About Qwen Code
+## About ZERO Agent
 
-Qwen Code is an AI-powered coding assistant that helps developers write better code faster. It provides intelligent code completion, refactoring suggestions, bug detection, and natural language code generation.
+ZERO Agent is an AI-powered coding assistant that helps developers write better code faster. It provides intelligent code completion, refactoring suggestions, bug detection, and natural language code generation.
 
-Learn more at [qwenlm.github.io/qwen-code-docs](https://qwenlm.github.io/qwen-code-docs/)
+Learn more at [qwenlm.github.io/zero-agent-docs](https://zero-agent.github.io/zero-agent-docs/)
 
 ## Stay Tuned
 

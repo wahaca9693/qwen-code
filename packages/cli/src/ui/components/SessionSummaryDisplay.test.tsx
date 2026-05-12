@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,7 +13,7 @@ import type {
   ModelMetricsCore,
   SessionMetrics,
 } from '../contexts/SessionContext.js';
-import { MAIN_SOURCE } from '@qwen-code/qwen-code-core';
+import { MAIN_SOURCE } from '@zero-agent/zero-core';
 import { ConfigContext } from '../contexts/ConfigContext.js';
 
 const mainOnly = (core: ModelMetricsCore): ModelMetrics => ({
@@ -97,7 +97,7 @@ describe('<SessionSummaryDisplay />', () => {
 
     expect(output).toContain('Agent powering down. Goodbye!');
     expect(output).toContain('To continue this session, run');
-    expect(output).toContain('qwen --resume test-session-id-12345');
+    expect(output).toContain('ZERO --resume test-session-id-12345');
     expect(output).toMatchSnapshot();
   });
 
@@ -128,7 +128,7 @@ describe('<SessionSummaryDisplay />', () => {
 
     expect(output).toContain('Agent powering down. Goodbye!');
     expect(output).not.toContain('To continue this session, run');
-    expect(output).not.toContain('qwen --resume');
+    expect(output).not.toContain('ZERO --resume');
   });
 
   it('does not show resume message when chat recording is disabled', () => {
@@ -158,6 +158,6 @@ describe('<SessionSummaryDisplay />', () => {
 
     expect(output).toContain('Agent powering down. Goodbye!');
     expect(output).not.toContain('To continue this session, run');
-    expect(output).not.toContain('qwen --resume');
+    expect(output).not.toContain('ZERO --resume');
   });
 });

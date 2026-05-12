@@ -1,12 +1,12 @@
-# Qwen Code Extensions
+# ZERO Agent Extensions
 
-Qwen Code extensions package prompts, MCP servers, subagents, skills and custom commands into a familiar and user-friendly format. With extensions, you can expand the capabilities of Qwen Code and share those capabilities with others. They are designed to be easily installable and shareable.
+ZERO Agent extensions package prompts, MCP servers, subagents, skills and custom commands into a familiar and user-friendly format. With extensions, you can expand the capabilities of ZERO Agent and share those capabilities with others. They are designed to be easily installable and shareable.
 
-Extensions and plugins from [Gemini CLI Extensions Gallery](https://geminicli.com/extensions/) and [Claude Code Marketplace](https://claudemarketplaces.com/) can be directly installed into Qwen Code. This cross-platform compatibility gives you access to a rich ecosystem of extensions and plugins, dramatically expanding Qwen Code's capabilities without requiring extension authors to maintain separate versions.
+Extensions and plugins from [Gemini CLI Extensions Gallery](https://geminicli.com/extensions/) and [Claude Code Marketplace](https://claudemarketplaces.com/) can be directly installed into ZERO Agent. This cross-platform compatibility gives you access to a rich ecosystem of extensions and plugins, dramatically expanding ZERO Agent's capabilities without requiring extension authors to maintain separate versions.
 
 ## Extension management
 
-We offer a suite of extension management tools using both `qwen extensions` CLI commands and `/extensions` slash commands within the interactive CLI.
+We offer a suite of extension management tools using both `zero extensions` CLI commands and `/extensions` slash commands within the interactive CLI.
 
 ### Runtime Extension Management (Slash Commands)
 
@@ -20,43 +20,43 @@ You can manage extensions at runtime within the interactive CLI using `/extensio
 
 ### CLI Extension Management
 
-You can also manage extensions using `qwen extensions` CLI commands. Note that changes made via CLI commands will be reflected in active CLI sessions on restart.
+You can also manage extensions using `zero extensions` CLI commands. Note that changes made via CLI commands will be reflected in active CLI sessions on restart.
 
 ### Installing an extension
 
-You can install an extension using `qwen extensions install` from multiple sources:
+You can install an extension using `zero extensions install` from multiple sources:
 
 #### From Claude Code Marketplace
 
-Qwen Code also supports plugins from the [Claude Code Marketplace](https://claudemarketplaces.com/). Install from a marketplace and choose a plugin:
+ZERO Agent also supports plugins from the [Claude Code Marketplace](https://claudemarketplaces.com/). Install from a marketplace and choose a plugin:
 
 ```bash
-qwen extensions install <marketplace-name>
+zero extensions install <marketplace-name>
 # or
-qwen extensions install <marketplace-github-url>
+zero extensions install <marketplace-github-url>
 ```
 
 If you want to install a specific plugin, you can use the format with plugin name:
 
 ```bash
-qwen extensions install <marketplace-name>:<plugin-name>
+zero extensions install <marketplace-name>:<plugin-name>
 # or
-qwen extensions install <marketplace-github-url>:<plugin-name>
+zero extensions install <marketplace-github-url>:<plugin-name>
 ```
 
 For example, to install the `prompts.chat` plugin from the [f/awesome-chatgpt-prompts](https://claudemarketplaces.com/plugins/f-awesome-chatgpt-prompts) marketplace:
 
 ```bash
-qwen extensions install f/awesome-chatgpt-prompts:prompts.chat
+zero extensions install f/awesome-chatgpt-prompts:prompts.chat
 # or
-qwen extensions install https://github.com/f/awesome-chatgpt-prompts:prompts.chat
+zero extensions install https://github.com/f/awesome-chatgpt-prompts:prompts.chat
 ```
 
-Claude plugins are automatically converted to Qwen Code format during installation:
+Claude plugins are automatically converted to ZERO Agent format during installation:
 
 - `claude-plugin.json` is converted to `qwen-extension.json`
-- Agent configurations are converted to Qwen subagent format
-- Skill configurations are converted to Qwen skill format
+- Agent configurations are converted to ZERO subagent format
+- Skill configurations are converted to ZERO skill format
 - Tool mappings are automatically handled
 
 You can quickly browse available extensions from different marketplaces using the `/extensions explore` command:
@@ -69,21 +69,21 @@ You can quickly browse available extensions from different marketplaces using th
 /extensions explore ClaudeCode
 ```
 
-This command opens the respective marketplace in your default browser, allowing you to discover new extensions to enhance your Qwen Code experience.
+This command opens the respective marketplace in your default browser, allowing you to discover new extensions to enhance your ZERO Agent experience.
 
-> **Cross-Platform Compatibility**: This allows you to leverage the rich extension ecosystems from both Gemini CLI and Claude Code, dramatically expanding the available functionality for Qwen Code users.
+> **Cross-Platform Compatibility**: This allows you to leverage the rich extension ecosystems from both Gemini CLI and Claude Code, dramatically expanding the available functionality for ZERO Agent users.
 
 #### From Gemini CLI Extensions
 
-Qwen Code fully supports extensions from the [Gemini CLI Extensions Gallery](https://geminicli.com/extensions/). Simply install them using the git URL:
+ZERO Agent fully supports extensions from the [Gemini CLI Extensions Gallery](https://geminicli.com/extensions/). Simply install them using the git URL:
 
 ```bash
-qwen extensions install <gemini-cli-extension-github-url>
+zero extensions install <gemini-cli-extension-github-url>
 # or
-qwen extensions install <owner>/<repo>
+zero extensions install <owner>/<repo>
 ```
 
-Gemini extensions are automatically converted to Qwen Code format during installation:
+Gemini extensions are automatically converted to ZERO Agent format during installation:
 
 - `gemini-extension.json` is converted to `qwen-extension.json`
 - TOML command files are automatically migrated to Markdown format
@@ -91,17 +91,17 @@ Gemini extensions are automatically converted to Qwen Code format during install
 
 #### From npm Registry
 
-Qwen Code supports installing extensions from npm registries using scoped package names. This is ideal for teams with private registries that already have auth, versioning, and publishing infrastructure in place.
+ZERO Agent supports installing extensions from npm registries using scoped package names. This is ideal for teams with private registries that already have auth, versioning, and publishing infrastructure in place.
 
 ```bash
 # Install the latest version
-qwen extensions install @scope/my-extension
+zero extensions install @scope/my-extension
 
 # Install a specific version
-qwen extensions install @scope/my-extension@1.2.0
+zero extensions install @scope/my-extension@1.2.0
 
 # Install from a custom registry
-qwen extensions install @scope/my-extension --registry https://your-registry.com
+zero extensions install @scope/my-extension --registry https://your-registry.com
 ```
 
 Only scoped packages (`@scope/package-name`) are supported to avoid ambiguity with the `owner/repo` GitHub shorthand format.
@@ -115,12 +115,12 @@ Only scoped packages (`@scope/package-name`) are supported to avoid ambiguity wi
 
 **Authentication** is handled automatically via the `NPM_TOKEN` environment variable or registry-specific `_authToken` entries in your `.npmrc` file.
 
-> **Note:** npm extensions must include a `qwen-extension.json` file at the package root, following the same format as any other Qwen Code extension. See [Extension Releasing](./extension-releasing.md#releasing-through-npm-registry) for packaging details.
+> **Note:** npm extensions must include a `qwen-extension.json` file at the package root, following the same format as any other ZERO Agent extension. See [Extension Releasing](./extension-releasing.md#releasing-through-npm-registry) for packaging details.
 
 #### From Git Repository
 
 ```bash
-qwen extensions install https://github.com/github/github-mcp-server
+zero extensions install https://github.com/github/github-mcp-server
 ```
 
 This will install the github mcp server extension.
@@ -128,44 +128,44 @@ This will install the github mcp server extension.
 #### From Local Path
 
 ```bash
-qwen extensions install /path/to/your/extension
+zero extensions install /path/to/your/extension
 ```
 
-Note that we create a copy of the installed extension, so you will need to run `qwen extensions update` to pull in changes from both locally-defined extensions and those on GitHub.
+Note that we create a copy of the installed extension, so you will need to run `zero extensions update` to pull in changes from both locally-defined extensions and those on GitHub.
 
 ### Uninstalling an extension
 
-To uninstall, run `qwen extensions uninstall extension-name`, so, in the case of the install example:
+To uninstall, run `zero extensions uninstall extension-name`, so, in the case of the install example:
 
 ```
-qwen extensions uninstall qwen-cli-security
+zero extensions uninstall qwen-cli-security
 ```
 
 ### Disabling an extension
 
 Extensions are, by default, enabled across all workspaces. You can disable an extension entirely or for specific workspace.
 
-For example, `qwen extensions disable extension-name` will disable the extension at the user level, so it will be disabled everywhere. `qwen extensions disable extension-name --scope=workspace` will only disable the extension in the current workspace.
+For example, `zero extensions disable extension-name` will disable the extension at the user level, so it will be disabled everywhere. `zero extensions disable extension-name --scope=workspace` will only disable the extension in the current workspace.
 
 ### Enabling an extension
 
-You can enable extensions using `qwen extensions enable extension-name`. You can also enable an extension for a specific workspace using `qwen extensions enable extension-name --scope=workspace` from within that workspace.
+You can enable extensions using `zero extensions enable extension-name`. You can also enable an extension for a specific workspace using `zero extensions enable extension-name --scope=workspace` from within that workspace.
 
 This is useful if you have an extension disabled at the top-level and only enabled in specific places.
 
 ### Updating an extension
 
-For extensions installed from a local path, a git repository, or an npm registry, you can explicitly update to the latest version with `qwen extensions update extension-name`. For npm extensions installed without a version pin (e.g. `@scope/pkg`), updates check the `latest` dist-tag. For those installed with a specific dist-tag (e.g. `@scope/pkg@beta`), updates track that tag. Extensions pinned to an exact version (e.g. `@scope/pkg@1.2.0`) are always considered up-to-date.
+For extensions installed from a local path, a git repository, or an npm registry, you can explicitly update to the latest version with `zero extensions update extension-name`. For npm extensions installed without a version pin (e.g. `@scope/pkg`), updates check the `latest` dist-tag. For those installed with a specific dist-tag (e.g. `@scope/pkg@beta`), updates track that tag. Extensions pinned to an exact version (e.g. `@scope/pkg@1.2.0`) are always considered up-to-date.
 
 You can update all extensions with:
 
 ```
-qwen extensions update --all
+zero extensions update --all
 ```
 
 ## How it works
 
-On startup, Qwen Code looks for extensions in `<home>/.qwen/extensions`
+On startup, ZERO Agent looks for extensions in `<home>/.qwen/extensions`
 
 Extensions exist as a directory that contains a `qwen-extension.json` file. For example:
 
@@ -223,30 +223,30 @@ The `qwen-extension.json` file contains the configuration for the extension. The
 
 ### Managing Extension Settings
 
-Extensions can require configuration through settings (such as API keys or credentials). These settings can be managed using the `qwen extensions settings` CLI command:
+Extensions can require configuration through settings (such as API keys or credentials). These settings can be managed using the `zero extensions settings` CLI command:
 
 **Set a setting value:**
 
 ```bash
-qwen extensions settings set <extension-name> <setting-name> [--scope user|workspace]
+zero extensions settings set <extension-name> <setting-name> [--scope user|workspace]
 ```
 
 **List all settings for an extension:**
 
 ```bash
-qwen extensions settings list <extension-name>
+zero extensions settings list <extension-name>
 ```
 
 **View current values (user and workspace):**
 
 ```bash
-qwen extensions settings show <extension-name> <setting-name>
+zero extensions settings show <extension-name> <setting-name>
 ```
 
 **Remove a setting value:**
 
 ```bash
-qwen extensions settings unset <extension-name> <setting-name> [--scope user|workspace]
+zero extensions settings unset <extension-name> <setting-name> [--scope user|workspace]
 ```
 
 Settings can be configured at two levels:
@@ -256,7 +256,7 @@ Settings can be configured at two levels:
 
 Workspace settings take precedence over user settings. Sensitive settings are stored securely and never displayed in plain text.
 
-When Qwen Code starts, it loads all the extensions and merges their configurations. If there are any conflicts, the workspace configuration takes precedence.
+When ZERO Agent starts, it loads all the extensions and merges their configurations. If there are any conflicts, the workspace configuration takes precedence.
 
 ### Custom commands
 
@@ -327,7 +327,7 @@ For example, if both a user and the `gcp` extension define a `deploy` command:
 
 ## Variables
 
-Qwen Code extensions allow variable substitution in `qwen-extension.json`. This can be useful if e.g., you need the current directory to run an MCP server using `"cwd": "${extensionPath}${/}run.ts"`.
+ZERO Agent extensions allow variable substitution in `qwen-extension.json`. This can be useful if e.g., you need the current directory to run an MCP server using `"cwd": "${extensionPath}${/}run.ts"`.
 
 **Supported variables:**
 

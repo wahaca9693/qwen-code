@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -46,7 +46,7 @@ describe('Skill Nudge E2E Integration Tests', () => {
     mgr = new MemoryManager();
     mockConfig = {
       getSessionId: () => 'test-session-1',
-      getModel: () => 'qwen-coder-32b',
+      getModel: () => 'zeror-32b',
       getProjectRoot: () => projectRoot,
     } as Config;
   });

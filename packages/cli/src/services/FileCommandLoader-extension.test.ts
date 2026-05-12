@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,8 +8,8 @@ import { describe, it, expect, afterEach, vi } from 'vitest';
 import * as path from 'node:path';
 import mock from 'mock-fs';
 import { FileCommandLoader } from './FileCommandLoader.js';
-import type { Config } from '@qwen-code/qwen-code-core';
-import { Storage } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
+import { Storage } from '@zero-agent/zero-core';
 
 describe('FileCommandLoader - Extension Commands Support', () => {
   const projectRoot = '/test/project';

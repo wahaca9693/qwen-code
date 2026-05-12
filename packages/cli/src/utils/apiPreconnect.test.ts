@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -20,7 +20,7 @@ const { mockGetOrCreateSharedDispatcher, mockDebugLogger } = vi.hoisted(() => {
     mockDebugLogger,
   };
 });
-vi.mock('@qwen-code/qwen-code-core', () => ({
+vi.mock('@zero-agent/zero-core', () => ({
   AuthType: {
     USE_OPENAI: 'openai',
     USE_ANTHROPIC: 'anthropic',

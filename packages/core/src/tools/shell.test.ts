@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -74,7 +74,7 @@ describe('ShellTool', () => {
         commit: true,
         pr: true,
         name: 'Qwen-Coder',
-        email: 'qwen-coder@alibabacloud.com',
+        email: 'zeror@alibabacloud.com',
       }),
       getShouldUseNodePtyShell: vi.fn().mockReturnValue(false),
       getBackgroundShellRegistry: vi.fn().mockReturnValue({
@@ -1637,7 +1637,7 @@ describe('ShellTool', () => {
         // Verify that the command was executed with co-author added
         expect(mockShellExecutionService).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>',
+            'Co-authored-by: Qwen-Coder <zeror@alibabacloud.com>',
           ),
           expect.any(String),
           expect.any(Function),
@@ -1667,7 +1667,7 @@ describe('ShellTool', () => {
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>',
+            'Co-authored-by: Qwen-Coder <zeror@alibabacloud.com>',
           ),
           expect.any(String),
           expect.any(Function),
@@ -1697,7 +1697,7 @@ describe('ShellTool', () => {
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>',
+            'Co-authored-by: Qwen-Coder <zeror@alibabacloud.com>',
           ),
           expect.any(String),
           expect.any(Function),
@@ -1727,7 +1727,7 @@ describe('ShellTool', () => {
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>',
+            'Co-authored-by: Qwen-Coder <zeror@alibabacloud.com>',
           ),
           expect.any(String),
           expect.any(Function),
@@ -1813,7 +1813,7 @@ describe('ShellTool', () => {
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>',
+            'Co-authored-by: Qwen-Coder <zeror@alibabacloud.com>',
           ),
           expect.any(String),
           expect.any(Function),
@@ -1831,7 +1831,7 @@ describe('ShellTool', () => {
           commit: false,
           pr: true,
           name: 'Qwen-Coder',
-          email: 'qwen-coder@alibabacloud.com',
+          email: 'zeror@alibabacloud.com',
         });
 
         const command = 'git commit -m "Initial commit"';
@@ -1867,7 +1867,7 @@ describe('ShellTool', () => {
           commit: false,
           pr: false,
           name: 'Qwen-Coder',
-          email: 'qwen-coder@alibabacloud.com',
+          email: 'zeror@alibabacloud.com',
         });
 
         const command = 'git commit -m "Initial commit"';
@@ -2596,7 +2596,7 @@ describe('ShellTool', () => {
         // the first; a simple way to assert this is that `Body line 1`
         // and the trailer share the same closing quote.
         expect(observed).toMatch(
-          /-m\s+"Body line 1\s+Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud\.com>"/s,
+          /-m\s+"Body line 1\s+Co-authored-by: Qwen-Coder <zeror@alibabacloud\.com>"/s,
         );
         // And the first -m's title is unchanged.
         expect(observed).toMatch(/-m\s+"Title"\s/);
@@ -2872,7 +2872,7 @@ describe('ShellTool', () => {
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>',
+            'Co-authored-by: Qwen-Coder <zeror@alibabacloud.com>',
           ),
           expect.any(String),
           expect.any(Function),
@@ -2906,7 +2906,7 @@ describe('ShellTool', () => {
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>',
+            'Co-authored-by: Qwen-Coder <zeror@alibabacloud.com>',
           ),
           expect.any(String),
           expect.any(Function),
@@ -2988,7 +2988,7 @@ describe('ShellTool', () => {
 
           const observed = mockShellExecutionService.mock.calls[0][0] as string;
           expect(observed).toBe(command);
-          expect(observed).not.toContain('Generated with Qwen Code');
+          expect(observed).not.toContain('Generated with ZERO Agent');
         },
       );
 
@@ -3013,7 +3013,7 @@ describe('ShellTool', () => {
         await promise;
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
-          expect.stringContaining('Generated with Qwen Code'),
+          expect.stringContaining('Generated with ZERO Agent'),
           expect.any(String),
           expect.any(Function),
           expect.any(AbortSignal),
@@ -3045,7 +3045,7 @@ describe('ShellTool', () => {
 
         const observed = mockShellExecutionService.mock.calls[0][0];
         expect(observed).toBe(command);
-        expect(observed).not.toContain('Generated with Qwen Code');
+        expect(observed).not.toContain('Generated with ZERO Agent');
       });
 
       // `-b` is gh's documented short alias for `--body`. Without
@@ -3078,7 +3078,7 @@ describe('ShellTool', () => {
         expect(observed).toContain('curl -b "session=abc"');
         // The trailer should land in gh's --body, not in curl's -b.
         expect(observed).toMatch(
-          /gh pr create --title "x" --body "summary[\s\S]*Generated with Qwen Code"/,
+          /gh pr create --title "x" --body "summary[\s\S]*Generated with ZERO Agent"/,
         );
       });
 
@@ -3101,7 +3101,7 @@ describe('ShellTool', () => {
         await promise;
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
-          expect.stringContaining('Generated with Qwen Code'),
+          expect.stringContaining('Generated with ZERO Agent'),
           expect.any(String),
           expect.any(Function),
           expect.any(AbortSignal),
@@ -3136,10 +3136,10 @@ describe('ShellTool', () => {
         // The trailer must appear AFTER the closing `"` of the outer
         // body, not between `flag` and `here`.
         expect(cmd).toMatch(
-          /--body "docs mention -b 'flag' here[\s\S]*Generated with Qwen Code"/,
+          /--body "docs mention -b 'flag' here[\s\S]*Generated with ZERO Agent"/,
         );
         expect(cmd).not.toMatch(
-          /-b 'flag[\s\S]*Generated with Qwen Code[\s\S]*' here"/,
+          /-b 'flag[\s\S]*Generated with ZERO Agent[\s\S]*' here"/,
         );
       });
 
@@ -3162,7 +3162,7 @@ describe('ShellTool', () => {
         await promise;
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
-          expect.stringContaining('Generated with Qwen Code'),
+          expect.stringContaining('Generated with ZERO Agent'),
           expect.any(String),
           expect.any(Function),
           expect.any(AbortSignal),
@@ -3195,11 +3195,11 @@ describe('ShellTool', () => {
         const calls = mockShellExecutionService.mock.calls;
         const cmd = calls[calls.length - 1]?.[0] as string;
         expect(cmd).toMatch(
-          /--body "ignored" --body "real summary[\s\S]*Generated with Qwen Code/,
+          /--body "ignored" --body "real summary[\s\S]*Generated with ZERO Agent/,
         );
         // The trailer must NOT be inside the first --body.
         expect(cmd).not.toMatch(
-          /--body "ignored[\s\S]*Generated with Qwen Code[\s\S]*" --body/,
+          /--body "ignored[\s\S]*Generated with ZERO Agent[\s\S]*" --body/,
         );
       });
 
@@ -3226,7 +3226,7 @@ describe('ShellTool', () => {
         await promise;
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
-          expect.stringContaining('Generated with Qwen Code'),
+          expect.stringContaining('Generated with ZERO Agent'),
           expect.any(String),
           expect.any(Function),
           expect.any(AbortSignal),
@@ -3256,7 +3256,7 @@ describe('ShellTool', () => {
         await promise;
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
-          expect.stringContaining('Generated with Qwen Code'),
+          expect.stringContaining('Generated with ZERO Agent'),
           expect.any(String),
           expect.any(Function),
           expect.any(AbortSignal),
@@ -3285,7 +3285,7 @@ describe('ShellTool', () => {
         await promise;
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
-          expect.not.stringContaining('Generated with Qwen Code'),
+          expect.not.stringContaining('Generated with ZERO Agent'),
           expect.any(String),
           expect.any(Function),
           expect.any(AbortSignal),
@@ -3300,7 +3300,7 @@ describe('ShellTool', () => {
           commit: true,
           pr: false,
           name: 'Qwen-Coder',
-          email: 'qwen-coder@alibabacloud.com',
+          email: 'zeror@alibabacloud.com',
         });
 
         const command = 'gh pr create --title "x" --body "Summary"';
@@ -3321,7 +3321,7 @@ describe('ShellTool', () => {
         await promise;
 
         expect(mockShellExecutionService).toHaveBeenCalledWith(
-          expect.not.stringContaining('Generated with Qwen Code'),
+          expect.not.stringContaining('Generated with ZERO Agent'),
           expect.any(String),
           expect.any(Function),
           expect.any(AbortSignal),
@@ -3432,7 +3432,7 @@ describe('ShellTool', () => {
         // The attribution lands AFTER the original body, not in the
         // middle of it.
         expect(observed).toMatch(
-          /don'\\''t break me[\s\S]*Generated with Qwen Code/,
+          /don'\\''t break me[\s\S]*Generated with ZERO Agent/,
         );
       });
     });

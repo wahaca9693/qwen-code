@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import type { Config } from '@qwen-code/qwen-code-core';
-import { GeminiEventType } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
+import { GeminiEventType } from '@zero-agent/zero-core';
 import { StreamJsonOutputAdapter } from './StreamJsonOutputAdapter.js';
 
 /**

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -22,9 +22,9 @@ vi.mock('../auth/allProviders.js', async (importOriginal) => {
     findProviderByCredentials: vi.fn(actual.findProviderByCredentials),
   };
 });
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const actual =
-    (await importOriginal()) as typeof import('@qwen-code/qwen-code-core');
+    (await importOriginal()) as typeof import('@zero-agent/zero-core');
   return {
     ...actual,
     canUseRipgrep: vi.fn().mockResolvedValue(true),

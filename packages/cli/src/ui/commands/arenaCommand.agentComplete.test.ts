@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import {
   AgentStatus,
   ArenaEventType,
   AuthType,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { arenaCommand } from './arenaCommand.js';
 import { createMockCommandContext } from '../../test-utils/mockCommandContext.js';
 
@@ -22,9 +22,9 @@ const arenaManagerMocks = vi.hoisted(() => ({
   }>,
 }));
 
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@qwen-code/qwen-code-core')>();
+    await importOriginal<typeof import('@zero-agent/zero-core')>();
 
   class MockArenaManager {
     emitter = new EventEmitter();

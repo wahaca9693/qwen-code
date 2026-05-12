@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 /**
- * Converter for Claude Code plugins to Qwen Code format.
+ * Converter for Claude Code plugins to ZERO Agent format.
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
@@ -155,9 +155,9 @@ function parseStringOrArray(value: unknown): string[] | undefined {
 }
 
 /**
- * Converts a Claude agent config to Qwen Code subagent format.
+ * Converts a Claude agent config to ZERO Agent subagent format.
  * @param claudeAgent Claude agent configuration
- * @returns Converted agent config compatible with Qwen Code SubagentConfig
+ * @returns Converted agent config compatible with ZERO Agent SubagentConfig
  */
 export function convertClaudeAgentConfig(
   claudeAgent: ClaudeAgentConfig,
@@ -298,7 +298,7 @@ ${systemPrompt}
 }
 
 /**
- * Converts a Claude plugin config to Qwen Code format.
+ * Converts a Claude plugin config to ZERO Agent format.
  * @param claudeConfig Claude plugin configuration
  * @returns Qwen ExtensionConfig
  */
@@ -354,7 +354,7 @@ export function convertClaudeToQwenConfig(
 }
 
 /**
- * Converts a complete Claude plugin package to Qwen Code format.
+ * Converts a complete Claude plugin package to ZERO Agent format.
  * Creates a new temporary directory with:
  * 1. Converted qwen-extension.json
  * 2. Commands, skills, and agents collected to respective folders

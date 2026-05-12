@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -26,7 +26,7 @@ import {
   ToolConfirmationOutcome,
   IdeClient,
   type SessionListItem,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { useSessionStats } from '../contexts/SessionContext.js';
 import type {
   Message,

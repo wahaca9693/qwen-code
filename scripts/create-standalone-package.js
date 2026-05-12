@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -90,12 +90,12 @@ async function main() {
   fs.mkdirSync(outDir, { recursive: true });
 
   const targetConfig = TARGETS.get(target);
-  const outputName = `qwen-code-${target}.${targetConfig.outputExtension}`;
+  const outputName = `zero-${target}.${targetConfig.outputExtension}`;
   const outputPath = path.join(outDir, outputName);
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'qwen-standalone-'));
 
   try {
-    const packageRoot = path.join(tempRoot, 'qwen-code');
+    const packageRoot = path.join(tempRoot, 'zero');
     const runtimeExtractDir = path.join(tempRoot, 'runtime');
     fs.mkdirSync(packageRoot, { recursive: true });
     fs.mkdirSync(runtimeExtractDir, { recursive: true });
@@ -188,7 +188,7 @@ function readOptionValue(argv, index, optionName) {
 }
 
 function printUsage() {
-  console.log(`Qwen Code standalone package builder
+  console.log(`ZERO Agent standalone package builder
 
 Usage:
   npm run package:standalone -- --target TARGET --node-archive PATH [OPTIONS]
@@ -197,7 +197,7 @@ Options:
   --target TARGET         One of: ${Array.from(TARGETS.keys()).join(', ')}
   --node-archive PATH    Downloaded Node.js runtime archive.
   --out-dir DIR          Output directory. Defaults to dist/standalone.
-  --version VERSION      Qwen Code version. Defaults to package.json version.
+  --version VERSION      ZERO Agent version. Defaults to package.json version.
   --skip-checksums       Do not update SHA256SUMS. Used by release packaging.
   -h, --help             Show this help message.`);
 }
@@ -505,7 +505,7 @@ function writeManifest(packageRoot, manifest) {
     manifestPath,
     JSON.stringify(
       {
-        name: '@qwen-code/qwen-code',
+        name: '@zero/zero',
         version: manifest.version,
         target: manifest.target,
         nodeArchive: manifest.nodeArchive,
@@ -523,7 +523,7 @@ function createArchive(outputExtension, outputPath, cwd) {
     return;
   }
 
-  run('tar', ['-czf', outputPath, '-C', cwd, 'qwen-code']);
+  run('tar', ['-czf', outputPath, '-C', cwd, 'zero']);
 }
 
 function createZipArchive(outputPath, cwd) {
@@ -540,7 +540,7 @@ function createZipArchive(outputPath, cwd) {
       {
         env: {
           ...process.env,
-          QWEN_PACKAGE_ROOT: path.join(cwd, 'qwen-code'),
+          QWEN_PACKAGE_ROOT: path.join(cwd, 'zero'),
           QWEN_OUTPUT_PATH: outputPath,
         },
       },
@@ -548,7 +548,7 @@ function createZipArchive(outputPath, cwd) {
     return;
   }
 
-  run('zip', ['-qr', outputPath, 'qwen-code'], { cwd });
+  run('zip', ['-qr', outputPath, 'zero'], { cwd });
 }
 
 async function writeSha256Sums(outDir) {
@@ -556,14 +556,14 @@ async function writeSha256Sums(outDir) {
     .readdirSync(outDir)
     .filter(
       (entry) =>
-        entry.startsWith('qwen-code-') &&
+        entry.startsWith('zero-') &&
         (entry.endsWith('.tar.gz') || entry.endsWith('.zip')),
     )
     .sort();
 
   if (entries.length === 0) {
     fail(
-      `No qwen-code archives found in ${outDir}; refusing to write empty SHA256SUMS.`,
+      `No zero archives found in ${outDir}; refusing to write empty SHA256SUMS.`,
     );
   }
 

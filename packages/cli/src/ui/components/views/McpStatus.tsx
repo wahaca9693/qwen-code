@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { MCPServerConfig } from '@qwen-code/qwen-code-core';
-import { MCPServerStatus } from '@qwen-code/qwen-code-core';
+import type { MCPServerConfig } from '@zero-agent/zero-core';
+import { MCPServerStatus } from '@zero-agent/zero-core';
 import { Box, Text } from 'ink';
 import type React from 'react';
 import { theme } from '../../semantic-colors.js';

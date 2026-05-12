@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ExtensionManager, type Extension } from '@qwen-code/qwen-code-core';
+import { ExtensionManager, type Extension } from '@zero-agent/zero-core';
 import { loadSettings } from '../../config/settings.js';
 import {
   requestConsentOrFail,

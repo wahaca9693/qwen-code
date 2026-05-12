@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,8 +12,8 @@ import type {
   ToolRegistry,
   AnyDeclarativeTool,
   AnyToolInvocation,
-} from '@qwen-code/qwen-code-core';
-import { Kind, ToolNames } from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
+import { Kind, ToolNames } from '@zero-agent/zero-core';
 import type { Part } from '@google/genai';
 
 // Helper to create mock message parts for tests

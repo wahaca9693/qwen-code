@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,12 +15,12 @@ import type {
   Config,
   GeminiClient,
   ShellExecutionResult,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import {
   createDebugLogger,
   isBinary,
   ShellExecutionService,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { type PartListUnion } from '@google/genai';
 import type { UseHistoryManagerReturn } from './useHistoryManager.js';
 import { SHELL_COMMAND_NAME } from '../constants.js';
