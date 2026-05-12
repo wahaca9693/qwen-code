@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as path from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
-import { Storage } from '@qwen-code/qwen-code-core';
+import { Storage } from '@zero-agent/zero-core';
 import { dreamCommand } from './dreamCommand.js';
 import { createMockCommandContext } from '../../test-utils/mockCommandContext.js';
 

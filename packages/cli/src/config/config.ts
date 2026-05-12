@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -33,7 +33,7 @@ import {
   SchemaValidator,
   type ConfigParameters,
   type MCPServerConfig,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { extensionsCommand } from '../commands/extensions.js';
 import { hooksCommand } from '../commands/hooks.js';
 import type { Settings } from './settings.js';
@@ -500,7 +500,7 @@ export async function parseArguments(): Promise<CliArgs> {
     .locale('en')
     .scriptName('qwen')
     .usage(
-      'Usage: qwen [options] [command]\n\nQwen Code - Launch an interactive CLI, use -p/--prompt for non-interactive mode',
+      'Usage: ZERO [options] [command]\n\nZERO Agent - Launch an interactive CLI, use -p/--prompt for non-interactive mode',
     )
     .option('telemetry', {
       type: 'boolean',
@@ -571,7 +571,7 @@ export async function parseArguments(): Promise<CliArgs> {
     })
     .option('proxy', {
       type: 'string',
-      description: 'Proxy for Qwen Code, like schema://user:password@host:port',
+      description: 'Proxy for ZERO Agent, like schema://user:password@host:port',
     })
     .deprecateOption(
       'proxy',
@@ -582,7 +582,7 @@ export async function parseArguments(): Promise<CliArgs> {
       description:
         'Enable chat recording to disk. If false, chat history is not saved and --continue/--resume will not work.',
     })
-    .command('$0 [query..]', 'Launch Qwen Code CLI', (yargsInstance: Argv) =>
+    .command('$0 [query..]', 'Launch ZERO Agent CLI', (yargsInstance: Argv) =>
       yargsInstance
         .positional('query', {
           description:
@@ -940,7 +940,7 @@ export async function parseArguments(): Promise<CliArgs> {
             const hasPositionalQuery = Array.isArray(query)
               ? query.length > 0
               : !!query;
-            // Allow stdin piping (`echo "..." | qwen --json-schema ...`):
+            // Allow stdin piping (`echo "..." | ZERO --json-schema ...`):
             // when stdin is not a TTY, the prompt is supplied via the pipe
             // and headless mode runs normally. Only reject true interactive
             // invocations with neither flag nor positional nor pipe — the
@@ -1521,7 +1521,7 @@ export async function loadCliConfig(
       sessionId = argv.resume;
       sessionData = await sessionService.loadSession(argv.resume);
       if (!sessionData) {
-        const message = `No saved session found with ID ${argv.resume}. Run \`qwen --resume\` without an ID to choose from existing sessions.`;
+        const message = `No saved session found with ID ${argv.resume}. Run \`ZERO --resume\` without an ID to choose from existing sessions.`;
         writeStderrLine(message);
         process.exit(1);
       }

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -38,7 +38,7 @@ vi.mock('node:os', async (importOriginal) => {
   };
 });
 
-vi.mock('@qwen-code/qwen-code-core/src/ide/detect-ide.js', () => ({
+vi.mock('@zero-agent/zero-core/src/ide/detect-ide.js', () => ({
   detectIdeFromEnv: vi.fn(() => ({ name: 'vscode', displayName: 'VS Code' })),
 }));
 
@@ -62,7 +62,7 @@ const vscodeMock = vi.hoisted(() => ({
 
 vi.mock('vscode', () => vscodeMock);
 
-vi.mock('@qwen-code/qwen-code-core/src/ide/detect-ide.js', () => ({
+vi.mock('@zero-agent/zero-core/src/ide/detect-ide.js', () => ({
   detectIdeFromEnv: vi.fn(() => ({
     name: 'vscode',
     displayName: 'VS Code',

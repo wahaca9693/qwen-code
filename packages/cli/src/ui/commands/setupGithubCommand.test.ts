@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -84,7 +84,7 @@ describe('setupGithubCommand', async () => {
 
     const expectedSubstrings = [
       `set -eEuo pipefail`,
-      `fakeOpenCommand "https://github.com/QwenLM/qwen-code-action`,
+      `fakeOpenCommand "https://github.com/ZEROLM/zero-action`,
     ];
 
     for (const substring of expectedSubstrings) {

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,7 +11,7 @@ import path from 'node:path';
 export default defineConfig({
   resolve: {
     alias: {
-      '@qwen-code/qwen-code-core': path.resolve(__dirname, '../core/index.ts'),
+      '@zero-agent/zero-core': path.resolve(__dirname, '../core/index.ts'),
     },
   },
   test: {
@@ -47,7 +47,7 @@ export default defineConfig({
     },
     server: {
       deps: {
-        inline: [/@qwen-code\/qwen-code-core/],
+        inline: [/@zero\/zero-core/],
       },
     },
   },

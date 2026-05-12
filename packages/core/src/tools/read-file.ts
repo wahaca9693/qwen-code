@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -122,7 +122,7 @@ class ReadFileToolInvocation extends BaseToolInvocation<
       isSubpaths(allowedRoots, filePath) ||
       // isAutoMemPath uses the narrower managed auto-memory root for this
       // project — not the broad getMemoryBaseDir() — to avoid exposing
-      // sensitive ~/.qwen files such as settings.json or OAuth credentials.
+      // sensitive ~/.ZERO files such as settings.json or OAuth credentials.
       isAutoMemPath(filePath, this.config.getTargetDir())
     ) {
       return 'allow';

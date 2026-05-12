@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,7 +23,7 @@ import type {
   MessageBus,
   StreamEvent,
   ChatCompressionInfo,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import {
   AuthType,
   ApprovalMode,
@@ -58,7 +58,7 @@ import {
   evaluatePermissionFlow,
   needsConfirmation,
   isPlanModeBlocked,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { getCommandSubcommandNames } from '../../services/commandMetadata.js';
 import { getEffectiveSupportedModes } from '../../services/commandUtils.js';
 
@@ -1725,7 +1725,7 @@ export class Session implements SessionContext {
     if (pm && !(await pm.isToolEnabled(fc.name as string))) {
       return earlyErrorResponse(
         new Error(
-          `Qwen Code requires permission to use "${fc.name}", but that permission was declined.`,
+          `ZERO Agent requires permission to use "${fc.name}", but that permission was declined.`,
         ),
         fc.name,
       );
@@ -1896,7 +1896,7 @@ export class Session implements SessionContext {
           if (hooksEnabled && messageBus) {
             void fireNotificationHook(
               messageBus,
-              `Qwen Code needs your permission to use ${fc.name}`,
+              `ZERO Agent needs your permission to use ${fc.name}`,
               NotificationType.PermissionPrompt,
               'Permission needed',
             );

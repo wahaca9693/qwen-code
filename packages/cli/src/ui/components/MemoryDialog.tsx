@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ import {
   Storage,
   getAutoMemoryRoot,
   getAutoMemoryProjectStateDir,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { useConfig } from '../contexts/ConfigContext.js';
 import { useSettings } from '../contexts/SettingsContext.js';
 import { SettingScope } from '../../config/settings.js';

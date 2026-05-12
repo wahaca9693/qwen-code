@@ -144,7 +144,7 @@ const TITLE_SCHEMA = {
 Why function calling rather than free text + tag extraction:
 
 1. Cross-provider reliability — OpenAI-compatible endpoints, Gemini, and
-   Qwen's native tool-calling all implement function calling; tag parsing
+   ZERO's native tool-calling all implement function calling; tag parsing
    would rely on every model respecting a text convention.
 2. No reasoning-preamble leakage — the function call arguments come back
    structured, so a "thinking" paragraph before the answer can't bleed
@@ -266,9 +266,9 @@ short-circuits the rest so the cheap ones run first:
 1. `currentCustomTitle` set → skip. Never overwrite manual / prior auto.
 2. `autoTitleController !== undefined` → skip. One attempt at a time.
 3. `autoTitleAttempts >= 3` → skip. Cap bounds total waste.
-4. `!config.isInteractive()` → skip. Headless `qwen -p` / CI never spends
+4. `!config.isInteractive()` → skip. Headless `zero -p` / CI never spends
    fast-model tokens on a one-shot session.
-5. `autoTitleDisabledByEnv()` → skip. `QWEN_DISABLE_AUTO_TITLE=1`
+5. `autoTitleDisabledByEnv()` → skip. `ZERO_DISABLE_AUTO_TITLE=1`
    explicit opt-out.
 6. `!config.getFastModel()` → skip. No fast-model → no-op.
 
@@ -319,7 +319,7 @@ AND the cross-process re-read both run; manual wins at both layers.
 | Setting / env var           | Default | Effect                                                                                              |
 | --------------------------- | ------- | --------------------------------------------------------------------------------------------------- |
 | `fastModel`                 | unset   | Required for auto-titling. Unset → no-op (no main-model fallback).                                  |
-| `QWEN_DISABLE_AUTO_TITLE=1` | unset   | Opt out of the auto trigger without unsetting `fastModel`. `/rename --auto` still works on request. |
+| `ZERO_DISABLE_AUTO_TITLE=1` | unset   | Opt out of the auto trigger without unsetting `fastModel`. `/rename --auto` still works on request. |
 
 No `settings.json` toggle — the env var is the only user-visible
 off-switch. Rationale: the feature is cosmetic and cheap; a settings
@@ -373,4 +373,4 @@ hostile text.
 | Settings-dialog toggle for auto generation  | Env var is the single knob. Full settings UI is easy to add later if user demand surfaces.                                                  |
 | i18n locale catalog entries for new strings | Consistent with existing `/rename` strings, which fall through to English. A repo-wide i18n pass is out of scope.                           |
 | Migration to re-classify legacy records     | Back-compat by design: absent `titleSource` is treated as manual. Rewriting old records would risk losing user intent.                      |
-| Non-interactive auto-titling                | `qwen -p` / CI scripts throw the session away; fast-model tokens for a title no one will ever resume is pure waste.                         |
+| Non-interactive auto-titling                | `zero -p` / CI scripts throw the session away; fast-model tokens for a title no one will ever resume is pure waste.                         |

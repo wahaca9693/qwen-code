@@ -560,7 +560,7 @@ export interface SubagentConfig {
 
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 

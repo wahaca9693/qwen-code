@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,8 +8,8 @@ import * as fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Config } from '@qwen-code/qwen-code-core';
-import { Storage } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
+import { Storage } from '@zero-agent/zero-core';
 import { setLanguageAsync } from '../i18n/index.js';
 import { CommandKind, type SlashCommand } from '../ui/commands/types.js';
 import { DynamicCommandLocalizationService } from './DynamicCommandLocalizationService.js';

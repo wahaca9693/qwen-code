@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// Traduccions en català per al CLI de Qwen Code per Jordi Mas i Hernàndez <jmas@softcatala.org>
+// Traduccions en català per al CLI de ZERO Agent per Jordi Mas i Hernàndez <jmas@softcatala.org>
 
 export default {
   // ============================================================================
@@ -80,7 +80,7 @@ export default {
   'For a full list of shortcuts, see {{docPath}}':
     'Per a una llista completa de dreceres, vegeu {{docPath}}',
   'docs/keyboard-shortcuts.md': 'docs/keyboard-shortcuts.md',
-  'for help on Qwen Code': 'per a ajuda sobre Qwen Code',
+  'for help on ZERO Agent': 'per a ajuda sobre ZERO Agent',
   'show version info': 'mostrar informació de la versió',
   'submit a bug report': "enviar un informe d'error",
   Status: 'Estat',
@@ -88,7 +88,7 @@ export default {
   // ============================================================================
   // Informació del sistema
   // ============================================================================
-  'Qwen Code': 'Qwen Code',
+  'ZERO Agent': 'ZERO Agent',
   Runtime: "Entorn d'execució",
   OS: 'SO',
   Auth: 'Autenticació',
@@ -106,10 +106,10 @@ export default {
   // ============================================================================
   'Analyzes the project and creates a tailored QWEN.md file.':
     'Analitza el projecte i crea un fitxer QWEN.md personalitzat.',
-  'List available Qwen Code tools. Usage: /tools [desc]':
-    'Llistar les eines disponibles de Qwen Code. Ús: /tools [desc]',
+  'List available ZERO Agent tools. Usage: /tools [desc]':
+    'Llistar les eines disponibles de ZERO Agent. Ús: /tools [desc]',
   'List available skills.': 'Llistar les habilitats disponibles.',
-  'Available Qwen Code CLI tools:': 'Eines del CLI de Qwen Code disponibles:',
+  'Available ZERO Agent CLI tools:': 'Eines del CLI de ZERO Agent disponibles:',
   'No tools available': 'No hi ha eines disponibles',
   'View or change the approval mode for tool usage':
     "Veure o canviar el mode d'aprovació per a l'ús d'eines",
@@ -147,8 +147,8 @@ export default {
     "Esborrar l'historial de la conversa i alliberar context",
   'Compresses the context by replacing it with a summary.':
     'Comprimeix el context substituint-lo per un resum.',
-  'open full Qwen Code documentation in your browser':
-    'obrir la documentació completa de Qwen Code al navegador',
+  'open full ZERO Agent documentation in your browser':
+    'obrir la documentació completa de ZERO Agent al navegador',
   'Configuration not available.': 'Configuració no disponible.',
   'Configure authentication information for login':
     "Configurar la informació d'autenticació per a iniciar sessió",
@@ -237,7 +237,7 @@ export default {
   'Step {{n}}: Choose Location': 'Pas {{n}}: Triar ubicació',
   'Step {{n}}: Choose Generation Method':
     'Pas {{n}}: Triar mètode de generació',
-  'Generate with Qwen Code (Recommended)': 'Generar amb Qwen Code (Recomanat)',
+  'Generate with ZERO Agent (Recommended)': 'Generar amb ZERO Agent (Recomanat)',
   'Manual Creation': 'Creació manual',
   'Describe what this subagent should do and when it should be used. (Be comprehensive for best results)':
     "Descriviu què ha de fer aquest subagent i quan s'ha d'usar. (Sigueu exhaustiu per obtenir els millors resultats)",
@@ -347,11 +347,11 @@ export default {
   // ============================================================================
   // Ordres - General (continuació)
   // ============================================================================
-  'View and edit Qwen Code settings':
-    'Veure i editar la configuració de Qwen Code',
+  'View and edit ZERO Agent settings':
+    'Veure i editar la configuració de ZERO Agent',
   Settings: 'Configuració',
-  'To see changes, Qwen Code must be restarted. Press r to exit and apply changes now.':
-    'Per veure els canvis, cal reiniciar Qwen Code. Premeu r per sortir i aplicar els canvis ara.',
+  'To see changes, ZERO Agent must be restarted. Press r to exit and apply changes now.':
+    'Per veure els canvis, cal reiniciar ZERO Agent. Premeu r per sortir i aplicar els canvis ara.',
   // ============================================================================
   // Etiquetes de configuració
   // ============================================================================
@@ -469,8 +469,8 @@ export default {
     'Aquesta extensió instal·larà els subagents següents:',
   'Installation cancelled for "{{name}}".':
     'Instal·lació cancel·lada per a "{{name}}".',
-  'You are installing an extension from {{originSource}}. Some features may not work perfectly with Qwen Code.':
-    'Esteu instal·lant una extensió des de {{originSource}}. Algunes funcions poden no funcionar perfectament amb Qwen Code.',
+  'You are installing an extension from {{originSource}}. Some features may not work perfectly with ZERO Agent.':
+    'Esteu instal·lant una extensió des de {{originSource}}. Algunes funcions poden no funcionar perfectament amb ZERO Agent.',
   '--ref and --auto-update are not applicable for marketplace extensions.':
     "--ref i --auto-update no s'apliquen a les extensions del mercat.",
   'Extension "{{name}}" installed successfully and enabled.':
@@ -580,8 +580,8 @@ export default {
     'instal·lar el complement IDE necessari per a {{ideName}}',
   'enable IDE integration': "activar la integració de l'IDE",
   'disable IDE integration': "desactivar la integració de l'IDE",
-  'IDE integration is not supported in your current environment. To use this feature, run Qwen Code in one of these supported IDEs: VS Code or VS Code forks.':
-    "La integració de l'IDE no és compatible en el vostre entorn actual. Per usar aquesta funció, executeu Qwen Code en un dels IDEs compatibles: VS Code o bifurcacions de VS Code.",
+  'IDE integration is not supported in your current environment. To use this feature, run ZERO Agent in one of these supported IDEs: VS Code or VS Code forks.':
+    "La integració de l'IDE no és compatible en el vostre entorn actual. Per usar aquesta funció, executeu ZERO Agent en un dels IDEs compatibles: VS Code o bifurcacions de VS Code.",
   'Set up GitHub Actions': 'Configurar GitHub Actions',
   'Configure terminal keybindings for multiline input (VS Code, Cursor, Windsurf, Trae)':
     'Configurar les dreceres del terminal per a entrada multilínia (VS Code, Cursor, Windsurf, Trae)',
@@ -616,7 +616,7 @@ export default {
   // ============================================================================
   // Ordres - Hooks
   // ============================================================================
-  'Manage Qwen Code hooks': 'Gestionar els hooks de Qwen Code',
+  'Manage ZERO Agent hooks': 'Gestionar els hooks de ZERO Agent',
   'List all configured hooks': 'Llistar tots els hooks configurats',
   Hooks: 'Hooks',
   'Loading hooks...': 'Carregant hooks...',
@@ -630,8 +630,8 @@ export default {
   'No hook events found.': "No s'han trobat esdeveniments de hook.",
   '{{count}} hook configured': '{{count}} hook configurat',
   '{{count}} hooks configured': '{{count}} hooks configurats',
-  'This menu is read-only. To add or modify hooks, edit settings.json directly or ask Qwen Code.':
-    'Aquest menú és de només lectura. Per afegir o modificar hooks, editeu settings.json directament o demaneu-ho a Qwen Code.',
+  'This menu is read-only. To add or modify hooks, edit settings.json directly or ask ZERO Agent.':
+    'Aquest menú és de només lectura. Per afegir o modificar hooks, editeu settings.json directament o demaneu-ho a ZERO Agent.',
   'Enter to select · Esc to cancel':
     'Enter per seleccionar · Esc per cancel·lar',
   'Exit codes:': 'Codis de sortida:',
@@ -658,8 +658,8 @@ export default {
   'StatusLine will not be displayed': "La barra d'estat no es mostrarà",
   'Tool operations will proceed without hook validation':
     "Les operacions d'eines continuaran sense validació de hook",
-  'To re-enable hooks, remove "disableAllHooks" from settings.json or ask Qwen Code.':
-    'Per tornar a activar els hooks, elimineu "disableAllHooks" de settings.json o demaneu-ho a Qwen Code.',
+  'To re-enable hooks, remove "disableAllHooks" from settings.json or ask ZERO Agent.':
+    'Per tornar a activar els hooks, elimineu "disableAllHooks" de settings.json o demaneu-ho a ZERO Agent.',
   Project: 'Projecte',
   User: 'Usuari',
   Skill: 'Habilitat',
@@ -676,8 +676,8 @@ export default {
   'When notifications are sent': "Quan s'envien notificacions",
   'When the user submits a prompt': "Quan l'usuari envia un missatge",
   'When a new session is started': "Quan s'inicia una nova sessió",
-  'Right before Qwen Code concludes its response':
-    'Immediatament abans que Qwen Code conclou la seva resposta',
+  'Right before ZERO Agent concludes its response':
+    'Immediatament abans que ZERO Agent conclou la seva resposta',
   'When a subagent (Agent tool call) is started':
     "Quan s'inicia un subagent (crida a l'eina Agent)",
   'Right before a subagent concludes its response':
@@ -894,8 +894,8 @@ export default {
   servers: 'servidors',
   'Add MCP servers to your settings to get started.':
     'Afegiu MCP servers a la configuració per començar.',
-  'Run qwen --debug to see error logs':
-    "Executeu qwen --debug per veure els registres d'errors",
+  'Run ZERO --debug to see error logs':
+    "Executeu ZERO --debug per veure els registres d'errors",
   'OAuth Authentication': 'Autenticació OAuth',
   'Authenticating... Please complete the login in your browser.':
     "Autenticant... Completeu l'inici de sessió al vostre navegador.",
@@ -1158,12 +1158,12 @@ export default {
   Ask: 'Preguntar',
   Deny: 'Denegar',
   Workspace: 'Espai de treball',
-  "Qwen Code won't ask before using allowed tools.":
-    "Qwen Code no preguntarà abans d'usar les eines permeses.",
-  'Qwen Code will ask before using these tools.':
-    "Qwen Code preguntarà abans d'usar aquestes eines.",
-  'Qwen Code is not allowed to use denied tools.':
-    'Qwen Code no té permís per usar les eines denegades.',
+  "ZERO Agent won't ask before using allowed tools.":
+    "ZERO Agent no preguntarà abans d'usar les eines permeses.",
+  'ZERO Agent will ask before using these tools.':
+    "ZERO Agent preguntarà abans d'usar aquestes eines.",
+  'ZERO Agent is not allowed to use denied tools.':
+    'ZERO Agent no té permís per usar les eines denegades.',
   'Manage trusted directories for this workspace.':
     "Gestionar els directoris de confiança d'aquest espai de treball.",
   'Any use of the {{tool}} tool': "Qualsevol ús de l'eina {{tool}}",
@@ -1197,10 +1197,10 @@ export default {
   'Search…': 'Cercar…',
   'Add directory…': 'Afegir directori…',
   'Add directory to workspace': "Afegir directori a l'espai de treball",
-  'Qwen Code can read files in the workspace, and make edits when auto-accept edits is on.':
-    "Qwen Code pot llegir fitxers a l'espai de treball i fer canvis quan l'acceptació automàtica de canvis està activada.",
-  'Qwen Code will be able to read files in this directory and make edits when auto-accept edits is on.':
-    "Qwen Code podrà llegir fitxers en aquest directori i fer canvis quan l'acceptació automàtica de canvis està activada.",
+  'ZERO Agent can read files in the workspace, and make edits when auto-accept edits is on.':
+    "ZERO Agent pot llegir fitxers a l'espai de treball i fer canvis quan l'acceptació automàtica de canvis està activada.",
+  'ZERO Agent will be able to read files in this directory and make edits when auto-accept edits is on.':
+    "ZERO Agent podrà llegir fitxers en aquest directori i fer canvis quan l'acceptació automàtica de canvis està activada.",
   'Enter the path to the directory:': 'Introduïu el camí del directori:',
   'Enter directory path…': 'Introduïu el camí del directori…',
   'Tab to complete · Enter to add · Esc to cancel':
@@ -1289,12 +1289,12 @@ export default {
     'Useu /bug per enviar incidències als mantenidors quan alguna cosa vagi malament.',
   'Switch auth type quickly with /auth.':
     "Canvieu ràpidament el tipus d'autenticació amb /auth.",
-  'You can run any shell commands from Qwen Code using ! (e.g. !ls).':
-    'Podeu executar qualsevol ordre shell des de Qwen Code usant ! (p. ex. !ls).',
+  'You can run any shell commands from ZERO Agent using ! (e.g. !ls).':
+    'Podeu executar qualsevol ordre shell des de ZERO Agent usant ! (p. ex. !ls).',
   'Type / to open the command popup; Tab autocompletes slash commands and saved prompts.':
     "Escriviu / per obrir el menú emergent d'ordres; Tab completa automàticament les ordres de barra i els missatges desats.",
-  'You can resume a previous conversation by running qwen --continue or qwen --resume.':
-    'Podeu reprendre una conversa anterior executant qwen --continue o qwen --resume.',
+  'You can resume a previous conversation by running ZERO --continue or ZERO --resume.':
+    'Podeu reprendre una conversa anterior executant ZERO --continue o ZERO --resume.',
   'You can switch permission mode quickly with Shift+Tab or /approval-mode.':
     'Podeu canviar ràpidament el mode de permisos amb Shift+Tab o /approval-mode.',
   'You can switch permission mode quickly with Tab or /approval-mode.':
@@ -1303,8 +1303,8 @@ export default {
     'Proveu /insight per generar idees personalitzades a partir del vostre historial de xat.',
   'Press Ctrl+O to toggle compact mode — hide tool output and thinking for a cleaner view.':
     'Premeu Ctrl+O per canviar el mode compacte — amagueu la sortida de les eines i el pensament per a una vista més neta.',
-  'Add a QWEN.md file to give Qwen Code persistent project context.':
-    'Afegiu un fitxer QWEN.md per donar a Qwen Code un context persistent del projecte.',
+  'Add a QWEN.md file to give ZERO Agent persistent project context.':
+    'Afegiu un fitxer QWEN.md per donar a ZERO Agent un context persistent del projecte.',
   'Use /btw to ask a quick side question without disrupting the conversation.':
     'Useu /btw per fer una pregunta ràpida sense interrompre la conversa.',
   'Context is almost full! Run /compress now or start /new to continue.':
@@ -1699,11 +1699,11 @@ export default {
     "⚠️  Cap mètode d'autenticació configurat.\n",
   'Run one of the following commands to get started:\n':
     'Executeu una de les ordres següents per començar:\n',
-  '  qwen auth qwen-oauth     - Authenticate with Qwen OAuth (discontinued)':
-    '  qwen auth qwen-oauth     - Autenticar-se amb Qwen OAuth (descontinuat)',
+  '  ZERO auth qwen-oauth     - Authenticate with Qwen OAuth (discontinued)':
+    '  ZERO auth qwen-oauth     - Autenticar-se amb Qwen OAuth (descontinuat)',
   'Or simply run:': 'O simplement executeu:',
-  '  qwen auth                - Interactive authentication setup\n':
-    "  qwen auth                - Configuració interactiva de l'autenticació\n",
+  '  ZERO auth                - Interactive authentication setup\n':
+    "  ZERO auth                - Configuració interactiva de l'autenticació\n",
   '✓ Authentication Method: Qwen OAuth': "✓ Mètode d'autenticació: Qwen OAuth",
   '  Type: Free tier (discontinued 2026-04-15)':
     '  Tipus: Nivell gratuït (descontinuat el 15-04-2026)',
@@ -1721,8 +1721,8 @@ export default {
     "⚠️  Mètode d'autenticació: Coding Plan d'Alibaba Cloud (Incomplet)",
   '  Issue: API key not found in environment or settings\n':
     "  Problema: API Key no trobada a l'entorn o la configuració\n",
-  '  Run `qwen auth coding-plan` to re-configure.\n':
-    '  Executeu `qwen auth coding-plan` per tornar a configurar.\n',
+  '  Run `ZERO auth coding-plan` to re-configure.\n':
+    '  Executeu `ZERO auth coding-plan` per tornar a configurar.\n',
   '✓ Authentication Method: {{type}}': "✓ Mètode d'autenticació: {{type}}",
   '  Status: Configured\n': '  Estat: Configurat\n',
   'Failed to check authentication status: {{error}}':
@@ -1746,8 +1746,8 @@ export default {
     'Ja esteu en mode de planificació. Useu "/plan exit" per sortir del mode de planificació.',
   'Not in plan mode. Use "/plan" to enter plan mode first.':
     'No esteu en mode de planificació. Useu "/plan" per entrar al mode de planificació primer.',
-  "Set up Qwen Code's status line UI":
-    "Configurar la interfície de la barra d'estat de Qwen Code",
+  "Set up ZERO Agent's status line UI":
+    "Configurar la interfície de la barra d'estat de ZERO Agent",
 
   // === Core: added from PR #3328 ===
   'Open the memory manager.': 'Obrir el gestor de memòria.',

@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { reconnectCommand } from './reconnect.js';
 import { loadSettings } from '../../config/settings.js';
-import { Config, ExtensionManager } from '@qwen-code/qwen-code-core';
+import { Config, ExtensionManager } from '@zero-agent/zero-core';
 
 const mockWriteStdoutLine = vi.hoisted(() => vi.fn());
 const mockWriteStderrLine = vi.hoisted(() => vi.fn());
@@ -26,7 +26,7 @@ vi.mock('../../config/trustedFolders.js', () => ({
   isWorkspaceTrusted: vi.fn().mockReturnValue(true),
 }));
 
-vi.mock('@qwen-code/qwen-code-core', () => ({
+vi.mock('@zero-agent/zero-core', () => ({
   Config: vi.fn(),
   FileDiscoveryService: vi.fn(),
   ExtensionManager: vi.fn(),

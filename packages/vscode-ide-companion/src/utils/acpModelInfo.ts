@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type { ModelInfo } from '@agentclientprotocol/sdk';
-import { knownTokenLimit } from '@qwen-code/qwen-code-core/src/core/tokenLimits.js';
+import { knownTokenLimit } from '@zero-agent/zero-core/src/core/tokenLimits.js';
 import type { ApprovalModeValue } from '../types/approvalModeValueTypes.js';
 
 type AcpMeta = Record<string, unknown>;

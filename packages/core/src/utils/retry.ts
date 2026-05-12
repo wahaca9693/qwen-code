@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -200,7 +200,7 @@ export async function retryWithBackoff<T>(
       if (authType === AuthType.QWEN_OAUTH && isQwenQuotaExceededError(error)) {
         throw new Error(
           `Qwen OAuth free tier has been discontinued as of 2026-04-15.\n\n` +
-            `To continue using Qwen Code, try one of these alternatives:\n` +
+            `To continue using ZERO Agent, try one of these alternatives:\n` +
             `  - OpenRouter:    https://openrouter.ai/docs/quickstart\n` +
             `  - Fireworks AI:  https://docs.fireworks.ai/api-reference/introduction\n` +
             `  - ModelStudio:   https://help.aliyun.com/zh/model-studio/coding-plan\n\n` +

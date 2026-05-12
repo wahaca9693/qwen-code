@@ -1,14 +1,14 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { Config } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
 import {
   createDebugLogger,
   appendToLastTextPart,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { ICommandLoader } from './types.js';
 import type {
   SlashCommand,

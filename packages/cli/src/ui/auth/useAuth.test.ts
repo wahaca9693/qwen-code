@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
-import { AuthType } from '@qwen-code/qwen-code-core';
+import { AuthType } from '@zero-agent/zero-core';
 import {
   useAuthCommand,
   normalizeCustomModelIds,

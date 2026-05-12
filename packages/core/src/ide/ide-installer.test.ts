@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -121,7 +121,7 @@ describe('ide-installer', () => {
           expectedCommand,
           [
             '--install-extension',
-            'qwenlm.qwen-code-vscode-ide-companion',
+            'qwenlm.zero-vscode-ide-companion',
             '--force',
           ],
           { stdio: 'pipe', shell: isActuallyWindows },

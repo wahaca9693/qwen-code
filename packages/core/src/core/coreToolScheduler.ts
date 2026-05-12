@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -1134,7 +1134,7 @@ export class CoreToolScheduler {
           const ruleInfo = matchingRule
             ? ` Matching deny rule: "${matchingRule}".`
             : '';
-          const permissionErrorMessage = `Qwen Code requires permission to use "${reqInfo.name}", but that permission was declined.${ruleInfo}`;
+          const permissionErrorMessage = `ZERO Agent requires permission to use "${reqInfo.name}", but that permission was declined.${ruleInfo}`;
           newToolCalls.push({
             status: 'error',
             request: reqInfo,
@@ -1158,7 +1158,7 @@ export class CoreToolScheduler {
                 excludedTool.toLowerCase().trim() === normalizedToolName,
             );
             if (excludedMatch) {
-              const permissionErrorMessage = `Qwen Code requires permission to use ${excludedMatch}, but that permission was declined.`;
+              const permissionErrorMessage = `ZERO Agent requires permission to use ${excludedMatch}, but that permission was declined.`;
               newToolCalls.push({
                 status: 'error',
                 request: reqInfo,
@@ -1390,7 +1390,7 @@ export class CoreToolScheduler {
               this.config.getInputFormat() !== InputFormat.STREAM_JSON;
 
             if (isNonInteractiveDeny) {
-              const errorMessage = `Qwen Code requires permission to use "${reqInfo.name}", but that permission was declined (non-interactive mode cannot prompt for confirmation).`;
+              const errorMessage = `ZERO Agent requires permission to use "${reqInfo.name}", but that permission was declined (non-interactive mode cannot prompt for confirmation).`;
               this.setStatusInternal(
                 reqInfo.callId,
                 'error',
@@ -1522,7 +1522,7 @@ export class CoreToolScheduler {
             if (hooksEnabled && messageBus) {
               fireNotificationHook(
                 messageBus,
-                `Qwen Code needs your permission to use ${reqInfo.name}`,
+                `ZERO Agent needs your permission to use ${reqInfo.name}`,
                 NotificationType.PermissionPrompt,
                 'Permission needed',
               ).catch((error) => {

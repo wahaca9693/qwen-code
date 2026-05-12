@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,8 +13,8 @@ import {
 import { MessageType, type HistoryItemSkillsList } from '../types.js';
 import { t } from '../../i18n/index.js';
 import { AsyncFzf } from 'fzf';
-import type { SkillConfig } from '@qwen-code/qwen-code-core';
-import { createDebugLogger } from '@qwen-code/qwen-code-core';
+import type { SkillConfig } from '@zero-agent/zero-core';
+import { createDebugLogger } from '@zero-agent/zero-core';
 
 const debugLogger = createDebugLogger('SKILLS_COMMAND');
 

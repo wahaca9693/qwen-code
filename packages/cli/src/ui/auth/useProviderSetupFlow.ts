@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { useState, useCallback } from 'react';
-import { AuthType } from '@qwen-code/qwen-code-core';
-import type { InputModalities } from '@qwen-code/qwen-code-core';
+import { AuthType } from '@zero-agent/zero-core';
+import type { InputModalities } from '@zero-agent/zero-core';
 import { t } from '../../i18n/index.js';
 
 const DEFAULT_BASE_URLS: Partial<Record<AuthType, string>> = {

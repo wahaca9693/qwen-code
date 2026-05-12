@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Qwen Code
+ * Copyright 2026 ZERO Agent
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
-import { SessionStartSource } from '@qwen-code/qwen-code-core';
+import { SessionStartSource } from '@zero-agent/zero-core';
 import { useBranchCommand } from './useBranchCommand.js';
 
 describe('useBranchCommand', () => {

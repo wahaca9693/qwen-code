@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -14,7 +14,7 @@ import {
 import {
   getProjectSummaryPrompt,
   runSideQuery,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { HistoryItemSummary } from '../types.js';
 import { t } from '../../i18n/index.js';
 
@@ -139,7 +139,7 @@ export const summaryCommand: SlashCommand = {
       filePathForDisplay: string;
       fullPath: string;
     }> => {
-      // Ensure .qwen directory exists
+      // Ensure .ZERO directory exists
       const projectRoot = config.getProjectRoot();
       const qwenDir = path.join(projectRoot, '.qwen');
       try {

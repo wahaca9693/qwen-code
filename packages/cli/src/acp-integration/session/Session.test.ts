@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,9 +10,9 @@ import * as os from 'node:os';
 import * as path from 'node:path';
 import { Session } from './Session.js';
 import type { Content } from '@google/genai';
-import type { Config, GeminiChat } from '@qwen-code/qwen-code-core';
-import { ApprovalMode, AuthType } from '@qwen-code/qwen-code-core';
-import * as core from '@qwen-code/qwen-code-core';
+import type { Config, GeminiChat } from '@zero-agent/zero-core';
+import { ApprovalMode, AuthType } from '@zero-agent/zero-core';
+import * as core from '@zero-agent/zero-core';
 import { SettingScope } from '../../config/settings.js';
 import type {
   AgentSideConnection,

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@
  */
 
 import { useEffect, useRef } from 'react';
-import { type Config, DEFAULT_TOKEN_LIMIT } from '@qwen-code/qwen-code-core';
+import { type Config, DEFAULT_TOKEN_LIMIT } from '@zero-agent/zero-core';
 import {
   StreamingState,
   MessageType,

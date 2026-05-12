@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -145,10 +145,10 @@ describe('session-tracing', () => {
       });
 
       expect(mockSpans).toHaveLength(1);
-      expect(mockSpans[0]!.name).toBe('qwen-code.interaction');
+      expect(mockSpans[0]!.name).toBe('zero.interaction');
       expect(mockSpans[0]!.attributes['session.id']).toBe('test-session-id');
-      expect(mockSpans[0]!.attributes['qwen-code.prompt_id']).toBe('prompt-1');
-      expect(mockSpans[0]!.attributes['qwen-code.model']).toBe('test-model');
+      expect(mockSpans[0]!.attributes['zero.prompt_id']).toBe('prompt-1');
+      expect(mockSpans[0]!.attributes['zero.model']).toBe('test-model');
 
       endInteractionSpan('ok');
 
@@ -243,7 +243,7 @@ describe('session-tracing', () => {
 
       const setAttrs = mockSpans[0]!.setAttributesCalls[0]!;
       expect(setAttrs).toHaveProperty('interaction.duration_ms');
-      expect(setAttrs['qwen-code.turn_status']).toBe('ok');
+      expect(setAttrs['zero.turn_status']).toBe('ok');
     });
   });
 
@@ -252,8 +252,8 @@ describe('session-tracing', () => {
       const span = startLLMRequestSpan('test-model', 'prompt-llm');
 
       expect(mockSpans).toHaveLength(1);
-      expect(mockSpans[0]!.name).toBe('qwen-code.llm_request');
-      expect(mockSpans[0]!.attributes['qwen-code.model']).toBe('test-model');
+      expect(mockSpans[0]!.name).toBe('zero.llm_request');
+      expect(mockSpans[0]!.attributes['zero.model']).toBe('test-model');
 
       endLLMRequestSpan(span, {
         success: true,
@@ -291,7 +291,7 @@ describe('session-tracing', () => {
       endInteractionSpan('ok');
 
       // The LLM span should have a parent context
-      const llmSpan = mockSpans.find((s) => s.name === 'qwen-code.llm_request');
+      const llmSpan = mockSpans.find((s) => s.name === 'zero.llm_request');
       expect(llmSpan?.parentContext).toBeDefined();
       expect(llmSpan?.attributes['llm_request.context']).toBe('interaction');
     });
@@ -330,7 +330,7 @@ describe('session-tracing', () => {
       const span = startToolSpan('ReadFile', { 'tool.call_id': 'call-1' });
 
       expect(mockSpans).toHaveLength(1);
-      expect(mockSpans[0]!.name).toBe('qwen-code.tool');
+      expect(mockSpans[0]!.name).toBe('zero.tool');
       expect(mockSpans[0]!.attributes['tool.name']).toBe('ReadFile');
       expect(mockSpans[0]!.attributes['tool.call_id']).toBe('call-1');
 
@@ -371,7 +371,7 @@ describe('session-tracing', () => {
       endToolSpan(span1, { success: false, error: 'timeout' });
 
       // Find tool spans
-      const toolSpans = mockSpans.filter((s) => s.name === 'qwen-code.tool');
+      const toolSpans = mockSpans.filter((s) => s.name === 'zero.tool');
       expect(toolSpans).toHaveLength(2);
 
       const readSpan = toolSpans.find(
@@ -393,7 +393,7 @@ describe('session-tracing', () => {
       const execSpan = startToolExecutionSpan(toolSpan);
 
       expect(mockSpans).toHaveLength(2);
-      expect(mockSpans[1]!.name).toBe('qwen-code.tool.execution');
+      expect(mockSpans[1]!.name).toBe('zero.tool.execution');
 
       endToolExecutionSpan(execSpan, { success: true });
       endToolSpan(toolSpan, { success: true });

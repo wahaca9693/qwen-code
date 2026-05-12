@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,7 +12,7 @@ import {
   isSuccessStatus,
   type Config,
   type ArenaAgentResult,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { theme } from '../../semantic-colors.js';
 import { useKeypress } from '../../hooks/useKeypress.js';
 import { MessageType, type HistoryItemWithoutId } from '../../types.js';

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@
 import { render } from 'ink-testing-library';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { QwenOAuthProgress } from './QwenOAuthProgress.js';
-import type { DeviceAuthorizationData } from '@qwen-code/qwen-code-core';
+import type { DeviceAuthorizationData } from '@zero-agent/zero-core';
 import { useKeypress } from '../hooks/useKeypress.js';
 import type { Key } from '../contexts/KeypressContext.js';
 

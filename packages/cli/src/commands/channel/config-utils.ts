@@ -1,5 +1,5 @@
-import type { ChannelConfig } from '@qwen-code/channel-base';
-import { resolvePath } from '@qwen-code/channel-base';
+import type { ChannelConfig } from '@zero-agent/channel-base';
+import { resolvePath } from '@zero-agent/channel-base';
 import * as path from 'node:path';
 import { getPlugin, supportedTypes } from './channel-registry.js';
 

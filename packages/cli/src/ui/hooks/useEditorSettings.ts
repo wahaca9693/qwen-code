@@ -1,17 +1,17 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { useState, useCallback } from 'react';
 import type { LoadedSettings, SettingScope } from '../../config/settings.js';
 import { type HistoryItem, MessageType } from '../types.js';
-import type { EditorType } from '@qwen-code/qwen-code-core';
+import type { EditorType } from '@zero-agent/zero-core';
 import {
   allowEditorTypeInSandbox,
   checkHasEditorType,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 
 interface UseEditorSettingsReturn {
   isEditorDialogOpen: boolean;

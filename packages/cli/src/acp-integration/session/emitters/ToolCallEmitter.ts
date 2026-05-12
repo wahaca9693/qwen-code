@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,7 +19,7 @@ import type {
   ToolKind,
 } from '@agentclientprotocol/sdk';
 import type { Part } from '@google/genai';
-import { ToolNames, Kind } from '@qwen-code/qwen-code-core';
+import { ToolNames, Kind } from '@zero-agent/zero-core';
 import { buildTruncatedDiffPreviewText } from '../../../utils/truncatedDiffPreview.js';
 
 /**

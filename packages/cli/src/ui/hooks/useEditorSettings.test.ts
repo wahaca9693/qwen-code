@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,10 +23,10 @@ import {
   type EditorType,
   checkHasEditorType,
   allowEditorTypeInSandbox,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 
-vi.mock('@qwen-code/qwen-code-core', async () => {
-  const actual = await vi.importActual('@qwen-code/qwen-code-core');
+vi.mock('@zero-agent/zero-core', async () => {
+  const actual = await vi.importActual('@zero-agent/zero-core');
   return {
     ...actual,
     checkHasEditorType: vi.fn(() => true),

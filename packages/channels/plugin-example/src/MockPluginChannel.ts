@@ -1,10 +1,10 @@
-import { ChannelBase } from '@qwen-code/channel-base';
+import { ChannelBase } from '@zero-agent/channel-base';
 import type {
   ChannelConfig,
   ChannelBaseOptions,
   Envelope,
   AcpBridge,
-} from '@qwen-code/channel-base';
+} from '@zero-agent/channel-base';
 import WebSocket from 'ws';
 import type {
   InboundMessage,

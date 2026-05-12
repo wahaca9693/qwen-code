@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { render } from 'ink-testing-library';
 import type React from 'react';
-import type { Config } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
 import { LoadedSettings } from '../config/settings.js';
 import { KeypressProvider } from '../ui/contexts/KeypressContext.js';
 import { SettingsContext } from '../ui/contexts/SettingsContext.js';

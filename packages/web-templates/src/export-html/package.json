@@ -1,12 +1,12 @@
 {
-  "name": "@qwen-code/cli-export-html",
+  "name": "@zero-agent/cli-export-html",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node build.mjs"
   },
   "dependencies": {
-    "@qwen-code/webui": "latest"
+    "@zero-agent/webui": "latest"
   },
   "devDependencies": {
     "esbuild": "^0.25.0"

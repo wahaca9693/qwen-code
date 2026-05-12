@@ -6,7 +6,7 @@ import {
   unlinkSync,
 } from 'node:fs';
 import * as path from 'node:path';
-import { Storage } from '@qwen-code/qwen-code-core';
+import { Storage } from '@zero-agent/zero-core';
 
 export interface ServiceInfo {
   pid: number;

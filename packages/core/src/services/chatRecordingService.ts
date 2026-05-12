@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -925,7 +925,7 @@ export class ChatRecordingService {
     // unset their fast model (which would break `/rename --auto`, recap,
     // compression, and other fast-model features).
     if (autoTitleDisabledByEnv()) return;
-    // Headless/one-shot CLI flows (`qwen -p "…"`, cron, CI scripts) run a
+    // Headless/one-shot CLI flows (`ZERO -p "…"`, cron, CI scripts) run a
     // single prompt and throw the session away. Spending fast-model tokens
     // on a title no one will ever resume is pure waste; skip entirely.
     // Checked before `getFastModel()` because it's strictly cheaper (a bool

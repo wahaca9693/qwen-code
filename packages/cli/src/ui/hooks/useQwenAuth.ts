@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import {
   qwenOAuth2Events,
   QwenOAuth2Event,
   type DeviceAuthorizationData,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 
 export interface QwenAuthState {
   deviceAuth: DeviceAuthorizationData | null;

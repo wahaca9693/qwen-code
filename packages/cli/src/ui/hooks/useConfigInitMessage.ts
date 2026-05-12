@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { useEffect, useState } from 'react';
 import { appEvents } from '../../utils/events.js';
-import { type McpClient, MCPServerStatus } from '@qwen-code/qwen-code-core';
+import { type McpClient, MCPServerStatus } from '@zero-agent/zero-core';
 import { t } from '../../i18n/index.js';
 
 // Tracks MCP connection progress. Returns the current status string while

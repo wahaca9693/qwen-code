@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, expect, it } from 'vitest';
-import { AgentStatus } from '@qwen-code/qwen-code-core';
+import { AgentStatus } from '@zero-agent/zero-core';
 import { renderWithProviders } from '../../../test-utils/render.js';
 import { ArenaSessionCard } from './ArenaCards.js';
 import type { ArenaAgentCardData } from '../../types.js';
@@ -14,7 +14,7 @@ describe('ArenaSessionCard', () => {
   it('renders the comparison summary sections from agent results', () => {
     const agents: ArenaAgentCardData[] = [
       {
-        label: 'qwen-coder-plus',
+        label: 'zeror-plus',
         status: AgentStatus.IDLE,
         durationMs: 12_000,
         totalTokens: 45_000,
@@ -73,11 +73,11 @@ describe('ArenaSessionCard', () => {
     expect(output).toContain('Arena Comparison Summary');
     expect(output).not.toContain('Status    Time    Tokens   Changes');
     expect(output).toContain('Status Summary:');
-    expect(output).toContain('qwen-coder-plus: Idle');
+    expect(output).toContain('zeror-plus: Idle');
     expect(output).toContain('gpt-4o: Idle');
     expect(output).toContain('Files Modified:');
     expect(output).toContain('common: src/auth.ts');
-    expect(output).toContain('qwen-coder-plus-only: tests/auth.test.ts');
+    expect(output).toContain('zeror-plus-only: tests/auth.test.ts');
     expect(output).toContain('gpt-4o-only: src/middleware.ts');
     expect(output).toContain('Approach Summary:');
     expect(output).toContain('Refactored with JWT strategy pattern.');

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  *
  * EmptyState component - Welcome screen when no conversation is active
@@ -37,7 +37,7 @@ export interface EmptyStateProps {
  * ```tsx
  * <EmptyState
  *   isAuthenticated={true}
- *   appName="Qwen Code"
+ *   appName="ZERO Agent"
  * />
  * ```
  */
@@ -45,7 +45,7 @@ export const EmptyState: FC<EmptyStateProps> = ({
   isAuthenticated = false,
   loadingMessage,
   logoUrl,
-  appName = 'Qwen Code',
+  appName = 'ZERO Agent',
 }) => {
   const platform = usePlatform();
 

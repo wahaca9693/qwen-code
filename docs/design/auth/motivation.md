@@ -14,7 +14,7 @@ architectures.
 ## Goals
 
 - Keep `/auth` user-facing flows easy to understand:
-  - Alibaba ModelStudio for first-party Qwen setup.
+  - Alibaba ModelStudio for first-party ZERO setup.
   - Third-party providers for common built-in integrations such as DeepSeek,
     MiniMax, and Z.AI.
   - OAuth providers such as OpenRouter.
@@ -94,7 +94,7 @@ the same provider install path:
 
 Static built-in providers can persist provider metadata under
 `providerMetadata.<providerId>`, including the model list version and base URL.
-This lets Qwen Code detect when a provider's built-in model list changes and
+This lets ZERO Agent detect when a provider's built-in model list changes and
 prompt the user to update owned models without overwriting unrelated custom
 models.
 

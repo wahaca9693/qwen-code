@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -554,7 +554,7 @@ export class AcpConnection {
         // ACP ListSessionsRequest schema has no `size` field; the SDK's zod
         // validator strips unknown top-level keys, so the agent would never
         // see it. Carry it via `_meta` instead, matching the pattern used for
-        // other Qwen Code ACP extensions.
+        // other ZERO Agent ACP extensions.
         const existingMeta = (params['_meta'] ?? {}) as Record<string, unknown>;
         params['_meta'] = { ...existingMeta, size: options.size };
       }

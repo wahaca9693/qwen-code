@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -33,7 +33,7 @@ import {
   readQwenSettingsForVSCode,
   clearPersistedAuth,
 } from '../../services/settingsWriter.js';
-import { parseInsightMessage } from '@qwen-code/qwen-code-core';
+import { parseInsightMessage } from '@zero-agent/zero-core';
 
 /** Threshold (ms) before a completed task triggers a notification. */
 const LONG_TASK_THRESHOLD_MS = 20_000;
@@ -55,9 +55,9 @@ const DOT_ICON: Record<DotColor | 'default', string> = {
 };
 
 const AUTH_RELATED_QWEN_SETTINGS = [
-  'qwen-code.provider',
-  'qwen-code.apiKey',
-  'qwen-code.codingPlanRegion',
+  'zero.provider',
+  'zero.apiKey',
+  'zero.codingPlanRegion',
 ] as const;
 
 function isInsightCommand(command: string): boolean {
@@ -173,7 +173,7 @@ export class WebViewProvider {
 
         if (authSettingsChanged && !this.isSyncingToVSCode) {
           console.log(
-            '[WebViewProvider] Auth-related qwen-code settings changed by user, syncing...',
+            '[WebViewProvider] Auth-related zero settings changed by user, syncing...',
           );
           const synced = await this.syncVSCodeSettingsToQwenConfig();
           if (synced && this.agentInitialized) {
@@ -194,14 +194,14 @@ export class WebViewProvider {
           } else if (
             !synced &&
             this.agentInitialized &&
-            e.affectsConfiguration('qwen-code.apiKey')
+            e.affectsConfiguration('zero.apiKey')
           ) {
-            // Only de-auth when qwen-code.apiKey itself was cleared.
+            // Only de-auth when zero.apiKey itself was cleared.
             // Other auth-related settings (provider, codingPlanRegion) returning
             // synced=false is normal for api-key providers — those are managed by
             // the interactive auth flow, not VS Code Settings sync.
             const apiKey = vscode.workspace
-              .getConfiguration('qwen-code')
+              .getConfiguration('zero')
               .get<string>('apiKey', '');
             if (!apiKey) {
               console.log(
@@ -891,7 +891,7 @@ export class WebViewProvider {
           ).trim();
           const panelRef = this.panelManager.getPanel();
           if (panelRef) {
-            panelRef.title = title ? truncatePanelTitle(title) : 'Qwen Code';
+            panelRef.title = title ? truncatePanelTitle(title) : 'ZERO Agent';
           }
           return;
         }
@@ -1042,14 +1042,14 @@ export class WebViewProvider {
   }
 
   /**
-   * Sync VSCode extension settings (qwen-code.*) to ~/.qwen/settings.json
+   * Sync VSCode extension settings (zero.*) to ~/.qwen/settings.json
    * if an API key is configured. This enables auto-connect on startup
    * without requiring the user to click "Connect" each time.
    *
    * @returns true if settings were synced (apiKey is configured), false otherwise
    */
   private async syncVSCodeSettingsToQwenConfig(): Promise<boolean> {
-    const config = vscode.workspace.getConfiguration('qwen-code');
+    const config = vscode.workspace.getConfiguration('zero');
     const apiKey = config.get<string>('apiKey', '');
 
     if (!apiKey) {
@@ -1099,7 +1099,7 @@ export class WebViewProvider {
       );
 
       // Set guard to prevent onDidChangeConfiguration from triggering a write-back
-      const config = vscode.workspace.getConfiguration('qwen-code');
+      const config = vscode.workspace.getConfiguration('zero');
       const target = vscode.ConfigurationTarget.Global;
       const updates: Array<Thenable<void>> = [];
 
@@ -1137,7 +1137,7 @@ export class WebViewProvider {
       }
     } catch (error) {
       console.error(
-        '[WebViewProvider] Failed to sync qwen config to VSCode settings:',
+        '[WebViewProvider] Failed to sync ZERO config to VSCode settings:',
         error,
       );
     }
@@ -1302,7 +1302,7 @@ export class WebViewProvider {
   /**
    * Handle auth interactive — interactive auth flow result.
    * Writes provider config to ~/.qwen/settings.json and reconnects.
-   * Mirrors the CLI's `qwen auth coding-plan` / `qwen auth` flow.
+   * Mirrors the CLI's `ZERO auth coding-plan` / `ZERO auth` flow.
    */
   private async handleAuthInteractive(
     provider: string,
@@ -1820,7 +1820,7 @@ export class WebViewProvider {
 
   /** Update the tab-dot icon. Blue takes priority over orange. */
   private setTabDot(color: DotColor): void {
-    const config = vscode.workspace.getConfiguration('qwen-code');
+    const config = vscode.workspace.getConfiguration('zero');
     if (!config.get<boolean>('dotIndicator', true)) {
       return;
     }
@@ -1905,11 +1905,11 @@ export class WebViewProvider {
 
   /**
    * Show a VS Code notification with sound and a "Show" button that focuses
-   * the Qwen Code panel (or sidebar view) when clicked.
+   * the ZERO Agent panel (or sidebar view) when clicked.
    */
   private notifyUser(message: string): void {
     void vscode.window
-      .showInformationMessage(`Qwen Code: ${message}`, 'Show')
+      .showInformationMessage(`ZERO Agent: ${message}`, 'Show')
       .then((action) => {
         if (action === 'Show') {
           const panel = this.panelManager.getPanel();
@@ -1917,7 +1917,7 @@ export class WebViewProvider {
             panel.reveal();
           } else if (this.isViewHost) {
             // Sidebar / secondary bar — focus the view via its command.
-            void vscode.commands.executeCommand('qwen-code.focusChat');
+            void vscode.commands.executeCommand('zero.focusChat');
           }
         }
       });
@@ -1925,7 +1925,7 @@ export class WebViewProvider {
   }
 
   /**
-   * Whether the user can currently see the Qwen Code panel.
+   * Whether the user can currently see the ZERO Agent panel.
    * Only true when VS Code is the foreground app AND the panel tab is visible.
    * If either condition is false the user needs a notification.
    */
@@ -1936,10 +1936,10 @@ export class WebViewProvider {
     return windowFocused && panelVisible;
   }
 
-  /** Whether the qwen-code.notifications setting is enabled. */
+  /** Whether the zero.notifications setting is enabled. */
   private isNotificationsEnabled(): boolean {
     return vscode.workspace
-      .getConfiguration('qwen-code')
+      .getConfiguration('zero')
       .get<boolean>('notifications', true);
   }
 
@@ -2166,7 +2166,7 @@ export class WebViewProvider {
     // Ensure restored tab starts from default label and icon
     this.dotState = null;
     try {
-      panel.title = 'Qwen Code';
+      panel.title = 'ZERO Agent';
       panel.iconPath = vscode.Uri.joinPath(
         this.extensionUri,
         'assets',
@@ -2196,7 +2196,7 @@ export class WebViewProvider {
           ).trim();
           const panelRef = this.panelManager.getPanel();
           if (panelRef) {
-            panelRef.title = title ? truncatePanelTitle(title) : 'Qwen Code';
+            panelRef.title = title ? truncatePanelTitle(title) : 'ZERO Agent';
           }
           return;
         }

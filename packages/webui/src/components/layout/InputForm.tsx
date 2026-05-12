@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  *
  * InputForm component - Main chat input with toolbar
@@ -196,7 +196,7 @@ export const InputForm: FC<InputFormProps> = ({
   onCompletionClose,
   onPaste,
   extraContent,
-  placeholder = 'Ask Qwen Code …',
+  placeholder = 'Ask ZERO Agent …',
   canSubmit,
   followupState,
   onAcceptFollowup,

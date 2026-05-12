@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -38,7 +38,7 @@ run(`npm version ${versionType} --no-git-tag-version --allow-same-version`);
 
 // 3. Get all workspaces and filter out the one we don't want to version.
 // We intend to maintain sdk version independently.
-const workspacesToExclude = ['@qwen-code/sdk'];
+const workspacesToExclude = ['@zero-agent/sdk'];
 let lsOutput;
 try {
   lsOutput = JSON.parse(

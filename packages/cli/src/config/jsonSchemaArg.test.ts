@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -75,7 +75,7 @@ describe('resolveJsonSchemaArg', () => {
 
   it('rejects @path schema files that exceed the size cap', () => {
     // Defence against a wrapper that forwards a user-supplied path into
-    // `qwen --json-schema "$X"` where X is e.g. `@/dev/zero` or any
+    // `ZERO --json-schema "$X"` where X is e.g. `@/dev/zero` or any
     // pathologically large file. We pre-check size via fs.statSync so the
     // huge buffer never gets allocated.
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'qwen-schema-big-'));

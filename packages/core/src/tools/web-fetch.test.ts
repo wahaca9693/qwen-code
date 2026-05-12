@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -40,7 +40,7 @@ describe('WebFetchTool', () => {
       getBaseLlmClient: mockGetBaseLlmClient,
       getFastModel: vi.fn(() => undefined),
       getSessionId: vi.fn(() => 'test-session-id'),
-      getModel: vi.fn(() => 'qwen-coder'),
+      getModel: vi.fn(() => 'zeror'),
     } as unknown as Config;
   });
 

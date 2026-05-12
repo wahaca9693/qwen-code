@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -75,7 +75,7 @@ vi.mock('node:stream', async (importOriginal) => {
 });
 
 // Mock core dependencies
-vi.mock('@qwen-code/qwen-code-core', () => ({
+vi.mock('@zero-agent/zero-core', () => ({
   createDebugLogger: () => ({
     debug: vi.fn(),
     error: vi.fn(),
@@ -134,14 +134,14 @@ import {
   toSseServer,
   toHttpServer,
 } from './acpAgent.js';
-import type { Config } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
 import type { LoadedSettings } from '../config/settings.js';
 import type { CliArgs } from '../config/config.js';
 import {
   SessionEndReason,
   MCPServerConfig,
   SessionService,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { McpServer } from '@agentclientprotocol/sdk';
 import { AgentSideConnection } from '@agentclientprotocol/sdk';
 import { loadSettings } from '../config/settings.js';

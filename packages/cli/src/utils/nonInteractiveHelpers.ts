@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,13 +13,13 @@ import type {
   ToolCallResponseInfo,
   SessionMetrics,
   McpToolProgressData,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import {
   OutputFormat,
   ToolErrorType,
   createDebugLogger,
   getMCPServerStatus,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { Part, PartListUnion } from '@google/genai';
 import type {
   CLIUserMessage,

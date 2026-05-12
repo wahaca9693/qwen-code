@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -40,7 +40,7 @@ describe('FolderTrustDialog', () => {
 
     expect(lastFrame()).toContain('Do you trust this folder?');
     expect(lastFrame()).toContain(
-      'Trusting a folder allows Qwen Code to execute commands it suggests.',
+      'Trusting a folder allows ZERO Agent to execute commands it suggests.',
     );
   });
 
@@ -75,7 +75,7 @@ describe('FolderTrustDialog', () => {
       <FolderTrustDialog onSelect={vi.fn()} isRestarting={true} />,
     );
 
-    expect(lastFrame()).toContain(' Qwen Code is restarting');
+    expect(lastFrame()).toContain(' ZERO Agent is restarting');
   });
 
   it('should call relaunchApp when isRestarting is true', async () => {

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -58,7 +58,7 @@ import {
   resetHomeEnvBootstrapForTesting,
 } from './settings.js';
 import { needsMigration } from './migration/index.js';
-import { QWEN_DIR } from '@qwen-code/qwen-code-core';
+import { QWEN_DIR } from '@zero-agent/zero-core';
 
 const mockDebugLogger = vi.hoisted(() => ({
   debug: vi.fn(),
@@ -67,9 +67,9 @@ const mockDebugLogger = vi.hoisted(() => ({
   info: vi.fn(),
 }));
 
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@qwen-code/qwen-code-core')>();
+    await importOriginal<typeof import('@zero-agent/zero-core')>();
   return {
     ...actual,
     createDebugLogger: () => mockDebugLogger,
@@ -525,7 +525,7 @@ describe('Settings Loading and Merging', () => {
       );
       const userSettingsContent = {
         [SETTINGS_VERSION_KEY]: SETTINGS_VERSION,
-        model: { name: 'qwen-coder' },
+        model: { name: 'zeror' },
       };
       (fs.readFileSync as Mock).mockImplementation(
         (p: fs.PathOrFileDescriptor) => {
@@ -661,7 +661,7 @@ describe('Settings Loading and Merging', () => {
       );
       const legacySettingsContent = {
         theme: 'dark',
-        model: 'qwen-coder',
+        model: 'zeror',
       };
       (fs.readFileSync as Mock).mockImplementation(
         (p: fs.PathOrFileDescriptor) => {
@@ -697,7 +697,7 @@ describe('Settings Loading and Merging', () => {
           theme: 'dark',
         },
         model: {
-          name: 'qwen-coder',
+          name: 'zeror',
         },
       };
       (fs.readFileSync as Mock).mockImplementation(
@@ -726,7 +726,7 @@ describe('Settings Loading and Merging', () => {
           theme: 'dark',
         },
         model: {
-          name: 'qwen-coder',
+          name: 'zeror',
         },
       };
       (fs.readFileSync as Mock).mockImplementation(
@@ -752,7 +752,7 @@ describe('Settings Loading and Merging', () => {
 
       expect(writtenContent[SETTINGS_VERSION_KEY]).toBe(SETTINGS_VERSION);
       expect(writtenContent.ui?.theme).toBe('dark');
-      expect(writtenContent.model?.name).toBe('qwen-coder');
+      expect(writtenContent.model?.name).toBe('zeror');
       // Verify writeWithBackupSync was called by checking temp file write
       expect(fs.writeFileSync).toHaveBeenCalled();
     });
@@ -764,7 +764,7 @@ describe('Settings Loading and Merging', () => {
       // Edge case: model already in V2 format (object), but autoAccept in V1 format
       const partiallyMigratedContent = {
         model: {
-          name: 'qwen-coder',
+          name: 'zeror',
         },
         autoAccept: false, // V1 key
       };
@@ -793,7 +793,7 @@ describe('Settings Loading and Merging', () => {
       const writtenContent = JSON.parse(writeCall[1] as string);
 
       // Model should remain as an object, not double-nested
-      expect(writtenContent.model).toEqual({ name: 'qwen-coder' });
+      expect(writtenContent.model).toEqual({ name: 'zeror' });
       // autoAccept should be migrated to tools.autoAccept
       expect(writtenContent.tools?.autoAccept).toBe(false);
       // Version field should be added
@@ -3324,7 +3324,7 @@ describe('Settings Loading and Merging', () => {
         cwdSpy.mockRestore();
       });
 
-      it('warns when QWEN_HOME redirects but the legacy ~/.qwen still has settings', () => {
+      it('warns when QWEN_HOME redirects but the legacy ~/.ZERO still has settings', () => {
         const customHome = '/tmp/qwen-home-fresh';
         process.env['QWEN_HOME'] = customHome;
         const legacySettings = path.join(
@@ -3332,7 +3332,7 @@ describe('Settings Loading and Merging', () => {
           QWEN_DIR,
           'settings.json',
         );
-        // Active QWEN_HOME has nothing yet; legacy ~/.qwen has settings.json.
+        // Active QWEN_HOME has nothing yet; legacy ~/.ZERO has settings.json.
         const customSettingsPath = path.join(customHome, 'settings.json');
 
         vi.mocked(isWorkspaceTrusted).mockReturnValue({
@@ -3600,7 +3600,7 @@ describe('Settings Loading and Merging', () => {
         // but other fields in V1 format
         const partiallyMigrated = {
           model: {
-            name: 'qwen-coder',
+            name: 'zeror',
           },
           autoAccept: false, // V1 key
         };
@@ -3612,7 +3612,7 @@ describe('Settings Loading and Merging', () => {
         const partiallyMigratedWithVersion = {
           [SETTINGS_VERSION_KEY]: SETTINGS_VERSION,
           model: {
-            name: 'qwen-coder',
+            name: 'zeror',
           },
           autoAccept: false, // This would look like V1 but version says it's V2
         };

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ const useTerminalSizeMock = vi.mocked(useTerminalSize.useTerminalSize);
 const defaultProps = {
   version: '1.0.0',
   authDisplayType: AuthDisplayType.QWEN_OAUTH,
-  model: 'qwen-coder-plus',
+  model: 'zeror-plus',
   workingDirectory: '/home/user/projects/test',
 };
 
@@ -44,7 +44,7 @@ describe('<Header />', () => {
     useTerminalSizeMock.mockReturnValue({ columns: 60, rows: 24 });
     const { lastFrame } = render(<Header {...defaultProps} />);
     expect(lastFrame()).not.toContain('██╔═══██╗');
-    expect(lastFrame()).toContain('>_ Qwen Code');
+    expect(lastFrame()).toContain('>_ ZERO Agent');
   });
 
   it('displays the version number', () => {
@@ -55,7 +55,7 @@ describe('<Header />', () => {
   it('displays auth type and model', () => {
     const { lastFrame } = render(<Header {...defaultProps} />);
     expect(lastFrame()).toContain('Qwen OAuth');
-    expect(lastFrame()).toContain('qwen-coder-plus');
+    expect(lastFrame()).toContain('zeror-plus');
   });
 
   it('displays Coding Plan auth type', () => {
@@ -119,7 +119,7 @@ describe('<Header />', () => {
     const frame = lastFrame() ?? '';
     expect(frame).toContain('Built-in DataWorks Official Skills');
     // Subtitle sits between the title and the auth line.
-    const titleIdx = frame.indexOf('>_ Qwen Code');
+    const titleIdx = frame.indexOf('>_ ZERO Agent');
     const subtitleIdx = frame.indexOf('Built-in DataWorks Official Skills');
     const authIdx = frame.indexOf('Qwen OAuth');
     expect(titleIdx).toBeLessThan(subtitleIdx);
@@ -132,7 +132,7 @@ describe('<Header />', () => {
     // Title and auth still both render at their usual positions; the
     // spacer between them is just whitespace-padding, so we assert the
     // visible chrome the user sees.
-    expect(frame).toContain('>_ Qwen Code');
+    expect(frame).toContain('>_ ZERO Agent');
     expect(frame).toContain('Qwen OAuth');
   });
 
@@ -141,7 +141,7 @@ describe('<Header />', () => {
       <Header {...defaultProps} customBannerTitle="Acme CLI" />,
     );
     expect(lastFrame()).toContain('Acme CLI');
-    expect(lastFrame()).not.toContain('>_ Qwen Code');
+    expect(lastFrame()).not.toContain('>_ ZERO Agent');
     // version suffix is still appended
     expect(lastFrame()).toContain('v1.0.0');
   });
@@ -193,6 +193,6 @@ describe('<Header />', () => {
     // wide enough terminal would show it — the previous test already covers
     // the wide case. This one just confirms the no-custom-art path doesn't
     // incidentally hide the logo.
-    expect(lastFrame()).toContain('>_ Qwen Code');
+    expect(lastFrame()).toContain('>_ ZERO Agent');
   });
 });

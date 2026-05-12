@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import { describe, it, expect } from 'vitest';
 import { toolsCommand } from './toolsCommand.js';
 import { createMockCommandContext } from '../../test-utils/mockCommandContext.js';
 import { MessageType } from '../types.js';
-import type { Tool } from '@qwen-code/qwen-code-core';
+import type { Tool } from '@zero-agent/zero-core';
 
 // Mock tools for testing
 const mockTools = [

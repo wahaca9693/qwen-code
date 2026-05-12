@@ -14,7 +14,7 @@ describe('channels/base paths – getGlobalQwenDir', () => {
     }
   });
 
-  it('defaults to ~/.qwen when QWEN_HOME is not set', () => {
+  it('defaults to ~/.ZERO when QWEN_HOME is not set', () => {
     delete process.env['QWEN_HOME'];
     expect(getGlobalQwenDir()).toBe(path.join(os.homedir(), '.qwen'));
   });

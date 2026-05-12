@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ import { t } from '../../i18n/index.js';
 export const toolsCommand: SlashCommand = {
   name: 'tools',
   get description() {
-    return t('List available Qwen Code tools. Usage: /tools [desc]');
+    return t('List available ZERO Agent tools. Usage: /tools [desc]');
   },
   kind: CommandKind.BUILT_IN,
   action: async (context: CommandContext, args?: string): Promise<void> => {

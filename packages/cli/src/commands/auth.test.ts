@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -36,7 +36,7 @@ describe('auth command', () => {
   it('builds a removal notice with migration paths and no ANSI in non-TTY', () => {
     const notice = buildRemovalNotice();
 
-    expect(notice).toContain('qwen auth has been removed');
+    expect(notice).toContain('ZERO auth has been removed');
     expect(notice).toContain('/auth');
     expect(notice).toContain('/doctor');
     expect(notice).toContain('BAILIAN_CODING_PLAN_API_KEY');

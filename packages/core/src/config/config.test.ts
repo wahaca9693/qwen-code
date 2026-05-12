@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -264,7 +264,7 @@ describe('Server Config (config.ts)', () => {
   });
   const SANDBOX: SandboxConfig = {
     command: 'docker',
-    image: 'qwen-code-sandbox',
+    image: 'zero-sandbox',
   };
   const TARGET_DIR = '/path/to/target';
   const DEBUG_MODE = false;

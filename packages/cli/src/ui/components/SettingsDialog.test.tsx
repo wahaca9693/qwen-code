@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -947,7 +947,7 @@ describe('SettingsDialog', () => {
 
       // Should not show restart prompt initially
       expect(lastFrame()).not.toContain(
-        'To see changes, Qwen Code must be restarted',
+        'To see changes, ZERO Agent must be restarted',
       );
 
       unmount();

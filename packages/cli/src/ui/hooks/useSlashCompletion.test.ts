@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -256,7 +256,7 @@ describe('useSlashCompletion', () => {
         createTestCommand({
           name: 'help',
           altNames: ['?'],
-          description: 'for help on Qwen Code',
+          description: 'for help on ZERO Agent',
         }),
       ];
       const { result } = renderHook(() =>
@@ -443,7 +443,7 @@ describe('useSlashCompletion', () => {
         createTestCommand({
           name: 'help',
           altNames: ['?'],
-          description: 'for help on Qwen Code',
+          description: 'for help on ZERO Agent',
         }),
       ];
       const recentCommands = new Map([

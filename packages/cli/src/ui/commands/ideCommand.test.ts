@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,10 +8,10 @@ import type { MockInstance } from 'vitest';
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { ideCommand } from './ideCommand.js';
 import { type CommandContext } from './types.js';
-import { IDE_DEFINITIONS } from '@qwen-code/qwen-code-core';
-import * as core from '@qwen-code/qwen-code-core';
+import { IDE_DEFINITIONS } from '@zero-agent/zero-core';
+import * as core from '@zero-agent/zero-core';
 
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const original = await importOriginal<typeof core>();
   return {
     ...original,

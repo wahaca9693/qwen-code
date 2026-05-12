@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -59,7 +59,7 @@ import {
   ToolConfirmationOutcome,
   type WaitingToolCall,
   ToolNames,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { buildResumedHistoryItems } from './utils/resumeHistoryUtils.js';
 import {
   getStickyTodos,
@@ -2378,7 +2378,7 @@ export const AppContainer = (props: AppContainerProps) => {
 
   useKeypress(handleGlobalKeypress, { isActive: true });
 
-  // Update terminal title with Qwen Code status and thoughts
+  // Update terminal title with ZERO Agent status and thoughts
   useEffect(() => {
     // Respect both showStatusInTitle and hideWindowTitle settings
     if (
@@ -2405,7 +2405,7 @@ export const AppContainer = (props: AppContainerProps) => {
       lastTitleRef.current = paddedTitle;
       stdout.write(`\x1b]2;${paddedTitle}\x07`);
     }
-    // Note: We don't need to reset the window title on exit because Qwen Code is already doing that elsewhere
+    // Note: We don't need to reset the window title on exit because ZERO Agent is already doing that elsewhere
   }, [
     streamingState,
     thought,

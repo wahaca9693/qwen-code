@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -242,7 +242,7 @@ function permissionModeToApprovalMode(mode: PermissionMode): ApprovalMode {
  * independent imports of this module observe the same Symbol identity.
  */
 export const TOOL_REGISTRY_REBUILT: unique symbol = Symbol.for(
-  'qwen-code:tool-registry-rebuilt',
+  'zero:tool-registry-rebuilt',
 );
 
 /**

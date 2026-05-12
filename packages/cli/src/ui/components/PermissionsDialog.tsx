@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,8 +23,8 @@ import type {
   PermissionManager,
   RuleWithSource,
   RuleType,
-} from '@qwen-code/qwen-code-core';
-import { isPathWithinRoot, parseRule } from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
+import { isPathWithinRoot, parseRule } from '@zero-agent/zero-core';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -85,17 +85,17 @@ function getTabs(): Tab[] {
     {
       id: 'allow',
       label: t('Allow'),
-      description: t("Qwen Code won't ask before using allowed tools."),
+      description: t("ZERO Agent won't ask before using allowed tools."),
     },
     {
       id: 'ask',
       label: t('Ask'),
-      description: t('Qwen Code will ask before using these tools.'),
+      description: t('ZERO Agent will ask before using these tools.'),
     },
     {
       id: 'deny',
       label: t('Deny'),
-      description: t('Qwen Code is not allowed to use denied tools.'),
+      description: t('ZERO Agent is not allowed to use denied tools.'),
     },
     {
       id: 'workspace',
@@ -654,7 +654,7 @@ export function PermissionsDialog({
         <Box height={1} />
         <Text color={theme.text.secondary} wrap="wrap">
           {t(
-            'Qwen Code will be able to read files in this directory and make edits when auto-accept edits is on.',
+            'ZERO Agent will be able to read files in this directory and make edits when auto-accept edits is on.',
           )}
         </Text>
         <Box height={1} />
@@ -755,7 +755,7 @@ export function PermissionsDialog({
         <TabBar tabs={tabs} activeIndex={activeTabIndex} />
         <Text color={theme.text.secondary} wrap="wrap">
           {t(
-            'Qwen Code can read files in the workspace, and make edits when auto-accept edits is on.',
+            'ZERO Agent can read files in the workspace, and make edits when auto-accept edits is on.',
           )}
         </Text>
         <Box height={1} />

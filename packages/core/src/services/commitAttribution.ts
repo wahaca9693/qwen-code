@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -291,7 +291,7 @@ function sanitiseAttribution(v: unknown): FileAttribution {
 
 /**
  * Surface label embedded in the git-notes payload. Defaults to `'cli'`
- * for the qwen-code CLI; embedders (IDE extensions, SDK consumers) can
+ * for the zero CLI; embedders (IDE extensions, SDK consumers) can
  * override by setting `QWEN_CODE_ENTRYPOINT` before construction so the
  * note records where the contribution was authored.
  */

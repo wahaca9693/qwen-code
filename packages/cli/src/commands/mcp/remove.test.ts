@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -36,9 +36,9 @@ vi.mock('../../config/settings.js', async () => {
   };
 });
 
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@qwen-code/qwen-code-core')>();
+    await importOriginal<typeof import('@zero-agent/zero-core')>();
   return {
     ...actual,
     MCPOAuthTokenStorage: vi.fn(() => ({

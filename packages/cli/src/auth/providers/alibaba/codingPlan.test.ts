@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, expect, it } from 'vitest';
-import { AuthType } from '@qwen-code/qwen-code-core';
+import { AuthType } from '@zero-agent/zero-core';
 import {
   CODING_PLAN_CHINA_BASE_URL,
   CODING_PLAN_ENV_KEY,

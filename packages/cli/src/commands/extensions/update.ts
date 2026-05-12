@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,7 +11,7 @@ import { ExtensionUpdateState } from '../../ui/state/extensions.js';
 import {
   checkForExtensionUpdate,
   type ExtensionUpdateInfo,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { getExtensionManager } from './utils.js';
 import { t } from '../../i18n/index.js';
 

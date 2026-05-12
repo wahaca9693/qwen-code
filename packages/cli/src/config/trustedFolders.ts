@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,7 +12,7 @@ import {
   isWithinRoot,
   ideContextStore,
   Storage,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { Settings } from './settings.js';
 import stripJsonComments from 'strip-json-comments';
 import { writeStderrLine } from '../utils/stdioHelpers.js';

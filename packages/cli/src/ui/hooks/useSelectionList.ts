@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { useReducer, useRef, useEffect } from 'react';
-import { createDebugLogger } from '@qwen-code/qwen-code-core';
+import { createDebugLogger } from '@zero-agent/zero-core';
 import { useKeypress } from './useKeypress.js';
 
 export interface SelectionListItem<T> {

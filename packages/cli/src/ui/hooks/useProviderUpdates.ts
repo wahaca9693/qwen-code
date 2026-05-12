@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { ProviderModelConfig, Config } from '@qwen-code/qwen-code-core';
+import type { ProviderModelConfig, Config } from '@zero-agent/zero-core';
 import type { LoadedSettings } from '../../config/settings.js';
 import { t } from '../../i18n/index.js';
 import { applyProviderInstallPlan } from '../../auth/install/applyProviderInstallPlan.js';

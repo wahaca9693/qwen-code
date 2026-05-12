@@ -1,14 +1,14 @@
-# Qwen Code Java SDK
+# ZERO Agent Java SDK
 
 ## Project Overview
 
-The Qwen Code Java SDK is a minimum experimental SDK for programmatic access to Qwen Code functionality. It provides a Java interface to interact with the Qwen Code CLI, allowing developers to integrate Qwen Code capabilities into their Java applications.
+The ZERO Agent Java SDK is a minimum experimental SDK for programmatic access to ZERO Agent functionality. It provides a Java interface to interact with the ZERO Agent CLI, allowing developers to integrate ZERO Agent capabilities into their Java applications.
 
 **Context Information:**
 
 - Current Date: Monday 5 January 2026
 - Operating System: darwin
-- Working Directory: /Users/weigeng/repos/qwen-code/packages/sdk-java
+- Working Directory: /Users/weigeng/repos/zero-agent/packages/sdk-java
 
 ## Project Details
 
@@ -23,8 +23,8 @@ The Qwen Code Java SDK is a minimum experimental SDK for programmatic access to 
 
 The SDK follows a layered architecture:
 
-- **API Layer**: Provides the main entry points through `QwenCodeCli` class with simple static methods for basic usage
-- **Session Layer**: Manages communication sessions with the Qwen Code CLI through the `Session` class
+- **API Layer**: Provides the main entry points through `ZEROCodeCli` class with simple static methods for basic usage
+- **Session Layer**: Manages communication sessions with the ZERO Agent CLI through the `Session` class
 - **Transport Layer**: Handles the communication mechanism between the SDK and CLI process (currently using process transport via `ProcessTransport`)
 - **Protocol Layer**: Defines data structures for communication based on the CLI protocol
 - **Utils**: Common utilities for concurrent execution, timeout handling, and error management
@@ -33,7 +33,7 @@ The SDK follows a layered architecture:
 
 ### Main Classes
 
-- `QwenCodeCli`: Main entry point with static methods for simple queries
+- `ZEROCodeCli`: Main entry point with static methods for simple queries
 - `Session`: Manages communication sessions with the CLI
 - `Transport`: Abstracts the communication mechanism (currently using process transport)
 - `ProcessTransport`: Implementation that communicates via process execution
@@ -79,7 +79,7 @@ mvn javadoc:javadoc
 
 ### Testing
 
-The project includes basic unit tests using JUnit 5. The main test class `QwenCodeCliTest` demonstrates how to use the SDK to make simple queries to the Qwen Code CLI.
+The project includes basic unit tests using JUnit 5. The main test class `ZEROCodeCliTest` demonstrates how to use the SDK to make simple queries to the ZERO Agent CLI.
 
 ### Code Quality
 
@@ -119,7 +119,7 @@ The project uses Checkstyle for code formatting and style enforcement. The confi
 
 ## API Reference
 
-### QwenCodeCli Class
+### ZEROCodeCli Class
 
 The main class provides several primary methods:
 
@@ -140,9 +140,9 @@ The SDK supports different permission modes for controlling tool execution:
 
 ### Transport Options
 
-The `TransportOptions` class allows configuration of how the SDK communicates with the Qwen Code CLI:
+The `TransportOptions` class allows configuration of how the SDK communicates with the ZERO Agent CLI:
 
-- `pathToQwenExecutable`: Path to the Qwen Code CLI executable
+- `pathToZEROExecutable`: Path to the ZERO Agent CLI executable
 - `cwd`: Working directory for the CLI process
 - `model`: AI model to use for the session
 - `permissionMode`: Permission mode that controls tool execution
@@ -160,7 +160,7 @@ The `TransportOptions` class allows configuration of how the SDK communicates wi
 
 ### Session Control Features
 
-- **Session creation**: Use `QwenCodeCli.newSession()` to create a new session with custom options
+- **Session creation**: Use `ZEROCodeCli.newSession()` to create a new session with custom options
 - **Session management**: The `Session` class provides methods to send prompts, handle responses, and manage session state
 - **Session cleanup**: Always close sessions using `session.close()` to properly terminate the CLI process
 - **Session resumption**: Use `setResumeSessionId()` in `TransportOptions` to resume a previous session
@@ -313,7 +313,7 @@ src/
 │               └── qwen/
 │                   └── code/
 │                       └── cli/
-│                           ├── QwenCodeCli.java
+│                           ├── ZEROCodeCli.java
 │                           ├── protocol/
 │                           ├── session/
 │                           ├── transport/
@@ -325,7 +325,7 @@ src/
     │           └── qwen/
     │               └── code/
     │                   └── cli/
-    │                       ├── QwenCodeCliTest.java
+    │                       ├── ZEROCodeCliTest.java
     │                       ├── session/
     │                       │   └── SessionTest.java
     │                       └── transport/
@@ -343,7 +343,7 @@ src/
 
 ## FAQ / Troubleshooting
 
-### Q: Do I need to install the Qwen CLI separately?
+### Q: Do I need to install the ZERO CLI separately?
 
 A: No, from v0.1.1, the CLI is bundled with the SDK, so no standalone CLI installation is needed.
 

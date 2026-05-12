@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,12 +17,12 @@ import type {
   AgentStreamTextEvent,
   ToolEditConfirmationDetails,
   ToolInfoConfirmationDetails,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import {
   AgentEventType,
   ToolConfirmationOutcome,
   ToolNames,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { AgentSideConnection } from '@agentclientprotocol/sdk';
 import { EventEmitter } from 'node:events';
 

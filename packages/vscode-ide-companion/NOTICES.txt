@@ -198,12 +198,6 @@ This file contains third-party software notices and license terms.
 
 
 ============================================================
-@qwen-code/webui@undefined
-(No repository found)
-
-License text not found.
-
-============================================================
 cors@2.8.5
 (No repository found)
 
@@ -2592,7 +2586,7 @@ SOFTWARE.
 
 
 ============================================================
-scheduler@0.26.0
+scheduler@0.27.0
 (https://github.com/facebook/react.git)
 
 MIT License

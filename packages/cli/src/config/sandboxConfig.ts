@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { SandboxConfig } from '@qwen-code/qwen-code-core';
-import { FatalSandboxError } from '@qwen-code/qwen-code-core';
+import type { SandboxConfig } from '@zero-agent/zero-core';
+import { FatalSandboxError } from '@zero-agent/zero-core';
 import commandExists from 'command-exists';
 import * as os from 'node:os';
 import { getPackageJson } from '../utils/package.js';

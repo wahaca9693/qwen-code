@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -69,7 +69,7 @@ function getCurrentModuleDir(): string {
 function findSdkPackageRoot(): string | null {
   try {
     const require = createRequire(import.meta.url);
-    const packageJsonPath = require.resolve('@qwen-code/sdk/package.json');
+    const packageJsonPath = require.resolve('@zero-agent/sdk/package.json');
     const packageRoot = path.dirname(packageJsonPath);
     const cliPath = path.join(packageRoot, 'dist', 'cli', 'cli.js');
     if (fs.existsSync(cliPath)) {
@@ -93,7 +93,7 @@ function findSdkPackageRoot(): string | null {
           const packageJson = JSON.parse(
             fs.readFileSync(packageJsonPath, 'utf-8'),
           );
-          if (packageJson.name === '@qwen-code/sdk') {
+          if (packageJson.name === '@zero-agent/sdk') {
             return dir;
           }
           if (!bestMatch) {
@@ -211,7 +211,7 @@ export function findBundledCliPath(): string {
 
   const candidates = getBundledCliCandidatePaths();
   throw new Error(
-    'Bundled qwen CLI not found. The CLI should be included in the SDK package.\n' +
+    'Bundled ZERO CLI not found. The CLI should be included in the SDK package.\n' +
       'Searched locations:\n' +
       candidates.map((c) => `  - ${c}`).join('\n') +
       '\n\nIf you need to use a custom CLI, provide explicit path:\n' +

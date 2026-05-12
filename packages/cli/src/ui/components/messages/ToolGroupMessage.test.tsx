@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ import type {
   AgentResultDisplay,
   Config,
   ToolCallConfirmationDetails,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { TOOL_STATUS } from '../../constants.js';
 import { ConfigContext } from '../../contexts/ConfigContext.js';
 import { CompactModeProvider } from '../../contexts/CompactModeContext.js';

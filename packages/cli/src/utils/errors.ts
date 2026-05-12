@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { Config } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
 import {
   OutputFormat,
   JsonFormatter,
@@ -13,7 +13,7 @@ import {
   FatalCancellationError,
   ToolErrorType,
   createDebugLogger,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { runExitCleanup } from './cleanup.js';
 import { writeStderrLine } from './stdioHelpers.js';
 
@@ -215,7 +215,7 @@ export function handleToolError(
     const warningMessage =
       `Warning: Tool "${toolName}" requires user approval but cannot execute in non-interactive mode.\n` +
       `To enable automatic tool execution, use the -y flag (YOLO mode):\n` +
-      `Example: qwen -p 'your prompt' -y\n\n`;
+      `Example: ZERO -p 'your prompt' -y\n\n`;
     process.stderr.write(warningMessage);
   }
 

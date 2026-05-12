@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import * as vscode from 'vscode';
-import { SessionService, type Config } from '@qwen-code/qwen-code-core';
+import { SessionService, type Config } from '@zero-agent/zero-core';
 import {
   collectSessionData,
   generateExportFilename,
@@ -16,14 +16,14 @@ import {
   toJson,
   toJsonl,
   toMarkdown,
-} from '@qwen-code/qwen-code/export';
+} from '@zero/zero/export';
 import {
   EXPORT_SESSION_FORMATS,
   getExportSubcommandRequiredMessage,
   isSessionExportFormat,
   type SessionExportFormat,
 } from '../utils/exportSlashCommand.js';
-import { stripZeroWidthSpaces } from '@qwen-code/webui';
+import { stripZeroWidthSpaces } from '@zero/webui';
 
 export { EXPORT_SESSION_FORMATS as SESSION_EXPORT_FORMATS };
 export type { SessionExportFormat } from '../utils/exportSlashCommand.js';

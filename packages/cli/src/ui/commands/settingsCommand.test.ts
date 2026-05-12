@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,7 +30,7 @@ describe('settingsCommand', () => {
   it('should have the correct name and description', () => {
     expect(settingsCommand.name).toBe('settings');
     expect(settingsCommand.description).toBe(
-      'View and edit Qwen Code settings',
+      'View and edit ZERO Agent settings',
     );
   });
 });

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,7 +19,7 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { type Config, createDebugLogger } from '@qwen-code/qwen-code-core';
+import { type Config, createDebugLogger } from '@zero-agent/zero-core';
 import {
   type DialogEntry,
   useBackgroundTaskView,

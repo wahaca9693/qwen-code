@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type { SpawnOptions } from 'node:child_process';
 import { spawn } from 'node:child_process';
-import { createDebugLogger } from '@qwen-code/qwen-code-core';
+import { createDebugLogger } from '@zero-agent/zero-core';
 import type { SlashCommand } from '../commands/types.js';
 import type { RecentSlashCommands } from '../hooks/useSlashCompletion.js';
 

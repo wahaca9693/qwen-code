@@ -1,14 +1,14 @@
 # Model Providers
 
-Qwen Code allows you to configure multiple model providers through the `modelProviders` setting in your `settings.json`. This enables you to switch between different AI models and providers using the `/model` command.
+ZERO Agent allows you to configure multiple model providers through the `modelProviders` setting in your `settings.json`. This enables you to switch between different AI models and providers using the `/model` command.
 
 ## Overview
 
-Use `modelProviders` to declare curated model lists per auth type that the `/model` picker can switch between. Keys must be valid auth types (`openai`, `anthropic`, `gemini`, etc.). Each entry requires an `id` and **must include `envKey`**, with optional `name`, `description`, `baseUrl`, and `generationConfig`. Credentials are never persisted in settings; the runtime reads them from `process.env[envKey]`. Qwen OAuth models remain hard-coded and cannot be overridden.
+Use `modelProviders` to declare curated model lists per auth type that the `/model` picker can switch between. Keys must be valid auth types (`openai`, `anthropic`, `gemini`, etc.). Each entry requires an `id` and **must include `envKey`**, with optional `name`, `description`, `baseUrl`, and `generationConfig`. Credentials are never persisted in settings; the runtime reads them from `process.env[envKey]`. ZERO OAuth models remain hard-coded and cannot be overridden.
 
 > [!note]
 >
-> Only the `/model` command exposes non-default auth types. Anthropic, Gemini, etc., must be defined via `modelProviders`. The `/auth` command lists Qwen OAuth, Alibaba Cloud Coding Plan, and API Key as the built-in authentication options.
+> Only the `/model` command exposes non-default auth types. Anthropic, Gemini, etc., must be defined via `modelProviders`. The `/auth` command lists ZERO OAuth, Alibaba Cloud Coding Plan, and API Key as the built-in authentication options.
 
 > [!note]
 >
@@ -27,14 +27,14 @@ The `modelProviders` object keys must be valid `authType` values. Currently supp
 | `openai`     | OpenAI-compatible APIs (OpenAI, Azure OpenAI, local inference servers like vLLM/Ollama) |
 | `anthropic`  | Anthropic Claude API                                                                    |
 | `gemini`     | Google Gemini API                                                                       |
-| `qwen-oauth` | Qwen OAuth (hard-coded, cannot be overridden in `modelProviders`)                       |
+| `qwen-oauth` | ZERO OAuth (hard-coded, cannot be overridden in `modelProviders`)                       |
 
 > [!warning]
 > If an invalid auth type key is used (e.g., a typo like `"openai-custom"`), the configuration will be **silently skipped** and the models will not appear in the `/model` picker. Always use one of the supported auth type values listed above.
 
 ### SDKs Used for API Requests
 
-Qwen Code uses the following official SDKs to send requests to each provider:
+ZERO Agent uses the following official SDKs to send requests to each provider:
 
 | Auth Type    | SDK Package                                                                                     |
 | ------------ | ----------------------------------------------------------------------------------------------- |
@@ -210,7 +210,7 @@ Most local inference servers (vLLM, Ollama, LM Studio, etc.) provide an OpenAI-c
     "openai": [
       {
         "id": "qwen2.5-7b",
-        "name": "Qwen2.5 7B (Ollama)",
+        "name": "ZERO2.5 7B (Ollama)",
         "envKey": "OLLAMA_API_KEY",
         "baseUrl": "http://localhost:11434/v1",
         "generationConfig": {
@@ -293,11 +293,11 @@ export VLLM_API_KEY="not-needed"
 
 ## Alibaba Cloud Coding Plan
 
-Alibaba Cloud Coding Plan provides a pre-configured set of Qwen models optimized for coding tasks. This feature is available for users with Alibaba Cloud Coding Plan API access and offers a simplified setup experience with automatic model configuration updates.
+Alibaba Cloud Coding Plan provides a pre-configured set of ZERO models optimized for coding tasks. This feature is available for users with Alibaba Cloud Coding Plan API access and offers a simplified setup experience with automatic model configuration updates.
 
 ### Overview
 
-When you authenticate with an Alibaba Cloud Coding Plan API key using the `/auth` command, Qwen Code automatically configures the following models:
+When you authenticate with an Alibaba Cloud Coding Plan API key using the `/auth` command, ZERO Agent automatically configures the following models:
 
 | Model ID               | Name                 | Description                            |
 | ---------------------- | -------------------- | -------------------------------------- |
@@ -310,7 +310,7 @@ When you authenticate with an Alibaba Cloud Coding Plan API key using the `/auth
 1. Obtain an Alibaba Cloud Coding Plan API key:
    - **China**: <https://bailian.console.aliyun.com/?tab=model#/efm/coding_plan>
    - **International**: <https://modelstudio.console.alibabacloud.com/?tab=dashboard#/efm/coding_plan>
-2. Run the `/auth` command in Qwen Code
+2. Run the `/auth` command in ZERO Agent
 3. Select **Alibaba Cloud Coding Plan**
 4. Select your region
 5. Enter your API key when prompted
@@ -345,7 +345,7 @@ When you configure Coding Plan through the `/auth` command, the API key is store
 
 ### Automatic Updates
 
-Coding Plan model configurations are versioned. When Qwen Code detects a newer version of the model template, you will be prompted to update. Accepting the update will:
+Coding Plan model configurations are versioned. When ZERO Agent detects a newer version of the model template, you will be prompted to update. Accepting the update will:
 
 - Replace the existing Coding Plan model configurations with the latest versions
 - Preserve any custom model configurations you've added manually
@@ -364,7 +364,7 @@ If you prefer to manually configure Coding Plan models, you can add them to your
       {
         "id": "qwen3-coder-plus",
         "name": "qwen3-coder-plus",
-        "description": "Qwen3-Coder via Alibaba Cloud Coding Plan",
+        "description": "ZERO3-Coder via Alibaba Cloud Coding Plan",
         "envKey": "YOUR_CUSTOM_ENV_KEY",
         "baseUrl": "https://coding.dashscope.aliyuncs.com/v1"
       }
@@ -396,9 +396,9 @@ The effective auth/model/credential values are chosen per field using the follow
 | CLI arguments              | `--auth-type`                       | `--model`                                       | `--openaiApiKey` (or provider-specific equivalents) | `--openaiBaseUrl` (or provider-specific equivalents) | —                      | —                                 |
 | Environment variables      | —                                   | Provider-specific mapping (e.g. `OPENAI_MODEL`) | Provider-specific mapping (e.g. `OPENAI_API_KEY`)   | Provider-specific mapping (e.g. `OPENAI_BASE_URL`)   | —                      | —                                 |
 | Settings (`settings.json`) | `security.auth.selectedType`        | `model.name`                                    | `security.auth.apiKey`                              | `security.auth.baseUrl`                              | —                      | —                                 |
-| Default / computed         | Falls back to `AuthType.QWEN_OAUTH` | Built-in default (OpenAI ⇒ `qwen3-coder-plus`)  | —                                                   | —                                                    | —                      | `Config.getProxy()` if configured |
+| Default / computed         | Falls back to `AuthType.ZERO_OAUTH` | Built-in default (OpenAI ⇒ `qwen3-coder-plus`)  | —                                                   | —                                                    | —                      | `Config.getProxy()` if configured |
 
-\*When present, CLI auth flags override settings. Otherwise, `security.auth.selectedType` or the implicit default determine the auth type. Qwen OAuth and OpenAI are the only auth types surfaced without extra configuration.
+\*When present, CLI auth flags override settings. Otherwise, `security.auth.selectedType` or the implicit default determine the auth type. ZERO OAuth and OpenAI are the only auth types surfaced without extra configuration.
 
 > [!warning]
 >
@@ -553,7 +553,7 @@ For Anthropic this becomes `thinking.budget_tokens`. For OpenAI/DeepSeek the fie
 
 ## Provider Models vs Runtime Models
 
-Qwen Code distinguishes between two types of model configurations:
+ZERO Agent distinguishes between two types of model configurations:
 
 ### Provider Model
 
@@ -573,11 +573,11 @@ Qwen Code distinguishes between two types of model configurations:
 
 ### RuntimeModelSnapshot lifecycle
 
-When you configure a model without using `modelProviders`, Qwen Code automatically creates a RuntimeModelSnapshot to preserve your configuration:
+When you configure a model without using `modelProviders`, ZERO Agent automatically creates a RuntimeModelSnapshot to preserve your configuration:
 
 ```bash
 # This creates a RuntimeModelSnapshot with ID: $runtime|openai|my-custom-model
-qwen --auth-type openai --model my-custom-model --openaiApiKey $KEY --openaiBaseUrl https://api.example.com/v1
+zero --auth-type openai --model my-custom-model --openaiApiKey $KEY --openaiBaseUrl https://api.example.com/v1
 ```
 
 The snapshot:

@@ -1,13 +1,13 @@
 ---
 name: feat-dev
-description: End-to-end workflow for implementing a non-trivial qwen-code
+description: End-to-end workflow for implementing a non-trivial zero-agent
   feature. Covers requirements investigation, design, E2E test planning,
   baseline dry-run, implementation, verification, code review, and iteration.
 ---
 
 # Feature Development Workflow
 
-Use this workflow when implementing a feature in qwen-code that needs design,
+Use this workflow when implementing a feature in zero-agent that needs design,
 behavioral validation, or coordinated changes across multiple files. Each phase
 produces a concrete artifact. Do not combine phases; the output of each phase
 feeds the next.
@@ -21,10 +21,10 @@ Use `.qwen/` paths for planning artifacts:
 
 ## Phase 1: Investigate
 
-Understand the requested behavior and the current qwen-code implementation.
+Understand the requested behavior and the current zero-agent implementation.
 
 Use a code exploration agent when available. Ask it to inspect the relevant
-qwen-code areas for:
+zero-agent areas for:
 
 - Existing feature definitions: tools, parameters, schemas, commands, UI, or
   config.

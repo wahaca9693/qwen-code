@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -42,7 +42,7 @@ describe('auto-memory storage scaffold', () => {
     });
   });
 
-  it('builds stable auto-memory paths under project .qwen directory', () => {
+  it('builds stable auto-memory paths under project .ZERO directory', () => {
     expect(getAutoMemoryRoot(projectRoot)).toBe(
       path.join(projectRoot, '.qwen', 'memory'),
     );

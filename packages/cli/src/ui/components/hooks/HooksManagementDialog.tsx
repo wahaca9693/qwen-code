@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -18,7 +18,7 @@ import {
   type SessionHookEntry,
   createDebugLogger,
   HOOKS_CONFIG_FIELDS,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type {
   HooksManagementDialogProps,
   HookEventDisplayInfo,

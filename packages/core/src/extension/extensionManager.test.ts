@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -123,10 +123,10 @@ describe('extension tests', () => {
 
   beforeEach(() => {
     tempHomeDir = fs.mkdtempSync(
-      path.join(os.tmpdir(), 'qwen-code-test-home-'),
+      path.join(os.tmpdir(), 'zero-test-home-'),
     );
     tempWorkspaceDir = fs.mkdtempSync(
-      path.join(tempHomeDir, 'qwen-code-test-workspace-'),
+      path.join(tempHomeDir, 'zero-test-workspace-'),
     );
     userExtensionsDir = path.join(tempHomeDir, EXTENSIONS_DIRECTORY_NAME);
     fs.mkdirSync(userExtensionsDir, { recursive: true });

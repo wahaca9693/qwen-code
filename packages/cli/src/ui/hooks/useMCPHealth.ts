@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,7 +19,7 @@ import {
   addMCPStatusChangeListener,
   removeMCPStatusChangeListener,
   getAllMCPServerStatuses,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 
 export interface MCPHealthSnapshot {
   /** Total servers tracked by the registry (configured + discovered). */

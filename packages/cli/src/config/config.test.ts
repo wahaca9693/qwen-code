@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,10 +13,10 @@ import {
   OutputFormat,
   NativeLspService,
   Storage,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { loadCliConfig, parseArguments, type CliArgs } from './config.js';
 import type { Settings } from './settings.js';
-import * as ServerConfig from '@qwen-code/qwen-code-core';
+import * as ServerConfig from '@zero-agent/zero-core';
 import { isWorkspaceTrusted } from './trustedFolders.js';
 
 const mockWriteStderrLine = vi.hoisted(() => vi.fn());
@@ -124,7 +124,7 @@ vi.mock('command-exists', () => ({
   },
 }));
 
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const actualServer = await importOriginal<typeof ServerConfig>();
   const SkillManagerMock = vi.fn();
   SkillManagerMock.prototype.startWatching = vi
@@ -645,7 +645,7 @@ describe('parseArguments', () => {
   });
 
   it('should accept --json-schema with no -p / positional when stdin is piped', async () => {
-    // `echo "..." | qwen --json-schema ...` — input arrives via the
+    // `echo "..." | ZERO --json-schema ...` — input arrives via the
     // pipe, so the prompt-presence check must not block the run.
     process.argv = ['node', 'script.js', '--json-schema', '{"type":"object"}'];
 

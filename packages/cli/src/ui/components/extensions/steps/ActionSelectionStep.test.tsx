@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import { render } from 'ink-testing-library';
 import { describe, it, expect, vi } from 'vitest';
 import { ActionSelectionStep } from './ActionSelectionStep.js';
 import { KeypressProvider } from '../../../contexts/KeypressContext.js';
-import type { Extension } from '@qwen-code/qwen-code-core';
+import type { Extension } from '@zero-agent/zero-core';
 
 const createMockExtension = (name: string, isActive = true): Extension =>
   ({

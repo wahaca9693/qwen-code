@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@
 
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { Storage } from '@qwen-code/qwen-code-core';
+import { Storage } from '@zero-agent/zero-core';
 
 interface TipHistoryEntry {
   totalShown: number;

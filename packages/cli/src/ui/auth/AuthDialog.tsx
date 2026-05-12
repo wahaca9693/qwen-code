@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type React from 'react';
 import { useState, useMemo } from 'react';
-import { AuthType } from '@qwen-code/qwen-code-core';
+import { AuthType } from '@zero-agent/zero-core';
 import { Box, Text } from 'ink';
 import Link from 'ink-link';
 import { theme } from '../semantic-colors.js';
@@ -410,11 +410,11 @@ export function AuthDialog(): React.JSX.Element {
           </Box>
           <Box>
             <Link
-              url="https://qwenlm.github.io/qwen-code-docs/en/users/support/tos-privacy/"
+              url="https://qwenlm.github.io/zero-docs/en/users/support/tos-privacy/"
               fallback={false}
             >
               <Text color={theme.text.secondary} underline>
-                https://qwenlm.github.io/qwen-code-docs/en/users/support/tos-privacy/
+                https://qwenlm.github.io/zero-docs/en/users/support/tos-privacy/
               </Text>
             </Link>
           </Box>

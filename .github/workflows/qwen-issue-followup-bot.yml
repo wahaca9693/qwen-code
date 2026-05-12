@@ -1,4 +1,4 @@
-name: 'Qwen Issue Follow-up Bot'
+name: 'ZERO Issue Follow-up Bot'
 
 # Required for automatic runs:
 # - Repository variable QWEN_ISSUE_FOLLOWUP_BOT_ENABLED=true.
@@ -19,7 +19,7 @@ on:
   workflow_dispatch:
     inputs:
       issue_number:
-        description: 'Optional issue number. Leave empty to let Qwen select scheduled candidates.'
+        description: 'Optional issue number. Leave empty to let ZERO select scheduled candidates.'
         required: false
         type: 'number'
       dry_run:
@@ -53,7 +53,7 @@ jobs:
     timeout-minutes: 15
     if: |-
       ${{
-        github.repository == 'QwenLM/qwen-code' &&
+        github.repository == 'ZEROLM/zero-agent' &&
         (github.event_name == 'workflow_dispatch' || vars.QWEN_ISSUE_FOLLOWUP_BOT_ENABLED == 'true') &&
         (github.event_name != 'issues' || github.event.issue.pull_request == null)
       }}
@@ -291,8 +291,8 @@ jobs:
           echo "scheduled_limit=${SCHEDULED_LIMIT_INPUT}" >> "${GITHUB_OUTPUT}"
           echo "Issue follow-up state: event=${EVENT_NAME} dispatch_dry=${DISPATCH_DRY_RUN} issues_dry=${ISSUE_OPENED_DRY_RUN} schedule_dry=${SCHEDULE_DRY_RUN} resolved_dry_run=${dry_run} scheduled_limit=${SCHEDULED_LIMIT_INPUT}"
 
-      - name: 'Run Qwen issue follow-up'
-        uses: 'QwenLM/qwen-code-action@5fd6818d04d64e87d255ee4d5f77995e32fbf4c2'
+      - name: 'Run ZERO issue follow-up'
+        uses: 'ZEROLM/zero-agent-action@5fd6818d04d64e87d255ee4d5f77995e32fbf4c2'
         env:
           GITHUB_TOKEN: '${{ env.BOT_GITHUB_TOKEN }}'
           GH_TOKEN: '${{ env.BOT_GITHUB_TOKEN }}'
@@ -320,7 +320,7 @@ jobs:
           prompt: |-
             ## Role
 
-            You are the Qwen Code issue follow-up bot. Use `gh` commands to
+            You are the ZERO Agent issue follow-up bot. Use `gh` commands to
             inspect GitHub issues and provide early, conservative community
             follow-up.
 
@@ -361,7 +361,7 @@ jobs:
             - Skip closed issues, pull requests, issues assigned to anyone, and
               issues that already appear to be handled by maintainers.
             - Treat comments from repository collaborators, members, owners, or
-              the Qwen bot itself as existing follow-up. Skip those issues.
+              the ZERO bot itself as existing follow-up. Skip those issues.
             - Skip issues that already have one of these marker comments unless
               this is a manual `workflow_dispatch` run for that exact issue:
               - `<!-- qwen-issue-bot:invalid -->`

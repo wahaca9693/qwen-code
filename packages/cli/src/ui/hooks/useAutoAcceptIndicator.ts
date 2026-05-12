@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import {
   type ApprovalMode,
   APPROVAL_MODES,
   type Config,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { useEffect, useState } from 'react';
 import { useKeypress } from './useKeypress.js';
 import type { HistoryItemWithoutId } from '../types.js';

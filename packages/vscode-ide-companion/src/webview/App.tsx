@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -22,8 +22,8 @@ import {
   shouldSendMessage,
   useMessageSubmit,
 } from './hooks/useMessageSubmit.js';
-import type { PermissionOption, PermissionToolCall } from '@qwen-code/webui';
-import { stripZeroWidthSpaces } from '@qwen-code/webui';
+import type { PermissionOption, PermissionToolCall } from '@zero/webui';
+import { stripZeroWidthSpaces } from '@zero/webui';
 import type { TextMessage } from './hooks/message/useMessageHandling.js';
 import type { ToolCallData } from './components/messages/toolcalls/ToolCall.js';
 import { ToolCall } from './components/messages/toolcalls/ToolCall.js';
@@ -49,7 +49,7 @@ import {
   EmptyState,
   ChatHeader,
   SessionSelector,
-} from '@qwen-code/webui';
+} from '@zero/webui';
 import { InputForm } from './components/layout/InputForm.js';
 import {
   AccountInfoDialog,
@@ -1424,7 +1424,7 @@ export const App: React.FC = () => {
             } else if (msg.role === 'thinking') {
               parts.push(`**Thinking:** ${content}`);
             } else {
-              parts.push(`**Qwen Code:** ${content}`);
+              parts.push(`**ZERO Agent:** ${content}`);
             }
           } else if (
             item.type === 'completed-tool-call' ||
@@ -1477,7 +1477,7 @@ export const App: React.FC = () => {
             <p className="text-muted-foreground text-sm">
               {sessionManagement.isSwitchingSession
                 ? 'Loading conversation...'
-                : 'Preparing Qwen Code...'}
+                : 'Preparing ZERO Agent...'}
             </p>
           </div>
         </div>
@@ -1532,7 +1532,7 @@ export const App: React.FC = () => {
                 className="text-sm"
                 style={{ color: 'var(--app-secondary-foreground)' }}
               >
-                Preparing Qwen Code...
+                Preparing ZERO Agent...
               </span>
             </div>
           ) : (

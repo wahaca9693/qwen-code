@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,9 +17,9 @@ import {
 
 const mockIsBinary = vi.hoisted(() => vi.fn());
 const mockShellExecutionService = vi.hoisted(() => vi.fn());
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const original =
-    await importOriginal<typeof import('@qwen-code/qwen-code-core')>();
+    await importOriginal<typeof import('@zero-agent/zero-core')>();
   return {
     ...original,
     ShellExecutionService: { execute: mockShellExecutionService },
@@ -40,7 +40,7 @@ import {
   type GeminiClient,
   type ShellExecutionResult,
   type ShellOutputEvent,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -1108,7 +1108,7 @@ export class ExtensionDisableEvent implements BaseTelemetryEvent {
 }
 
 export class PromptSuggestionEvent implements BaseTelemetryEvent {
-  'event.name': 'qwen-code.prompt_suggestion';
+  'event.name': 'zero.prompt_suggestion';
   'event.timestamp': string;
   outcome: 'accepted' | 'ignored' | 'suppressed';
   prompt_id?: string;
@@ -1133,7 +1133,7 @@ export class PromptSuggestionEvent implements BaseTelemetryEvent {
     was_focused_when_shown?: boolean;
     reason?: string;
   }) {
-    this['event.name'] = 'qwen-code.prompt_suggestion';
+    this['event.name'] = 'zero.prompt_suggestion';
     this['event.timestamp'] = new Date().toISOString();
     this.outcome = params.outcome;
     this.prompt_id = params.prompt_id ?? 'user_intent';
@@ -1149,7 +1149,7 @@ export class PromptSuggestionEvent implements BaseTelemetryEvent {
 }
 
 export class SpeculationEvent implements BaseTelemetryEvent {
-  'event.name': 'qwen-code.speculation';
+  'event.name': 'zero.speculation';
   'event.timestamp': string;
   outcome: 'accepted' | 'aborted' | 'failed';
   turns_used: number;
@@ -1168,7 +1168,7 @@ export class SpeculationEvent implements BaseTelemetryEvent {
     boundary_type?: string;
     had_pipelined_suggestion: boolean;
   }) {
-    this['event.name'] = 'qwen-code.speculation';
+    this['event.name'] = 'zero.speculation';
     this['event.timestamp'] = new Date().toISOString();
     this.outcome = params.outcome;
     this.turns_used = params.turns_used;
@@ -1185,7 +1185,7 @@ export class SpeculationEvent implements BaseTelemetryEvent {
 // ---------------------------------------------------------------------------
 
 export class MemoryExtractEvent implements BaseTelemetryEvent {
-  'event.name': 'qwen-code.memory.extract';
+  'event.name': 'zero.memory.extract';
   'event.timestamp': string;
   /** 'auto' = triggered by session turn; 'manual' = user-initiated */
   trigger: 'auto' | 'manual';
@@ -1203,7 +1203,7 @@ export class MemoryExtractEvent implements BaseTelemetryEvent {
     touched_topics: string[];
     duration_ms: number;
   }) {
-    this['event.name'] = 'qwen-code.memory.extract';
+    this['event.name'] = 'zero.memory.extract';
     this['event.timestamp'] = new Date().toISOString();
     this.trigger = params.trigger;
     this.status = params.status;
@@ -1215,7 +1215,7 @@ export class MemoryExtractEvent implements BaseTelemetryEvent {
 }
 
 export class MemoryDreamEvent implements BaseTelemetryEvent {
-  'event.name': 'qwen-code.memory.dream';
+  'event.name': 'zero.memory.dream';
   'event.timestamp': string;
   /** 'auto' = scheduler-triggered; 'manual' = user ran /dream */
   trigger: 'auto' | 'manual';
@@ -1232,7 +1232,7 @@ export class MemoryDreamEvent implements BaseTelemetryEvent {
     touched_topics: string[];
     duration_ms: number;
   }) {
-    this['event.name'] = 'qwen-code.memory.dream';
+    this['event.name'] = 'zero.memory.dream';
     this['event.timestamp'] = new Date().toISOString();
     this.trigger = params.trigger;
     this.status = params.status;
@@ -1244,7 +1244,7 @@ export class MemoryDreamEvent implements BaseTelemetryEvent {
 }
 
 export class MemoryRecallEvent implements BaseTelemetryEvent {
-  'event.name': 'qwen-code.memory.recall';
+  'event.name': 'zero.memory.recall';
   'event.timestamp': string;
   query_length: number;
   docs_scanned: number;
@@ -1259,7 +1259,7 @@ export class MemoryRecallEvent implements BaseTelemetryEvent {
     strategy: 'none' | 'heuristic' | 'model';
     duration_ms: number;
   }) {
-    this['event.name'] = 'qwen-code.memory.recall';
+    this['event.name'] = 'zero.memory.recall';
     this['event.timestamp'] = new Date().toISOString();
     this.query_length = params.query_length;
     this.docs_scanned = params.docs_scanned;

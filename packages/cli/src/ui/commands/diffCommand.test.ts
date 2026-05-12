@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,12 +9,12 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 import { computeDiffColumnWidths, diffCommand } from './diffCommand.js';
 import { type CommandContext } from './types.js';
 import { createMockCommandContext } from '../../test-utils/mockCommandContext.js';
-import { fetchGitDiff, type GitDiffResult } from '@qwen-code/qwen-code-core';
+import { fetchGitDiff, type GitDiffResult } from '@zero-agent/zero-core';
 
-vi.mock('@qwen-code/qwen-code-core', async () => {
+vi.mock('@zero-agent/zero-core', async () => {
   const actual = await vi.importActual<
-    typeof import('@qwen-code/qwen-code-core')
-  >('@qwen-code/qwen-code-core');
+    typeof import('@zero-agent/zero-core')
+  >('@zero-agent/zero-core');
   return {
     ...actual,
     fetchGitDiff: vi.fn(),

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,7 @@
 import { act, createElement, type FormEvent, type RefObject } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZERO_WIDTH_SPACE, stripZeroWidthSpaces } from '@qwen-code/webui';
+import { ZERO_WIDTH_SPACE, stripZeroWidthSpaces } from '@zero/webui';
 import { shouldSendMessage, useMessageSubmit } from './useMessageSubmit.js';
 
 type UseMessageSubmitProps = Parameters<typeof useMessageSubmit>[0];

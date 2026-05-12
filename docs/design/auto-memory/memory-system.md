@@ -1,6 +1,6 @@
 # Memory 记忆管理系统
 
-> 本文介绍 Qwen Code 中 **Managed Auto-Memory**（托管自动记忆）的记忆管理机制、触发时机和实现细节。
+> 本文介绍 ZERO Agent 中 **Managed Auto-Memory**（托管自动记忆）的记忆管理机制、触发时机和实现细节。
 
 ---
 
@@ -56,8 +56,8 @@ Managed Auto-Memory 是一套在 AI 会话过程中**自动**积累、整合和�
 
 > **环境变量覆盖**：
 >
-> - `QWEN_CODE_MEMORY_BASE_DIR`：替换全局基础目录
-> - `QWEN_CODE_MEMORY_LOCAL=1`：改用项目内路径 `.qwen/memory/`
+> - `ZERO_CODE_MEMORY_BASE_DIR`：替换全局基础目录
+> - `ZERO_CODE_MEMORY_LOCAL=1`：改用项目内路径 `.qwen/memory/`
 
 ### 关键文件说明
 

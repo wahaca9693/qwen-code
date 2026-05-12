@@ -1,6 +1,6 @@
-# Installation Guide for Qwen Code with Source Tracking
+# Installation Guide for ZERO Agent with Source Tracking
 
-This guide describes the source-tracking installation scripts for Qwen Code.
+This guide describes the source-tracking installation scripts for ZERO Agent.
 The scripts prefer standalone release archives and can fall back to npm when a
 standalone archive is not available.
 
@@ -29,17 +29,17 @@ are only required when the installer falls back to npm or when
 
 GitHub releases publish these standalone archives:
 
-- `qwen-code-darwin-arm64.tar.gz`
-- `qwen-code-darwin-x64.tar.gz`
-- `qwen-code-linux-arm64.tar.gz`
-- `qwen-code-linux-x64.tar.gz`
-- `qwen-code-win-x64.zip`
+- `zero-agent-darwin-arm64.tar.gz`
+- `zero-agent-darwin-x64.tar.gz`
+- `zero-agent-linux-arm64.tar.gz`
+- `zero-agent-linux-x64.tar.gz`
+- `zero-agent-win-x64.zip`
 - `SHA256SUMS`
 
 Archive layout:
 
 ```text
-qwen-code/
+zero-agent/
   bin/qwen
   bin/qwen.cmd
   lib/cli.js
@@ -73,9 +73,9 @@ install-qwen-with-source.bat --method npm
 
 ## Optional Native Modules
 
-The standalone archives bundle Qwen Code and a private Node.js runtime. They do
+The standalone archives bundle ZERO Agent and a private Node.js runtime. They do
 not currently install npm optional native modules such as `node-pty` and
-`@teddyzhu/clipboard`. Qwen Code is designed to degrade when these optional
+`@teddyzhu/clipboard`. ZERO Agent is designed to degrade when these optional
 modules are absent, but terminal pty behavior and clipboard image support may
 not be identical to an npm installation.
 
@@ -99,16 +99,16 @@ bash install-qwen-with-source.sh --mirror aliyun
 
 # Install an offline archive
 # SHA256SUMS must be in the same directory.
-bash install-qwen-with-source.sh --archive ./qwen-code-linux-x64.tar.gz
+bash install-qwen-with-source.sh --archive ./zero-agent-linux-x64.tar.gz
 ```
 
 Standalone installs to:
 
-- Runtime: `~/.local/lib/qwen-code`
+- Runtime: `~/.local/lib/zero-agent`
 - Shim: `~/.local/bin/qwen`
 
-Override with `QWEN_INSTALL_ROOT`, `QWEN_INSTALL_LIB_PARENT`,
-`QWEN_INSTALL_LIB_DIR`, or `QWEN_INSTALL_BIN_DIR` when needed.
+Override with `ZERO_INSTALL_ROOT`, `ZERO_INSTALL_LIB_PARENT`,
+`ZERO_INSTALL_LIB_DIR`, or `ZERO_INSTALL_BIN_DIR` when needed.
 
 ## Windows Usage
 
@@ -127,16 +127,16 @@ install-qwen-with-source.bat --mirror aliyun
 
 REM Install an offline archive
 REM SHA256SUMS must be in the same directory.
-install-qwen-with-source.bat --archive qwen-code-win-x64.zip
+install-qwen-with-source.bat --archive zero-agent-win-x64.zip
 ```
 
 Standalone installs to:
 
-- Runtime: `%LOCALAPPDATA%\qwen-code\qwen-code`
-- Shim: `%LOCALAPPDATA%\qwen-code\bin\qwen.cmd`
+- Runtime: `%LOCALAPPDATA%\zero-agent\zero-agent`
+- Shim: `%LOCALAPPDATA%\zero-agent\bin\qwen.cmd`
 
-Override with `QWEN_INSTALL_ROOT`, `QWEN_INSTALL_LIB_DIR`, or
-`QWEN_INSTALL_BIN_DIR` when needed.
+Override with `ZERO_INSTALL_ROOT`, `ZERO_INSTALL_LIB_DIR`, or
+`ZERO_INSTALL_BIN_DIR` when needed.
 
 Restart the terminal if `qwen` is not immediately available on PATH.
 
@@ -154,15 +154,15 @@ Options:
 
 Environment variables:
 
-- `QWEN_INSTALL_METHOD`
-- `QWEN_INSTALL_MIRROR`
-- `QWEN_INSTALL_BASE_URL`
-- `QWEN_INSTALL_ARCHIVE`
-- `QWEN_INSTALL_VERSION`
-- `QWEN_NPM_REGISTRY`
+- `ZERO_INSTALL_METHOD`
+- `ZERO_INSTALL_MIRROR`
+- `ZERO_INSTALL_BASE_URL`
+- `ZERO_INSTALL_ARCHIVE`
+- `ZERO_INSTALL_VERSION`
+- `ZERO_NPM_REGISTRY`
 
 Use `--base-url` for private mirrors. The URL must contain
-`qwen-code-<target>` archives and `SHA256SUMS` in the same directory. Custom
+`zero-agent-<target>` archives and `SHA256SUMS` in the same directory. Custom
 base URLs must use `https://`.
 
 For Aliyun OSS/CDN, release publishing must upload byte-identical artifacts to
@@ -202,13 +202,13 @@ unreadable source files are ignored.
 If source tracking is not needed and Node.js 20 or newer is already available:
 
 ```bash
-npm install -g @qwen-code/qwen-code@latest
+npm install -g @zero-agent/zero-agent@latest
 ```
 
-Homebrew users can also install Qwen Code with:
+Homebrew users can also install ZERO Agent with:
 
 ```bash
-brew install qwen-code
+brew install zero-agent
 ```
 
 ## Troubleshooting
@@ -234,10 +234,10 @@ fails with a permission error, fix the npm global install location or use a
 user-owned Node.js installation, then rerun:
 
 ```bash
-npm install -g @qwen-code/qwen-code@latest --registry https://registry.npmmirror.com
+npm install -g @zero-agent/zero-agent@latest --registry https://registry.npmmirror.com
 ```
 
-### qwen Is Not on PATH After Installation
+### zero Is Not on PATH After Installation
 
 Restart the terminal first. For standalone installs, add the shim directory:
 
@@ -255,5 +255,5 @@ export PATH="$(npm prefix -g)/bin:$PATH"
 On Windows standalone installs, add this directory to PATH:
 
 ```bat
-%LOCALAPPDATA%\qwen-code\bin
+%LOCALAPPDATA%\zero-agent\bin
 ```

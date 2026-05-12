@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import type { Config } from '@qwen-code/qwen-code-core';
-import { createDebugLogger, runSideQuery } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
+import { createDebugLogger, runSideQuery } from '@zero-agent/zero-core';
 import type { TurnContent, MessageRewriteConfig } from './types.js';
 
 const debugLogger = createDebugLogger('MESSAGE_REWRITER');

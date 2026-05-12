@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { Extension, Config } from '@qwen-code/qwen-code-core';
+import type { Extension, Config } from '@zero-agent/zero-core';
 
 /**
  * Management steps for the extensions manager dialog.

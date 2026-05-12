@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,7 +16,7 @@ import {
   type Config,
   createDebugLogger,
   writeRuntimeStatus,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { render } from 'ink';
 import dns from 'node:dns';
 import os from 'node:os';
@@ -575,7 +575,7 @@ export async function main() {
   }
 
   // We are now past the logic handling potentially launching a child process
-  // to run Qwen Code. It is now safe to perform expensive initialization that
+  // to run ZERO Agent. It is now safe to perform expensive initialization that
   // may have side effects.
   profileCheckpoint('after_sandbox_check');
 
@@ -716,7 +716,7 @@ export async function main() {
       // runNonInteractive's main/drain loops. In TUI mode the same call
       // would just emit "Structured output accepted." and keep the chat
       // alive, which silently strands the user's run. Parse-time gating
-      // can't catch this case (`qwen --json-schema '...'` on a TTY with
+      // can't catch this case (`ZERO --json-schema '...'` on a TTY with
       // no prompt routes to interactive only after stdin TTY detection),
       // so reject here before the UI launches.
       if (config.getJsonSchema?.()) {

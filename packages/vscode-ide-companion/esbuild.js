@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -84,7 +84,7 @@ const reactDedupPlugin = {
 const publicCliExportPlugin = {
   name: 'public-cli-export',
   setup(build) {
-    build.onResolve({ filter: /^@qwen-code\/qwen-code\/export$/ }, () => ({
+    build.onResolve({ filter: /^@zero\/zero\/export$/ }, () => ({
       path: resolve(repoRoot, 'packages/cli/src/export/index.ts'),
     }));
   },
@@ -215,16 +215,16 @@ async function main() {
     sourcesContent: false,
     platform: 'browser',
     outfile: 'dist/webview.js',
-    // @qwen-code/qwen-code-core is a peer dependency of @qwen-code/webui.
-    // Since @qwen-code/webui marks it as external in its own Vite build, the
+    // @zero-agent/zero-core is a peer dependency of @zero/webui.
+    // Since @zero/webui marks it as external in its own Vite build, the
     // browser bundle must also mark it external to avoid bundling Node.js-only
     // modules (undici, @grpc/grpc-js, fs, stream, etc.) into the webview.
     // The wildcard ensures deep sub-path imports (e.g.
-    // '@qwen-code/qwen-code-core/src/core/tokenLimits.js') are also excluded;
+    // '@zero-agent/zero-core/src/core/tokenLimits.js') are also excluded;
     // without it esbuild only matches the bare package name and attempts to
     // bundle the sub-path, which triggers "Dynamic require is not supported"
     // at runtime in the browser.
-    external: ['@qwen-code/qwen-code-core', '@qwen-code/qwen-code-core/*'],
+    external: ['@zero-agent/zero-core', '@zero-agent/zero-core/*'],
     logLevel: 'silent',
     plugins: [reactDedupPlugin, cssInjectPlugin, esbuildProblemMatcherPlugin],
     jsx: 'automatic', // Use new JSX transform (React 17+)

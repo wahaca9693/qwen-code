@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,9 +11,9 @@ import {
   Config,
   FileDiscoveryService,
   ExtensionManager,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { isWorkspaceTrusted } from '../../config/trustedFolders.js';
-import type { MCPServerConfig } from '@qwen-code/qwen-code-core';
+import type { MCPServerConfig } from '@zero-agent/zero-core';
 
 async function getMcpServersFromConfig(
   extensionManager?: ExtensionManager,
@@ -151,7 +151,7 @@ export const reconnectCommand: CommandModule = {
   describe: 'Reconnect MCP server(s)',
   builder: (yargs) =>
     yargs
-      .usage('Usage: qwen mcp reconnect [options] [server-name]')
+      .usage('Usage: ZERO mcp reconnect [options] [server-name]')
       .positional('server-name', {
         describe: 'Name of the server to reconnect',
         type: 'string',

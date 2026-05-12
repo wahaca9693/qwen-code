@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@
  * - Project-level: `.qwen/skills/`
  * - User-level: `~/.qwen/skills/`
  * - Extension-level: provided by installed extensions
- * - Bundled: built-in skills shipped with qwen-code
+ * - Bundled: built-in skills shipped with zero
  */
 
 // Core types and interfaces

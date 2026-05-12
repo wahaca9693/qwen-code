@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,11 +10,11 @@ import { activate } from './extension.js';
 import {
   IDE_DEFINITIONS,
   detectIdeFromEnv,
-} from '@qwen-code/qwen-code-core/src/ide/detect-ide.js';
+} from '@zero-agent/zero-core/src/ide/detect-ide.js';
 
-vi.mock('@qwen-code/qwen-code-core/src/ide/detect-ide.js', async () => {
+vi.mock('@zero-agent/zero-core/src/ide/detect-ide.js', async () => {
   const actual = await vi.importActual(
-    '@qwen-code/qwen-code-core/src/ide/detect-ide.js',
+    '@zero-agent/zero-core/src/ide/detect-ide.js',
   );
   return {
     ...actual,
@@ -120,7 +120,7 @@ describe('activate', () => {
     } as vscode.Extension<unknown>);
     await activate(context);
     expect(showInformationMessageMock).toHaveBeenCalledWith(
-      'Qwen Code Companion extension successfully installed.',
+      'ZERO Agent Companion extension successfully installed.',
     );
   });
 
@@ -150,21 +150,21 @@ describe('activate', () => {
     const viewIds = registerCalls.map((call) => call[0]);
 
     // Only sidebar and secondary are registered; panel view was removed
-    expect(viewIds).toContain('qwen-code.chatView.sidebar');
-    expect(viewIds).toContain('qwen-code.chatView.secondary');
+    expect(viewIds).toContain('zero.chatView.sidebar');
+    expect(viewIds).toContain('zero.chatView.secondary');
   });
 
-  it('should launch the Qwen Code when the user clicks the button', async () => {
+  it('should launch the ZERO Agent when the user clicks the button', async () => {
     const showInformationMessageMock = vi
       .mocked(vscode.window.showInformationMessage)
-      .mockResolvedValue('Run Qwen Code' as never);
+      .mockResolvedValue('Run ZERO Agent' as never);
     vi.mocked(context.globalState.get).mockReturnValue(undefined);
     vi.mocked(vscode.extensions.getExtension).mockReturnValue({
       packageJSON: { version: '1.1.0' },
     } as vscode.Extension<unknown>);
     await activate(context);
     expect(showInformationMessageMock).toHaveBeenCalledWith(
-      'Qwen Code Companion extension successfully installed.',
+      'ZERO Agent Companion extension successfully installed.',
     );
   });
 
@@ -197,7 +197,7 @@ describe('activate', () => {
       await activate(context);
 
       expect(showInformationMessageMock).toHaveBeenCalledWith(
-        'A new version (1.2.0) of the Qwen Code Companion extension is available.',
+        'A new version (1.2.0) of the ZERO Agent Companion extension is available.',
         'Update to latest version',
       );
     });
@@ -296,7 +296,7 @@ describe('activate', () => {
 
       expect(executeCommandMock).toHaveBeenCalledWith(
         'workbench.extensions.installExtension',
-        'qwenlm.qwen-code-vscode-ide-companion',
+        'qwenlm.zero-vscode-ide-companion',
       );
     });
 

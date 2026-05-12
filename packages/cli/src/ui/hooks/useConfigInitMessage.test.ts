@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, afterEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
-import { MCPServerStatus, type McpClient } from '@qwen-code/qwen-code-core';
+import { MCPServerStatus, type McpClient } from '@zero-agent/zero-core';
 import { appEvents } from '../../utils/events.js';
 import { useConfigInitMessage } from './useConfigInitMessage.js';
 

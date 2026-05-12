@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,7 +23,7 @@ import type {
   EditorType,
   GeminiClient,
   AnyToolInvocation,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import {
   ApprovalMode,
   AuthType,
@@ -31,7 +31,7 @@ import {
   SendMessageType,
   ToolErrorType,
   ToolConfirmationOutcome,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type { Part, PartListUnion } from '@google/genai';
 import type { UseHistoryManagerReturn } from './useHistoryManager.js';
 import type { HistoryItem, SlashCommandProcessorResult } from '../types.js';
@@ -78,7 +78,7 @@ const mockParseAndFormatApiError = vi.hoisted(() =>
 );
 const mockLogApiCancel = vi.hoisted(() => vi.fn());
 
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const actualCoreModule = (await importOriginal()) as any;
   return {
     ...actualCoreModule,

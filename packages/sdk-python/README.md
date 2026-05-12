@@ -1,18 +1,18 @@
-# qwen-code-sdk
+# zero-agent-sdk
 
-Experimental Python SDK for programmatic access to Qwen Code through the
+Experimental Python SDK for programmatic access to ZERO Agent through the
 `stream-json` protocol.
 
 ## Installation
 
 ```bash
-pip install qwen-code-sdk
+pip install zero-agent-sdk
 ```
 
 For preview releases, enable pre-release resolution:
 
 ```bash
-pip install --pre qwen-code-sdk
+pip install --pre zero-agent-sdk
 ```
 
 ## Requirements
@@ -26,7 +26,7 @@ You can also point the SDK at an explicit CLI binary or script with
 Before using the SDK, verify that the CLI works in the same environment:
 
 ```bash
-qwen --version
+zero --version
 ```
 
 ## Quick Start
@@ -412,7 +412,7 @@ try:
 except ValidationError as exc:
     print(f"Invalid SDK options: {exc}")
 except ProcessExitError as exc:
-    print(f"qwen exited with {exc.exit_code}: {exc}")
+    print(f"zero exited with {exc.exit_code}: {exc}")
 ```
 
 ## Current Scope

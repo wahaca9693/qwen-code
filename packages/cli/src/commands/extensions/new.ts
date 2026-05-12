@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -70,7 +70,7 @@ async function handleNew(args: NewArgs) {
       writeStdoutLine(`Successfully created new extension at ${args.path}.`);
     }
     writeStdoutLine(
-      `You can install this using "qwen extensions link ${args.path}" to test it out.`,
+      `You can install this using "ZERO extensions link ${args.path}" to test it out.`,
     );
   } catch (error) {
     writeStderrLine(getErrorMessage(error));

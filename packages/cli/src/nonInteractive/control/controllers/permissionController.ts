@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,11 +19,11 @@ import type {
   ToolExecuteConfirmationDetails,
   ToolMcpConfirmationDetails,
   ApprovalMode,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import {
   InputFormat,
   ToolConfirmationOutcome,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import type {
   CLIControlPermissionRequest,
   CLIControlSetPermissionModeRequest,

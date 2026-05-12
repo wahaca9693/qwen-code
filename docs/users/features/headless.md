@@ -1,12 +1,12 @@
 # Headless Mode
 
-Headless mode allows you to run Qwen Code programmatically from command line
+Headless mode allows you to run ZERO Agent programmatically from command line
 scripts and automation tools without any interactive UI. This is ideal for
 scripting, automation, CI/CD pipelines, and building AI-powered tools.
 
 ## Overview
 
-The headless mode provides a headless interface to Qwen Code that:
+The headless mode provides a headless interface to ZERO Agent that:
 
 - Accepts prompts via command line arguments or stdin
 - Returns structured output (text or JSON)
@@ -22,12 +22,12 @@ The headless mode provides a headless interface to Qwen Code that:
 Use the `--prompt` (or `-p`) flag to run in headless mode:
 
 ```bash
-qwen --prompt "What is machine learning?"
+zero --prompt "What is machine learning?"
 ```
 
 ### Stdin Input
 
-Pipe input to Qwen Code from your terminal:
+Pipe input to ZERO Agent from your terminal:
 
 ```bash
 echo "Explain this code" | qwen
@@ -35,10 +35,10 @@ echo "Explain this code" | qwen
 
 ### Combining with File Input
 
-Read from files and process with Qwen Code:
+Read from files and process with ZERO Agent:
 
 ```bash
-cat README.md | qwen --prompt "Summarize this documentation"
+cat README.md | zero --prompt "Summarize this documentation"
 ```
 
 ### Resume Previous Sessions (Headless)
@@ -47,10 +47,10 @@ Reuse conversation context from the current project in headless scripts:
 
 ```bash
 # Continue the most recent session for this project and run a new prompt
-qwen --continue -p "Run the tests again and summarize failures"
+zero --continue -p "Run the tests again and summarize failures"
 
 # Resume a specific session ID directly (no UI)
-qwen --resume 123e4567-e89b-12d3-a456-426614174000 -p "Apply the follow-up refactor"
+zero --resume 123e4567-e89b-12d3-a456-426614174000 -p "Apply the follow-up refactor"
 ```
 
 > [!note]
@@ -64,10 +64,10 @@ You can change the main session system prompt for a single CLI run without editi
 
 ### Override the Built-in System Prompt
 
-Use `--system-prompt` to replace Qwen Code's built-in main-session prompt for the current run:
+Use `--system-prompt` to replace ZERO Agent's built-in main-session prompt for the current run:
 
 ```bash
-qwen -p "Review this patch" --system-prompt "You are a terse release reviewer. Report only blocking issues."
+zero -p "Review this patch" --system-prompt "You are a terse release reviewer. Report only blocking issues."
 ```
 
 ### Append Extra Instructions
@@ -75,13 +75,13 @@ qwen -p "Review this patch" --system-prompt "You are a terse release reviewer. R
 Use `--append-system-prompt` to keep the built-in prompt and add extra instructions for this run:
 
 ```bash
-qwen -p "Review this patch" --append-system-prompt "Be terse and focus on concrete findings."
+zero -p "Review this patch" --append-system-prompt "Be terse and focus on concrete findings."
 ```
 
 You can combine both flags when you want a custom base prompt plus an extra run-specific instruction:
 
 ```bash
-qwen -p "Summarize this repository" \
+zero -p "Summarize this repository" \
   --system-prompt "You are a migration planner." \
   --append-system-prompt "Return exactly three bullets."
 ```
@@ -94,14 +94,14 @@ qwen -p "Summarize this repository" \
 
 ## Output Formats
 
-Qwen Code supports multiple output formats for different use cases:
+ZERO Agent supports multiple output formats for different use cases:
 
 ### Text Output (Default)
 
 Standard human-readable output:
 
 ```bash
-qwen -p "What is the capital of France?"
+zero -p "What is the capital of France?"
 ```
 
 Response format:
@@ -119,7 +119,7 @@ The JSON output is an array of message objects. The output includes multiple mes
 #### Example Usage
 
 ```bash
-qwen -p "What is the capital of France?" --output-format json
+zero -p "What is the capital of France?" --output-format json
 ```
 
 Output (at end of execution):
@@ -171,7 +171,7 @@ Output (at end of execution):
 Stream-JSON format emits JSON messages immediately as they occur during execution, enabling real-time monitoring. This format uses line-delimited JSON where each message is a complete JSON object on a single line.
 
 ```bash
-qwen -p "Explain TypeScript" --output-format stream-json
+zero -p "Explain TypeScript" --output-format stream-json
 ```
 
 Output (streaming as events occur):
@@ -185,12 +185,12 @@ Output (streaming as events occur):
 When combined with `--include-partial-messages`, additional stream events are emitted in real-time (message_start, content_block_delta, etc.) for real-time UI updates.
 
 ```bash
-qwen -p "Write a Python script" --output-format stream-json --include-partial-messages
+zero -p "Write a Python script" --output-format stream-json --include-partial-messages
 ```
 
 ### Input Format
 
-The `--input-format` parameter controls how Qwen Code consumes input from standard input:
+The `--input-format` parameter controls how ZERO Agent consumes input from standard input:
 
 - **`text`** (default): Standard text input from stdin or command-line arguments
 - **`stream-json`**: JSON message protocol via stdin for bidirectional communication
@@ -203,20 +203,20 @@ Save output to files or pipe to other commands:
 
 ```bash
 # Save to file
-qwen -p "Explain Docker" > docker-explanation.txt
-qwen -p "Explain Docker" --output-format json > docker-explanation.json
+zero -p "Explain Docker" > docker-explanation.txt
+zero -p "Explain Docker" --output-format json > docker-explanation.json
 
 # Append to file
-qwen -p "Add more details" >> docker-explanation.txt
+zero -p "Add more details" >> docker-explanation.txt
 
 # Pipe to other tools
-qwen -p "What is Kubernetes?" --output-format json | jq '.response'
-qwen -p "Explain microservices" | wc -w
-qwen -p "List programming languages" | grep -i "python"
+zero -p "What is Kubernetes?" --output-format json | jq '.response'
+zero -p "Explain microservices" | wc -w
+zero -p "List programming languages" | grep -i "python"
 
 # Stream-JSON output for real-time processing
-qwen -p "Explain Docker" --output-format stream-json | jq '.type'
-qwen -p "Write code" --output-format stream-json --include-partial-messages | jq '.event.type'
+zero -p "Explain Docker" --output-format stream-json | jq '.type'
+zero -p "Write code" --output-format stream-json --include-partial-messages | jq '.event.type'
 ```
 
 ## Configuration Options
@@ -225,19 +225,19 @@ Key command-line options for headless usage:
 
 | Option                       | Description                                                              | Example                                                                  |
 | ---------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `--prompt`, `-p`             | Run in headless mode                                                     | `qwen -p "query"`                                                        |
-| `--output-format`, `-o`      | Specify output format (text, json, stream-json)                          | `qwen -p "query" --output-format json`                                   |
-| `--input-format`             | Specify input format (text, stream-json)                                 | `qwen --input-format text --output-format stream-json`                   |
-| `--include-partial-messages` | Include partial messages in stream-json output                           | `qwen -p "query" --output-format stream-json --include-partial-messages` |
-| `--system-prompt`            | Override the main session system prompt for this run                     | `qwen -p "query" --system-prompt "You are a terse reviewer."`            |
-| `--append-system-prompt`     | Append extra instructions to the main session system prompt for this run | `qwen -p "query" --append-system-prompt "Focus on concrete findings."`   |
-| `--debug`, `-d`              | Enable debug mode                                                        | `qwen -p "query" --debug`                                                |
-| `--all-files`, `-a`          | Include all files in context                                             | `qwen -p "query" --all-files`                                            |
-| `--include-directories`      | Include additional directories                                           | `qwen -p "query" --include-directories src,docs`                         |
-| `--yolo`, `-y`               | Auto-approve all actions                                                 | `qwen -p "query" --yolo`                                                 |
-| `--approval-mode`            | Set approval mode                                                        | `qwen -p "query" --approval-mode auto_edit`                              |
-| `--continue`                 | Resume the most recent session for this project                          | `qwen --continue -p "Pick up where we left off"`                         |
-| `--resume [sessionId]`       | Resume a specific session (or choose interactively)                      | `qwen --resume 123e... -p "Finish the refactor"`                         |
+| `--prompt`, `-p`             | Run in headless mode                                                     | `zero -p "query"`                                                        |
+| `--output-format`, `-o`      | Specify output format (text, json, stream-json)                          | `zero -p "query" --output-format json`                                   |
+| `--input-format`             | Specify input format (text, stream-json)                                 | `zero --input-format text --output-format stream-json`                   |
+| `--include-partial-messages` | Include partial messages in stream-json output                           | `zero -p "query" --output-format stream-json --include-partial-messages` |
+| `--system-prompt`            | Override the main session system prompt for this run                     | `zero -p "query" --system-prompt "You are a terse reviewer."`            |
+| `--append-system-prompt`     | Append extra instructions to the main session system prompt for this run | `zero -p "query" --append-system-prompt "Focus on concrete findings."`   |
+| `--debug`, `-d`              | Enable debug mode                                                        | `zero -p "query" --debug`                                                |
+| `--all-files`, `-a`          | Include all files in context                                             | `zero -p "query" --all-files`                                            |
+| `--include-directories`      | Include additional directories                                           | `zero -p "query" --include-directories src,docs`                         |
+| `--yolo`, `-y`               | Auto-approve all actions                                                 | `zero -p "query" --yolo`                                                 |
+| `--approval-mode`            | Set approval mode                                                        | `zero -p "query" --approval-mode auto_edit`                              |
+| `--continue`                 | Resume the most recent session for this project                          | `zero --continue -p "Pick up where we left off"`                         |
+| `--resume [sessionId]`       | Resume a specific session (or choose interactively)                      | `zero --resume 123e... -p "Finish the refactor"`                         |
 
 For complete details on all available configuration options, settings files, and environment variables, see the [Configuration Guide](../configuration/settings).
 
@@ -246,20 +246,20 @@ For complete details on all available configuration options, settings files, and
 ### Code review
 
 ```bash
-cat src/auth.py | qwen -p "Review this authentication code for security issues" > security-review.txt
+cat src/auth.py | zero -p "Review this authentication code for security issues" > security-review.txt
 ```
 
 ### Generate commit messages
 
 ```bash
-result=$(git diff --cached | qwen -p "Write a concise commit message for these changes" --output-format json)
+result=$(git diff --cached | zero -p "Write a concise commit message for these changes" --output-format json)
 echo "$result" | jq -r '.response'
 ```
 
 ### API documentation
 
 ```bash
-result=$(cat api/routes.js | qwen -p "Generate OpenAPI spec for these routes" --output-format json)
+result=$(cat api/routes.js | zero -p "Generate OpenAPI spec for these routes" --output-format json)
 echo "$result" | jq -r '.response' > openapi.json
 ```
 
@@ -268,7 +268,7 @@ echo "$result" | jq -r '.response' > openapi.json
 ```bash
 for file in src/*.py; do
     echo "Analyzing $file..."
-    result=$(cat "$file" | qwen -p "Find potential bugs and suggest improvements" --output-format json)
+    result=$(cat "$file" | zero -p "Find potential bugs and suggest improvements" --output-format json)
     echo "$result" | jq -r '.response' > "reports/$(basename "$file").analysis"
     echo "Completed analysis for $(basename "$file")" >> reports/progress.log
 done
@@ -277,20 +277,20 @@ done
 ### PR code review
 
 ```bash
-result=$(git diff origin/main...HEAD | qwen -p "Review these changes for bugs, security issues, and code quality" --output-format json)
+result=$(git diff origin/main...HEAD | zero -p "Review these changes for bugs, security issues, and code quality" --output-format json)
 echo "$result" | jq -r '.response' > pr-review.json
 ```
 
 ### Log analysis
 
 ```bash
-grep "ERROR" /var/log/app.log | tail -20 | qwen -p "Analyze these errors and suggest root cause and fixes" > error-analysis.txt
+grep "ERROR" /var/log/app.log | tail -20 | zero -p "Analyze these errors and suggest root cause and fixes" > error-analysis.txt
 ```
 
 ### Release notes generation
 
 ```bash
-result=$(git log --oneline v1.0.0..HEAD | qwen -p "Generate release notes from these commits" --output-format json)
+result=$(git log --oneline v1.0.0..HEAD | zero -p "Generate release notes from these commits" --output-format json)
 response=$(echo "$result" | jq -r '.response')
 echo "$response"
 echo "$response" >> CHANGELOG.md
@@ -299,7 +299,7 @@ echo "$response" >> CHANGELOG.md
 ### Model and tool usage tracking
 
 ```bash
-result=$(qwen -p "Explain this database schema" --include-directories db --output-format json)
+result=$(zero -p "Explain this database schema" --include-directories db --output-format json)
 total_tokens=$(echo "$result" | jq -r '.stats.models // {} | to_entries | map(.value.tokens.total) | add // 0')
 models_used=$(echo "$result" | jq -r '.stats.models // {} | keys | join(", ") | if . == "" then "none" else . end')
 tool_calls=$(echo "$result" | jq -r '.stats.tools.totalCalls // 0')
@@ -312,7 +312,7 @@ tail -5 usage.log
 
 ## Persistent Retry Mode
 
-When Qwen Code runs in CI/CD pipelines or as a background daemon, a brief API outage (rate limiting or overload) should not kill a multi-hour task. **Persistent retry mode** makes Qwen Code retry transient API errors indefinitely until the service recovers.
+When ZERO Agent runs in CI/CD pipelines or as a background daemon, a brief API outage (rate limiting or overload) should not kill a multi-hour task. **Persistent retry mode** makes ZERO Agent retry transient API errors indefinitely until the service recovers.
 
 ### How it works
 
@@ -323,14 +323,14 @@ When Qwen Code runs in CI/CD pipelines or as a background daemon, a brief API ou
 
 ### Activation
 
-Set the `QWEN_CODE_UNATTENDED_RETRY` environment variable to `true` or `1` (strict match, case-sensitive):
+Set the `ZERO_CODE_UNATTENDED_RETRY` environment variable to `true` or `1` (strict match, case-sensitive):
 
 ```bash
-export QWEN_CODE_UNATTENDED_RETRY=1
+export ZERO_CODE_UNATTENDED_RETRY=1
 ```
 
 > [!important]
-> Persistent retry requires an **explicit opt-in**. `CI=true` alone does **not** activate it — silently turning a fast-fail CI job into an infinite-wait job would be dangerous. Always set `QWEN_CODE_UNATTENDED_RETRY` explicitly in your pipeline configuration.
+> Persistent retry requires an **explicit opt-in**. `CI=true` alone does **not** activate it — silently turning a fast-fail CI job into an infinite-wait job would be dangerous. Always set `ZERO_CODE_UNATTENDED_RETRY` explicitly in your pipeline configuration.
 
 ### Examples
 
@@ -339,9 +339,9 @@ export QWEN_CODE_UNATTENDED_RETRY=1
 ```yaml
 - name: Automated code review
   env:
-    QWEN_CODE_UNATTENDED_RETRY: '1'
+    ZERO_CODE_UNATTENDED_RETRY: '1'
   run: |
-    qwen -p "Review all files in src/ for security issues" \
+    zero -p "Review all files in src/ for security issues" \
       --output-format json \
       --yolo > review.json
 ```
@@ -349,14 +349,14 @@ export QWEN_CODE_UNATTENDED_RETRY=1
 #### Overnight batch processing
 
 ```bash
-export QWEN_CODE_UNATTENDED_RETRY=1
-qwen -p "Migrate all callback-style functions to async/await in src/" --yolo
+export ZERO_CODE_UNATTENDED_RETRY=1
+zero -p "Migrate all callback-style functions to async/await in src/" --yolo
 ```
 
 #### Background daemon
 
 ```bash
-QWEN_CODE_UNATTENDED_RETRY=1 nohup qwen -p "Audit all dependencies for known CVEs" \
+ZERO_CODE_UNATTENDED_RETRY=1 nohup zero -p "Audit all dependencies for known CVEs" \
   --output-format json > audit.json 2> audit.log &
 ```
 
@@ -365,8 +365,8 @@ QWEN_CODE_UNATTENDED_RETRY=1 nohup qwen -p "Audit all dependencies for known CVE
 During persistent retry, heartbeat messages are printed to **stderr**:
 
 ```
-[qwen-code] Waiting for API capacity... attempt 3, retry in 45s
-[qwen-code] Waiting for API capacity... attempt 3, retry in 15s
+[zero-agent] Waiting for API capacity... attempt 3, retry in 45s
+[zero-agent] Waiting for API capacity... attempt 3, retry in 15s
 ```
 
 These messages keep CI runners alive and let you monitor progress. They do not appear in stdout, so JSON output piped to other tools remains clean.

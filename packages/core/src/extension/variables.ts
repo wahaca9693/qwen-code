@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -221,7 +221,7 @@ export function performVariableReplacement(extensionPath: string): void {
         if (finalScriptContent !== content) {
           fs.writeFileSync(filePath, finalScriptContent, 'utf8');
           debugLogger.debug(
-            `Updated transcript format and replaced .claude with .qwen in shell script: ${filePath}`,
+            `Updated transcript format and replaced .claude with .ZERO in shell script: ${filePath}`,
           );
         }
       } catch (error) {

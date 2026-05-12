@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -63,7 +63,7 @@ describe('vscode-ide-companion paths – getGlobalQwenDir', () => {
     }
   });
 
-  it('defaults to ~/.qwen when QWEN_HOME is not set', () => {
+  it('defaults to ~/.ZERO when QWEN_HOME is not set', () => {
     delete process.env['QWEN_HOME'];
     expect(getGlobalQwenDir()).toBe(path.join(home.tempHome, '.qwen'));
   });

@@ -1,16 +1,16 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  *
- * Runtime status sidecar for an active interactive Qwen Code session.
+ * Runtime status sidecar for an active interactive ZERO Agent session.
  *
  * This module writes a small JSON file alongside the session's chat log
  * while an interactive session is alive. It exists so that **external**
  * tools (terminal multiplexers, tab managers, IDE integrations,
  * observability daemons) can answer the question:
  *
- *     "Which Qwen Code session is the running PID X serving?"
+ *     "Which ZERO Agent session is the running PID X serving?"
  *
  * The CLI does not embed the session id in `argv` for fresh
  * (non-resumed) sessions, and the OS process title can be truncated, so
@@ -42,7 +42,7 @@ import { isNodeError } from './errors.js';
 
 export const RUNTIME_STATUS_SCHEMA_VERSION = 1;
 
-/** Snapshot of a live Qwen Code session process for external observers. */
+/** Snapshot of a live ZERO Agent session process for external observers. */
 export interface RuntimeStatus {
   schemaVersion: number;
   pid: number;
@@ -131,7 +131,7 @@ export async function writeRuntimeStatus(
  * coerces null/array/object into a string just to satisfy the
  * dataclass.
  *
- * Note: a returned record only proves that *some* Qwen Code process
+ * Note: a returned record only proves that *some* ZERO Agent process
  * once claimed this session. The PID may already be dead (clean quit
  * or crash). Consumers must verify liveness themselves before treating
  * the record as a currently-running session.
@@ -195,7 +195,7 @@ export async function readRuntimeStatus(
 /**
  * Remove the runtime status file at `filePath`, if present.
  *
- * Intentionally **not** called on `/quit` — when the qwen-code process
+ * Intentionally **not** called on `/quit` — when the zero process
  * exits, an external observer's PID-liveness check already detects the
  * missing process, so a stale record is harmless. This helper exists
  * for the narrow case where the **same PID continues running** but

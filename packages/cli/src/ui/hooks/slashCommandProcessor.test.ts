@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -27,15 +27,15 @@ import {
   SlashCommandStatus,
   ToolConfirmationOutcome,
   makeFakeConfig,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 
 const { logSlashCommand } = vi.hoisted(() => ({
   logSlashCommand: vi.fn(),
 }));
 
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const original =
-    await importOriginal<typeof import('@qwen-code/qwen-code-core')>();
+    await importOriginal<typeof import('@zero-agent/zero-core')>();
   return {
     ...original,
     logSlashCommand,

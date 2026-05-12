@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,9 +13,9 @@ const { mockGetGlobalSettingsPath } = vi.hoisted(() => ({
   mockGetGlobalSettingsPath: vi.fn(),
 }));
 
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@qwen-code/qwen-code-core')>();
+    await importOriginal<typeof import('@zero-agent/zero-core')>();
   return {
     ...actual,
     Storage: {
@@ -25,7 +25,7 @@ vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
   };
 });
 
-import { AuthType } from '@qwen-code/qwen-code-core';
+import { AuthType } from '@zero-agent/zero-core';
 import { CODING_PLAN_ENV_KEY } from './subscriptionPlanDefinitions.js';
 import {
   readQwenSettingsForVSCode,

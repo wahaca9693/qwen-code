@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { ToolCallConfirmationDetails } from '@qwen-code/qwen-code-core';
-import { ToolConfirmationOutcome } from '@qwen-code/qwen-code-core';
+import type { ToolCallConfirmationDetails } from '@zero-agent/zero-core';
+import { ToolConfirmationOutcome } from '@zero-agent/zero-core';
 import type {
   PermissionOption,
   ToolCallContent,

@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// Русский перевод для Qwen Code CLI
+// Русский перевод для ZERO Agent CLI
 // Ключ служит одновременно ключом перевода и текстом по умолчанию
 
 export default {
@@ -68,7 +68,7 @@ export default {
   'For a full list of shortcuts, see {{docPath}}':
     'Полный список горячих клавиш см. в {{docPath}}',
   'docs/keyboard-shortcuts.md': 'docs/keyboard-shortcuts.md',
-  'for help on Qwen Code': 'Справка по Qwen Code',
+  'for help on ZERO Agent': 'Справка по ZERO Agent',
   'show version info': 'Просмотр информации о версии',
   'submit a bug report': 'Отправка отчёта об ошибке',
   Status: 'Статус',
@@ -90,7 +90,7 @@ export default {
   // ============================================================================
   // Поля системной информации
   // ============================================================================
-  'Qwen Code': 'Qwen Code',
+  'ZERO Agent': 'ZERO Agent',
   Runtime: 'Среда выполнения',
   OS: 'ОС',
   Auth: 'Аутентификация',
@@ -108,10 +108,10 @@ export default {
   // ============================================================================
   'Analyzes the project and creates a tailored QWEN.md file.':
     'Анализ проекта и создание адаптированного файла QWEN.md',
-  'List available Qwen Code tools. Usage: /tools [desc]':
-    'Просмотр доступных инструментов Qwen Code. Использование: /tools [desc]',
+  'List available ZERO Agent tools. Usage: /tools [desc]':
+    'Просмотр доступных инструментов ZERO Agent. Использование: /tools [desc]',
   'List available skills.': 'Показать доступные навыки.',
-  'Available Qwen Code CLI tools:': 'Доступные инструменты Qwen Code CLI:',
+  'Available ZERO Agent CLI tools:': 'Доступные инструменты ZERO Agent CLI:',
   'No tools available': 'Нет доступных инструментов',
   'View or change the approval mode for tool usage':
     'Просмотр или изменение режима подтверждения для использования инструментов',
@@ -150,8 +150,8 @@ export default {
     'Очистить историю диалога и освободить контекст',
   'Compresses the context by replacing it with a summary.':
     'Сжатие контекста заменой на краткую сводку',
-  'open full Qwen Code documentation in your browser':
-    'Открытие полной документации Qwen Code в браузере',
+  'open full ZERO Agent documentation in your browser':
+    'Открытие полной документации ZERO Agent в браузере',
   'Configuration not available.': 'Конфигурация недоступна.',
   'Configure authentication information for login':
     'Настройка аутентификационной информации для входа',
@@ -239,8 +239,8 @@ export default {
   // Агенты - Шаги мастера создания
   'Step {{n}}: Choose Location': 'Шаг {{n}}: Выберите расположение',
   'Step {{n}}: Choose Generation Method': 'Шаг {{n}}: Выберите метод генерации',
-  'Generate with Qwen Code (Recommended)':
-    'Сгенерировать с помощью Qwen Code (Рекомендуется)',
+  'Generate with ZERO Agent (Recommended)':
+    'Сгенерировать с помощью ZERO Agent (Рекомендуется)',
   'Manual Creation': 'Ручное создание',
   'Describe what this subagent should do and when it should be used. (Be comprehensive for best results)':
     'Опишите, что должен делать этот подагент и когда его следует использовать. (Будьте подробны для лучших результатов)',
@@ -300,10 +300,10 @@ export default {
   // ============================================================================
   // Команды - Общие (продолжение)
   // ============================================================================
-  'View and edit Qwen Code settings': 'Просмотр и изменение настроек Qwen Code',
+  'View and edit ZERO Agent settings': 'Просмотр и изменение настроек ZERO Agent',
   Settings: 'Настройки',
-  'To see changes, Qwen Code must be restarted. Press r to exit and apply changes now.':
-    'Для применения изменений необходимо перезапустить Qwen Code. Нажмите r для выхода и применения изменений.',
+  'To see changes, ZERO Agent must be restarted. Press r to exit and apply changes now.':
+    'Для применения изменений необходимо перезапустить ZERO Agent. Нажмите r для выхода и применения изменений.',
   // ============================================================================
   // Метки настроек
   // ============================================================================
@@ -422,8 +422,8 @@ export default {
   'This extension will install the following subagents:':
     'Это расширение установит следующие подагенты:',
   'Installation cancelled for "{{name}}".': 'Установка "{{name}}" отменена.',
-  'You are installing an extension from {{originSource}}. Some features may not work perfectly with Qwen Code.':
-    'Вы устанавливаете расширение от {{originSource}}. Некоторые функции могут работать не идеально с Qwen Code.',
+  'You are installing an extension from {{originSource}}. Some features may not work perfectly with ZERO Agent.':
+    'Вы устанавливаете расширение от {{originSource}}. Некоторые функции могут работать не идеально с ZERO Agent.',
   '--ref and --auto-update are not applicable for marketplace extensions.':
     '--ref и --auto-update неприменимы для расширений из маркетплейса.',
   'Extension "{{name}}" installed successfully and enabled.':
@@ -530,8 +530,8 @@ export default {
     'Установить необходимый компаньон IDE для {{ideName}}',
   'enable IDE integration': 'Включение интеграции с IDE',
   'disable IDE integration': 'Отключение интеграции с IDE',
-  'IDE integration is not supported in your current environment. To use this feature, run Qwen Code in one of these supported IDEs: VS Code or VS Code forks.':
-    'Интеграция с IDE не поддерживается в вашем окружении. Для использования этой функции запустите Qwen Code в одной из поддерживаемых IDE: VS Code или форках VS Code.',
+  'IDE integration is not supported in your current environment. To use this feature, run ZERO Agent in one of these supported IDEs: VS Code or VS Code forks.':
+    'Интеграция с IDE не поддерживается в вашем окружении. Для использования этой функции запустите ZERO Agent в одной из поддерживаемых IDE: VS Code или форках VS Code.',
   'Set up GitHub Actions': 'Настройка GitHub Actions',
   'Configure terminal keybindings for multiline input (VS Code, Cursor, Windsurf, Trae)':
     'Настройка привязки клавиш терминала для многострочного ввода (VS Code, Cursor, Windsurf, Trae)',
@@ -565,7 +565,7 @@ export default {
   // ============================================================================
   // Commands - Hooks
   // ============================================================================
-  'Manage Qwen Code hooks': 'Управлять хуками Qwen Code',
+  'Manage ZERO Agent hooks': 'Управлять хуками ZERO Agent',
   'List all configured hooks': 'Показать все настроенные хуки',
   // Hooks - Dialog
   Hooks: 'Хуки',
@@ -581,8 +581,8 @@ export default {
   'No hook events found.': 'События хуков не найдены.',
   '{{count}} hook configured': '{{count}} хук настроен',
   '{{count}} hooks configured': '{{count}} хуков настроено',
-  'This menu is read-only. To add or modify hooks, edit settings.json directly or ask Qwen Code.':
-    'Это меню только для чтения. Чтобы добавить или изменить хуки, отредактируйте settings.json напрямую или спросите Qwen Code.',
+  'This menu is read-only. To add or modify hooks, edit settings.json directly or ask ZERO Agent.':
+    'Это меню только для чтения. Чтобы добавить или изменить хуки, отредактируйте settings.json напрямую или спросите ZERO Agent.',
   'Enter to select · Esc to cancel': 'Enter для выбора · Esc для отмены',
   // Hooks - Detail Step
   'Exit codes:': 'Коды выхода:',
@@ -611,8 +611,8 @@ export default {
   'StatusLine will not be displayed': 'StatusLine не будет отображаться',
   'Tool operations will proceed without hook validation':
     'Операции инструментов будут выполняться без проверки хуков',
-  'To re-enable hooks, remove "disableAllHooks" from settings.json or ask Qwen Code.':
-    'Чтобы снова включить хуки, удалите "disableAllHooks" из settings.json или спросите Qwen Code.',
+  'To re-enable hooks, remove "disableAllHooks" from settings.json or ask ZERO Agent.':
+    'Чтобы снова включить хуки, удалите "disableAllHooks" из settings.json или спросите ZERO Agent.',
   // Hooks - Source
   Project: 'Проект',
   User: 'Пользователь',
@@ -631,8 +631,8 @@ export default {
   'When notifications are sent': 'При отправке уведомлений',
   'When the user submits a prompt': 'Когда пользователь отправляет промпт',
   'When a new session is started': 'При запуске новой сессии',
-  'Right before Qwen Code concludes its response':
-    'Непосредственно перед завершением ответа Qwen Code',
+  'Right before ZERO Agent concludes its response':
+    'Непосредственно перед завершением ответа ZERO Agent',
   'When a subagent (Agent tool call) is started':
     'При запуске субагента (вызов инструмента Agent)',
   'Right before a subagent concludes its response':
@@ -1061,12 +1061,12 @@ export default {
   Ask: 'Спросить',
   Deny: 'Запретить',
   Workspace: 'Рабочая область',
-  "Qwen Code won't ask before using allowed tools.":
-    'Qwen Code не будет спрашивать перед использованием разрешённых инструментов.',
-  'Qwen Code will ask before using these tools.':
-    'Qwen Code спросит перед использованием этих инструментов.',
-  'Qwen Code is not allowed to use denied tools.':
-    'Qwen Code не может использовать запрещённые инструменты.',
+  "ZERO Agent won't ask before using allowed tools.":
+    'ZERO Agent не будет спрашивать перед использованием разрешённых инструментов.',
+  'ZERO Agent will ask before using these tools.':
+    'ZERO Agent спросит перед использованием этих инструментов.',
+  'ZERO Agent is not allowed to use denied tools.':
+    'ZERO Agent не может использовать запрещённые инструменты.',
   'Manage trusted directories for this workspace.':
     'Управление доверенными каталогами для этой рабочей области.',
   'Any use of the {{tool}} tool': 'Любое использование инструмента {{tool}}',
@@ -1101,10 +1101,10 @@ export default {
   // Workspace directory management
   'Add directory…': 'Добавить каталог…',
   'Add directory to workspace': 'Добавить каталог в рабочую область',
-  'Qwen Code can read files in the workspace, and make edits when auto-accept edits is on.':
-    'Qwen Code может читать файлы в рабочей области и вносить правки, когда автоприём правок включён.',
-  'Qwen Code will be able to read files in this directory and make edits when auto-accept edits is on.':
-    'Qwen Code сможет читать файлы в этом каталоге и вносить правки, когда автоприём правок включён.',
+  'ZERO Agent can read files in the workspace, and make edits when auto-accept edits is on.':
+    'ZERO Agent может читать файлы в рабочей области и вносить правки, когда автоприём правок включён.',
+  'ZERO Agent will be able to read files in this directory and make edits when auto-accept edits is on.':
+    'ZERO Agent сможет читать файлы в этом каталоге и вносить правки, когда автоприём правок включён.',
   'Enter the path to the directory:': 'Введите путь к каталогу:',
   'Enter directory path…': 'Введите путь к каталогу…',
   'Tab to complete · Enter to add · Esc to cancel':
@@ -1455,12 +1455,12 @@ export default {
     'Используйте /bug, чтобы сообщить о проблемах разработчикам.',
   'Switch auth type quickly with /auth.':
     'Быстро переключите тип аутентификации с помощью /auth.',
-  'You can run any shell commands from Qwen Code using ! (e.g. !ls).':
-    'Вы можете выполнять любые shell-команды в Qwen Code с помощью ! (например, !ls).',
+  'You can run any shell commands from ZERO Agent using ! (e.g. !ls).':
+    'Вы можете выполнять любые shell-команды в ZERO Agent с помощью ! (например, !ls).',
   'Type / to open the command popup; Tab autocompletes slash commands and saved prompts.':
     'Введите /, чтобы открыть меню команд; Tab автодополняет слэш-команды и сохранённые промпты.',
-  'You can resume a previous conversation by running qwen --continue or qwen --resume.':
-    'Вы можете продолжить предыдущий разговор, запустив qwen --continue или qwen --resume.',
+  'You can resume a previous conversation by running ZERO --continue or ZERO --resume.':
+    'Вы можете продолжить предыдущий разговор, запустив ZERO --continue или ZERO --resume.',
   'You can switch permission mode quickly with Shift+Tab or /approval-mode.':
     'Вы можете быстро переключать режим разрешений с помощью Shift+Tab или /approval-mode.',
   'You can switch permission mode quickly with Tab or /approval-mode.':
@@ -1469,8 +1469,8 @@ export default {
     'Попробуйте /insight, чтобы получить персонализированные выводы из истории чатов.',
   'Press Ctrl+O to toggle compact mode — hide tool output and thinking for a cleaner view.':
     'Нажмите Ctrl+O для переключения компактного режима — скрыть вывод инструментов и рассуждения.',
-  'Add a QWEN.md file to give Qwen Code persistent project context.':
-    'Добавьте файл QWEN.md, чтобы предоставить Qwen Code постоянный контекст проекта.',
+  'Add a QWEN.md file to give ZERO Agent persistent project context.':
+    'Добавьте файл QWEN.md, чтобы предоставить ZERO Agent постоянный контекст проекта.',
   'Use /btw to ask a quick side question without disrupting the conversation.':
     'Используйте /btw, чтобы задать короткий побочный вопрос, не прерывая основной разговор.',
   'Context is almost full! Run /compress now or start /new to continue.':
@@ -1575,8 +1575,8 @@ export default {
   servers: 'серверов',
   'Add MCP servers to your settings to get started.':
     'Добавьте MCP servers в настройки, чтобы начать.',
-  'Run qwen --debug to see error logs':
-    'Запустите qwen --debug для просмотра журналов ошибок',
+  'Run ZERO --debug to see error logs':
+    'Запустите ZERO --debug для просмотра журналов ошибок',
 
   // MCP OAuth Authentication
   'OAuth Authentication': 'OAuth-аутентификация',
@@ -1646,11 +1646,11 @@ export default {
     '⚠️  Метод аутентификации не настроен.\n',
   'Run one of the following commands to get started:\n':
     'Выполните одну из следующих команд для начала:\n',
-  '  qwen auth qwen-oauth     - Authenticate with Qwen OAuth (discontinued)':
-    '  qwen auth qwen-oauth     - Аутентификация через Qwen OAuth (прекращено)',
+  '  ZERO auth qwen-oauth     - Authenticate with Qwen OAuth (discontinued)':
+    '  ZERO auth qwen-oauth     - Аутентификация через Qwen OAuth (прекращено)',
   'Or simply run:': 'Или просто выполните:',
-  '  qwen auth                - Interactive authentication setup\n':
-    '  qwen auth                - Интерактивная настройка аутентификации\n',
+  '  ZERO auth                - Interactive authentication setup\n':
+    '  ZERO auth                - Интерактивная настройка аутентификации\n',
   '✓ Authentication Method: Qwen OAuth': '✓ Метод аутентификации: Qwen OAuth',
   '  Type: Free tier (discontinued 2026-04-15)':
     '  Тип: Бесплатный уровень (прекращено 2026-04-15)',
@@ -1668,8 +1668,8 @@ export default {
     '⚠️  Метод аутентификации: Alibaba Cloud Coding Plan (Не завершён)',
   '  Issue: API key not found in environment or settings\n':
     '  Проблема: API Key не найден в окружении или настройках\n',
-  '  Run `qwen auth coding-plan` to re-configure.\n':
-    '  Выполните `qwen auth coding-plan` для повторной настройки.\n',
+  '  Run `ZERO auth coding-plan` to re-configure.\n':
+    '  Выполните `ZERO auth coding-plan` для повторной настройки.\n',
   '✓ Authentication Method: {{type}}': '✓ Метод аутентификации: {{type}}',
   '  Status: Configured\n': '  Статус: Настроено\n',
   'Failed to check authentication status: {{error}}':
@@ -1693,8 +1693,8 @@ export default {
     'Уже в режиме плана. Используйте "/plan exit" для выхода из режима плана.',
   'Not in plan mode. Use "/plan" to enter plan mode first.':
     'Не в режиме плана. Сначала используйте "/plan" для входа в режим плана.',
-  "Set up Qwen Code's status line UI":
-    'Настроить интерфейс строки состояния Qwen Code',
+  "Set up ZERO Agent's status line UI":
+    'Настроить интерфейс строки состояния ZERO Agent',
 
   // === Core: added from PR #3328 ===
   'Open the memory manager.': 'Открыть менеджер памяти.',

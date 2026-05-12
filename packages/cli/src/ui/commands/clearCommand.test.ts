@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,11 +11,11 @@ import { createMockCommandContext } from '../../test-utils/mockCommandContext.js
 import {
   SessionEndReason,
   SessionStartSource,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 
 // Mock the telemetry service
-vi.mock('@qwen-code/qwen-code-core', async () => {
-  const actual = await vi.importActual('@qwen-code/qwen-code-core');
+vi.mock('@zero-agent/zero-core', async () => {
+  const actual = await vi.importActual('@zero-agent/zero-core');
   return {
     ...actual,
     uiTelemetryService: {
@@ -24,7 +24,7 @@ vi.mock('@qwen-code/qwen-code-core', async () => {
   };
 });
 
-import type { GeminiClient } from '@qwen-code/qwen-code-core';
+import type { GeminiClient } from '@zero-agent/zero-core';
 
 describe('clearCommand', () => {
   let mockContext: CommandContext;

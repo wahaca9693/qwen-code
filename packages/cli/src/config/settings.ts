@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ import {
   getErrorMessage,
   Storage,
   createDebugLogger,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import stripJsonComments from 'strip-json-comments';
 import { DefaultLight } from '../ui/themes/default-light.js';
 import { DefaultDark } from '../ui/themes/default.js';
@@ -159,9 +159,9 @@ export function getSystemSettingsPath(): string {
   if (platform() === 'darwin') {
     return '/Library/Application Support/QwenCode/settings.json';
   } else if (platform() === 'win32') {
-    return 'C:\\ProgramData\\qwen-code\\settings.json';
+    return 'C:\\ProgramData\\zero\\settings.json';
   } else {
-    return '/etc/qwen-code/settings.json';
+    return '/etc/zero/settings.json';
   }
 }
 

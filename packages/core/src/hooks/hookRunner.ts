@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -551,7 +551,7 @@ export class HookRunner {
         ...process.env,
         GEMINI_PROJECT_DIR: input.cwd,
         CLAUDE_PROJECT_DIR: input.cwd, // For compatibility
-        QWEN_PROJECT_DIR: input.cwd, // For Qwen Code compatibility
+        QWEN_PROJECT_DIR: input.cwd, // For ZERO Agent compatibility
         ...hookConfig.env,
       };
 

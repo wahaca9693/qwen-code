@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -60,7 +60,7 @@ export async function getEnvironmentContext(config: Config): Promise<Part[]> {
   const directoryContext = await getDirectoryContextString(config);
 
   const context = `
-This is the Qwen Code. We are setting up the context for our chat.
+This is the ZERO Agent. We are setting up the context for our chat.
 Today's date is ${today} (formatted according to the user's locale).
 My operating system is: ${platform}
 ${directoryContext}

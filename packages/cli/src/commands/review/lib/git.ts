@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2026 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// Thin wrapper around `git` for the `qwen review` subcommands. Same
+// Thin wrapper around `git` for the `ZERO review` subcommands. Same
 // `execFileSync` pattern as `lib/gh.ts` so quoting / escaping is consistent
 // across platforms.
 

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@ import {
   isSDKAssistantMessage,
   isSDKSystemMessage,
   type SDKMessage,
-} from '@qwen-code/sdk';
+} from '@zero-agent/sdk';
 import {
   SDKTestHelper,
   extractText,
@@ -440,7 +440,7 @@ describe('Configuration Options (E2E)', () => {
 
     // Skip - qwen-oauth requires user interaction which is not possible in CI environments
     it.skip('should accept authType: qwen-oauth', async () => {
-      // Note: qwen-oauth requires credentials in ~/.qwen and user interaction
+      // Note: qwen-oauth requires credentials in ~/.ZERO and user interaction
       // Without credentials, the auth process will timeout waiting for user
       // This test verifies the option is accepted and passed correctly to CLI
 

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -14,7 +14,7 @@
  * schema object which has stricter typing and recursion restrictions.
  * If this test fails, it's likely because either the GenAI SDK or Gemini API
  * has become more restrictive about the type of tool parameter schemas that
- * are accepted. If this occurs: Qwen Code previously attempted to detect
+ * are accepted. If this occurs: ZERO Agent previously attempted to detect
  * such tools and proactively remove them from the set of tools provided in
  * the Gemini API call (as FunctionDeclaration objects). It may be appropriate
  * to resurrect that behavior but note that it's difficult to keep the
@@ -31,7 +31,7 @@ import { TestRig } from '../test-helper.js';
 const serverScript = `#!/usr/bin/env node
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 

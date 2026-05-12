@@ -237,7 +237,7 @@ action: async (context) => {
 
   if (context.executionMode !== 'interactive') {
     const lines = [
-      `Qwen Code v${systemInfo.cliVersion}`,
+      `ZERO Agent v${systemInfo.cliVersion}`,
       `Model: ${systemInfo.modelVersion}`,
       `Fast Model: ${systemInfo.fastModel ?? 'not set'}`,
       `Auth: ${systemInfo.selectedAuthType}`,
@@ -361,14 +361,14 @@ if (context.executionMode === 'acp') {
 ```typescript
 action: async (context) => {
   const langPath = getCurrentLanguage()?.startsWith('zh') ? 'zh' : 'en';
-  const docsUrl = `https://qwenlm.github.io/qwen-code-docs/${langPath}`;
+  const docsUrl = `https://zero-agent.github.io/zero-agent-docs/${langPath}`;
 
   if (context.executionMode !== 'interactive') {
     // 非交互/ACP：直接返回 URL，不打开浏览器，不调用 addItem
     return {
       type: 'message',
       messageType: 'info',
-      content: `Qwen Code documentation: ${docsUrl}`,
+      content: `ZERO Agent documentation: ${docsUrl}`,
     };
   }
 

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,7 @@ import * as fsp from 'fs/promises';
 import * as path from 'path';
 import { randomUUID } from 'node:crypto';
 import type { ContentBlock } from '@agentclientprotocol/sdk';
-import { Storage } from '@qwen-code/qwen-code-core';
+import { Storage } from '@zero-agent/zero-core';
 import type {
   ImageAttachment,
   SavedImageAttachment,

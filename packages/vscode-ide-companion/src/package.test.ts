@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,9 +19,9 @@ describe('package.json command metadata', () => {
     };
 
     const command = manifest.contributes.commands.find(
-      (item) => item.command === 'qwen-code.focusChat',
+      (item) => item.command === 'zero.focusChat',
     );
 
-    expect(command?.title).toBe('Qwen Code: Focus Chat View');
+    expect(command?.title).toBe('ZERO Agent: Focus Chat View');
   });
 });

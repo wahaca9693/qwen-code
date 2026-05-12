@@ -1,4 +1,4 @@
-name: '🧐 Qwen Pull Request Review'
+name: '🧐 ZERO Pull Request Review'
 
 on:
   pull_request_target:
@@ -97,8 +97,8 @@ jobs:
           echo "$CHANGED_FILES" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
 
-      - name: 'Run Qwen PR Review'
-        uses: 'QwenLM/qwen-code-action@5fd6818d04d64e87d255ee4d5f77995e32fbf4c2'
+      - name: 'Run ZERO PR Review'
+        uses: 'ZEROLM/zero-agent-action@5fd6818d04d64e87d255ee4d5f77995e32fbf4c2'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           PR_NUMBER: '${{ steps.get_pr.outputs.pr_number || steps.get_pr_comment.outputs.pr_number }}'

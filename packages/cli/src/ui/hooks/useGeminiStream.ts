@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -25,7 +25,7 @@ import type {
   ToolCallRequestInfo,
   GeminiErrorEventValue,
   StopFailureErrorType,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import {
   GeminiEventType as ServerGeminiEventType,
   SendMessageType,
@@ -50,7 +50,7 @@ import {
   isSupportedImageMimeType,
   getUnsupportedImageFormatWarning,
   generateToolUseSummary,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { type Part, type PartListUnion, FinishReason } from '@google/genai';
 import type {
   HistoryItem,

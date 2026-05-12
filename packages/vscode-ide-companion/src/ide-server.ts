@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,8 +9,8 @@ import {
   CloseDiffRequestSchema,
   IdeContextNotificationSchema,
   OpenDiffRequestSchema,
-} from '@qwen-code/qwen-code-core/src/ide/types.js';
-import { detectIdeFromEnv } from '@qwen-code/qwen-code-core/src/ide/detect-ide.js';
+} from '@zero-agent/zero-core/src/ide/types.js';
+import { detectIdeFromEnv } from '@zero-agent/zero-core/src/ide/detect-ide.js';
 import { isInitializeRequest } from '@modelcontextprotocol/sdk/types.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
@@ -428,7 +428,7 @@ export class IDEServer {
 const createMcpServer = (diffManager: DiffManager) => {
   const server = new McpServer(
     {
-      name: 'qwen-code-companion-mcp-server',
+      name: 'zero-companion-mcp-server',
       version: '1.0.0',
     },
     { capabilities: { logging: {} } },

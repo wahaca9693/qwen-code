@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { execSync } from 'node:child_process';
 import { ProxyAgent } from 'undici';
-import { createDebugLogger } from '@qwen-code/qwen-code-core';
+import { createDebugLogger } from '@zero-agent/zero-core';
 
 const debugLogger = createDebugLogger('GIT');
 
@@ -61,7 +61,7 @@ export const getLatestGitHubRelease = async (
   try {
     const controller = new AbortController();
 
-    const endpoint = `https://api.github.com/repos/QwenLM/qwen-code-action/releases/latest`;
+    const endpoint = `https://api.github.com/repos/ZEROLM/zero-action/releases/latest`;
 
     const response = await fetch(endpoint, {
       method: 'GET',
@@ -87,11 +87,11 @@ export const getLatestGitHubRelease = async (
     return releaseTag;
   } catch (_error) {
     debugLogger.debug(
-      `Failed to determine latest qwen-code-action release:`,
+      `Failed to determine latest zero-action release:`,
       _error,
     );
     throw new Error(
-      `Unable to determine the latest qwen-code-action release on GitHub.`,
+      `Unable to determine the latest zero-action release on GitHub.`,
     );
   }
 };

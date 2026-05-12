@@ -1,14 +1,14 @@
 # Python SDK
 
-## `qwen-code-sdk`
+## `zero-agent-sdk`
 
-`qwen-code-sdk` is an experimental Python SDK for Qwen Code. v1 targets the
+`zero-agent-sdk` is an experimental Python SDK for ZERO Agent. v1 targets the
 existing `stream-json` CLI protocol and keeps the transport surface small and
 testable.
 
 ## Scope
 
-- Package name: `qwen-code-sdk`
+- Package name: `zero-agent-sdk`
 - Import path: `qwen_code_sdk`
 - Runtime requirement: Python `>=3.10`
 - CLI dependency: external `qwen` executable is required in v1
@@ -18,13 +18,13 @@ testable.
 ## Install
 
 ```bash
-pip install qwen-code-sdk
+pip install zero-agent-sdk
 ```
 
 For preview releases:
 
 ```bash
-pip install --pre qwen-code-sdk
+pip install --pre zero-agent-sdk
 ```
 
 If `qwen` is not on `PATH`, pass `path_to_qwen_executable` explicitly.
@@ -32,7 +32,7 @@ If `qwen` is not on `PATH`, pass `path_to_qwen_executable` explicitly.
 Before writing SDK code, make sure the CLI works in the same shell:
 
 ```bash
-qwen --version
+zero --version
 ```
 
 ## Quick Start
@@ -465,14 +465,14 @@ try:
 except ValidationError as exc:
     print(f"Invalid SDK options: {exc}")
 except ProcessExitError as exc:
-    print(f"qwen exited with {exc.exit_code}: {exc}")
+    print(f"zero exited with {exc.exit_code}: {exc}")
 ```
 
 ## Troubleshooting
 
 If the SDK cannot start the CLI:
 
-- Verify `qwen --version` works in the target environment
+- Verify `zero --version` works in the target environment
 - Pass `path_to_qwen_executable` if your shell uses `nvm`, `pyenv`, or other
   non-standard PATH setup
 - Use `debug=True` or `stderr=print` to surface CLI stderr while debugging
@@ -490,7 +490,7 @@ Repository-level helper commands:
 - `npm run test:sdk:python`
 - `npm run lint:sdk:python`
 - `npm run typecheck:sdk:python`
-- `npm run smoke:sdk:python -- --qwen qwen`
+- `npm run smoke:sdk:python -- --zero qwen`
 
 ## Real E2E Smoke
 
@@ -499,7 +499,7 @@ the repository root. The npm helper uses `python3`, so ensure it resolves to a
 Python `>=3.10` interpreter:
 
 ```bash
-npm run smoke:sdk:python -- --qwen qwen
+npm run smoke:sdk:python -- --zero qwen
 ```
 
 This script runs:

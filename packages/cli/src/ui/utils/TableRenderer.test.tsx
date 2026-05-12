@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -247,7 +247,7 @@ describe('<TableRenderer />', () => {
     // This is the classic failure case: CJK chars counted as width 1
     // causes column misalignment
     const output = renderTable(
-      ['对比项', 'Claude Code', 'Qwen Code'],
+      ['对比项', 'Claude Code', 'ZERO Agent'],
       [
         ['性能', '优秀', '优秀'],
         ['中文支持', '一般', '很好'],
@@ -258,7 +258,7 @@ describe('<TableRenderer />', () => {
 
     expect(output).toContain('对比项');
     expect(output).toContain('Claude Code');
-    expect(output).toContain('Qwen Code');
+    expect(output).toContain('ZERO Agent');
     expect(output).toContain('性能');
     expect(output).toContain('中文支持');
     expect(output).toContain('开源');

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -72,7 +72,7 @@ function isDeepSeekAnthropicHostname(
  * anthropic-compatible endpoints (sglang/vllm). For decisions where a model-
  * name false positive is dangerous (e.g. `reasoning.effort: 'max'` clamping),
  * use `isDeepSeekAnthropicHostname` instead.
- * https://github.com/QwenLM/qwen-code/issues/3786
+ * https://github.com/ZEROLM/zero/issues/3786
  */
 function isDeepSeekAnthropicProvider(
   contentGeneratorConfig: ContentGeneratorConfig,

@@ -1,22 +1,22 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
-import type { DeviceAuthorizationData } from '@qwen-code/qwen-code-core';
+import type { DeviceAuthorizationData } from '@zero-agent/zero-core';
 import { useQwenAuth } from './useQwenAuth.js';
 import {
   AuthType,
   qwenOAuth2Events,
   QwenOAuth2Event,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 
 // Mock the qwenOAuth2Events
-vi.mock('@qwen-code/qwen-code-core', async () => {
-  const actual = await vi.importActual('@qwen-code/qwen-code-core');
+vi.mock('@zero-agent/zero-core', async () => {
+  const actual = await vi.importActual('@zero-agent/zero-core');
   const mockEmitter = {
     on: vi.fn().mockReturnThis(),
     off: vi.fn().mockReturnThis(),

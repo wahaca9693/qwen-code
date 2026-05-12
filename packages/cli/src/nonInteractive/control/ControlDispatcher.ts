@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -38,7 +38,7 @@ import type {
   ControlResponse,
   ControlRequestPayload,
 } from '../types.js';
-import { createDebugLogger } from '@qwen-code/qwen-code-core';
+import { createDebugLogger } from '@zero-agent/zero-core';
 
 const debugLogger = createDebugLogger('CONTROL_DISPATCHER');
 

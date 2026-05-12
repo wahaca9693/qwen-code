@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -92,7 +92,7 @@ esbuild
         __dirname,
         'packages/cli/src/patches/is-in-ci.ts',
       ),
-      '@qwen-code/web-templates': path.resolve(
+      '@zero/web-templates': path.resolve(
         __dirname,
         'packages/web-templates/src/index.ts',
       ),

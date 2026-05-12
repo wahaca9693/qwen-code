@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -1463,7 +1463,7 @@ export class ShellToolInvocation extends BaseToolInvocation<
       ]);
     }
 
-    // Add co-author to git commit commands and Qwen Code attribution to
+    // Add co-author to git commit commands and ZERO Agent attribution to
     // `gh pr create` bodies. Both wrappers are no-ops on commands they
     // don't recognise. Apply to the *trimmed original* (not strippedCommand)
     // so leading env assignments and shell wrappers (`FOO=bar bash -c '...'`)
@@ -3369,9 +3369,9 @@ export class ShellToolInvocation extends BaseToolInvocation<
 
   /**
    * Detect `gh pr create` commands and append AI attribution text to the
-   * PR body. Format: "🤖 Generated with Qwen Code (N-shotted by Qwen-Coder)"
+   * PR body. Format: "🤖 Generated with ZERO Agent (N-shotted by Qwen-Coder)"
    * when at least one user prompt has been recorded since the last commit;
-   * otherwise just "🤖 Generated with Qwen Code".
+   * otherwise just "🤖 Generated with ZERO Agent".
    *
    * Skipped on Windows: the appended text relies on bash quote-escape
    * conventions (`\$`, `'\''`) that cmd.exe and PowerShell don't honor,
@@ -3406,8 +3406,8 @@ export class ShellToolInvocation extends BaseToolInvocation<
 
     const attribution =
       shots > 0
-        ? `\n\n🤖 Generated with Qwen Code (${shots}-shotted by ${generator})`
-        : `\n\n🤖 Generated with Qwen Code`;
+        ? `\n\n🤖 Generated with ZERO Agent (${shots}-shotted by ${generator})`
+        : `\n\n🤖 Generated with ZERO Agent`;
 
     // Match both the long form `--body` and the short alias `-b`
     // (documented in `gh pr create --help`), with either space or

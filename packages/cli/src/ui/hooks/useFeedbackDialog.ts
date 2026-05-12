@@ -9,7 +9,7 @@ import {
   isNodeError,
   AuthType,
   Storage,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 import { StreamingState, MessageType, type HistoryItem } from '../types.js';
 import { SettingScope, type LoadedSettings } from '../../config/settings.js';
 import type { SessionStatsState } from '../contexts/SessionContext.js';

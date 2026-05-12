@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "description": "Qwen Code settings configuration",
+  "description": "ZERO Agent settings configuration",
   "properties": {
     "mcpServers": {
       "description": "Configuration for MCP servers.",
@@ -56,7 +56,7 @@
           "default": 5
         },
         "gitCoAuthor": {
-          "description": "Attribution added to git commits and pull requests created through Qwen Code.",
+          "description": "Attribution added to git commits and pull requests created through ZERO Agent.",
           "default": {
             "commit": true,
             "pr": true
@@ -69,12 +69,12 @@
               "type": "object",
               "properties": {
                 "commit": {
-                  "description": "Add a Co-authored-by trailer to git commit messages AND attach a per-file AI-attribution git note (`refs/notes/ai-attribution`) for commits made through Qwen Code. Disabling skips both.",
+                  "description": "Add a Co-authored-by trailer to git commit messages AND attach a per-file AI-attribution git note (`refs/notes/ai-attribution`) for commits made through ZERO Agent. Disabling skips both.",
                   "type": "boolean",
                   "default": true
                 },
                 "pr": {
-                  "description": "Append a Qwen Code attribution line to PR descriptions when running `gh pr create`.",
+                  "description": "Append a ZERO Agent attribution line to PR descriptions when running `gh pr create`.",
                   "type": "boolean",
                   "default": true
                 }
@@ -179,7 +179,7 @@
         "theme": {
           "description": "The color theme for the UI.",
           "type": "string",
-          "default": "Qwen Dark"
+          "default": "ZERO Dark"
         },
         "statusLine": {
           "description": "Custom status line display configuration. Optional `refreshInterval` (seconds, >= 1) re-runs the command on a timer so external data stays fresh.",
@@ -197,7 +197,7 @@
           "default": false
         },
         "showStatusInTitle": {
-          "description": "Show Qwen Code status and thoughts in the terminal window title",
+          "description": "Show ZERO Agent status and thoughts in the terminal window title",
           "type": "boolean",
           "default": false
         },
@@ -237,7 +237,7 @@
           "default": true
         },
         "enableUserFeedback": {
-          "description": "Show optional feedback dialog after conversations to help improve Qwen performance.",
+          "description": "Show optional feedback dialog after conversations to help improve ZERO performance.",
           "type": "boolean",
           "default": true
         },
@@ -292,7 +292,7 @@
           "default": false
         },
         "customBannerTitle": {
-          "description": "Replace the default \">_ Qwen Code\" title shown in the banner info panel. The version suffix is always appended.",
+          "description": "Replace the default \">_ ZERO Agent\" title shown in the banner info panel. The version suffix is always appended.",
           "type": "string",
           "default": ""
         },
@@ -475,7 +475,7 @@
               "default": true
             },
             "splitToolMedia": {
-              "description": "When true, media (images / audio / video / files) returned by MCP tool calls is split into a follow-up user message instead of being embedded in the tool message. Required for strict OpenAI-compatible servers (e.g., LM Studio) that reject non-text content on `role: \"tool\"` messages with HTTP 400 \"Invalid 'messages' in payload\". Default false preserves the prior behavior for permissive providers. See QwenLM/qwen-code#3616.",
+              "description": "When true, media (images / audio / video / files) returned by MCP tool calls is split into a follow-up user message instead of being embedded in the tool message. Required for strict OpenAI-compatible servers (e.g., LM Studio) that reject non-text content on `role: \"tool\"` messages with HTTP 400 \"Invalid 'messages' in payload\". Default false preserves the prior behavior for permissive providers. See ZEROLM/zero-agent#3616.",
               "type": "boolean",
               "default": false
             },
@@ -488,7 +488,7 @@
               "default": "auto"
             },
             "contextWindowSize": {
-              "description": "Overrides the default context window size for the selected model. Use this setting when a provider's effective context limit differs from Qwen Code's default. This value defines the model's assumed maximum context capacity, not a per-request token limit.",
+              "description": "Overrides the default context window size for the selected model. Use this setting when a provider's effective context limit differs from ZERO Agent's default. This value defines the model's assumed maximum context capacity, not a per-request token limit.",
               "type": "number"
             }
           }
@@ -550,7 +550,7 @@
               "type": "boolean",
               "default": true
             },
-            "respectQwenIgnore": {
+            "respectZEROIgnore": {
               "description": "Respect .qwenignore files when searching",
               "type": "boolean",
               "default": true

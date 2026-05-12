@@ -1,15 +1,15 @@
 /**
  * @license
- * Copyright 2025 Qwen
+ * Copyright 2026 Qwen
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { SessionUpdate } from '@agentclientprotocol/sdk';
-import type { Config } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
 
 // Mock core to avoid Vite https resolution issue
-vi.mock('@qwen-code/qwen-code-core', () => ({
+vi.mock('@zero-agent/zero-core', () => ({
   createDebugLogger: () => ({
     info: vi.fn(),
     warn: vi.fn(),

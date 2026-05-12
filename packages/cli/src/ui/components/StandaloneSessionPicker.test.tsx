@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Qwen Code
+ * Copyright 2026 ZERO Agent
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,10 +16,10 @@ import type {
   Config,
   SessionListItem,
   ListSessionsResult,
-} from '@qwen-code/qwen-code-core';
+} from '@zero-agent/zero-core';
 
-vi.mock('@qwen-code/qwen-code-core', async () => {
-  const actual = await vi.importActual('@qwen-code/qwen-code-core');
+vi.mock('@zero-agent/zero-core', async () => {
+  const actual = await vi.importActual('@zero-agent/zero-core');
   return {
     ...actual,
     getGitBranch: vi.fn().mockReturnValue('main'),

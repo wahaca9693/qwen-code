@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { type CommandModule } from 'yargs';
-import { FatalConfigError, getErrorMessage } from '@qwen-code/qwen-code-core';
+import { FatalConfigError, getErrorMessage } from '@zero-agent/zero-core';
 import { SettingScope } from '../../config/settings.js';
 import { writeStdoutLine } from '../../utils/stdioHelpers.js';
 import { getExtensionManager } from './utils.js';

@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Qwen Team
+ * Copyright 2026 ZERO Agent Team
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { act } from '@testing-library/react';
 import { render } from 'ink-testing-library';
-import type { Config } from '@qwen-code/qwen-code-core';
+import type { Config } from '@zero-agent/zero-core';
 import { LiveAgentPanel } from './LiveAgentPanel.js';
 import { BackgroundTaskViewStateContext } from '../../contexts/BackgroundTaskViewContext.js';
 import { ConfigContext } from '../../contexts/ConfigContext.js';

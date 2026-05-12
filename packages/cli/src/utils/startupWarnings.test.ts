@@ -1,18 +1,18 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { getStartupWarnings } from './startupWarnings.js';
 import * as fs from 'node:fs/promises';
-import { getErrorMessage } from '@qwen-code/qwen-code-core';
+import { getErrorMessage } from '@zero-agent/zero-core';
 
 vi.mock('node:fs/promises', { spy: true });
-vi.mock('@qwen-code/qwen-code-core', async (importOriginal) => {
+vi.mock('@zero-agent/zero-core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@qwen-code/qwen-code-core')>();
+    await importOriginal<typeof import('@zero-agent/zero-core')>();
   return {
     ...actual,
     getErrorMessage: vi.fn(),
