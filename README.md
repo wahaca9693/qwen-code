@@ -46,7 +46,7 @@ ZERO Agent is an open-source AI agent for the terminal, optimized for ZERO serie
 #### Linux / macOS
 
 ```bash
-bash -c "$(curl -fsSL https://zero-agent-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen.sh)"
+bash -c "$(curl -fsSL https://zero-agent-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-zero.sh)"
 ```
 
 #### Windows (Run as Administrator)
@@ -54,7 +54,7 @@ bash -c "$(curl -fsSL https://zero-agent-assets.oss-cn-hangzhou.aliyuncs.com/ins
 Works in both Command Prompt and PowerShell:
 
 ```cmd
-powershell -Command "Invoke-WebRequest 'https://zero-agent-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen.bat' -OutFile (Join-Path $env:TEMP 'install-qwen.bat'); & (Join-Path $env:TEMP 'install-qwen.bat')"
+powershell -Command "Invoke-WebRequest 'https://zero-agent-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-zero.bat' -OutFile (Join-Path $env:TEMP 'install-zero.bat'); & (Join-Path $env:TEMP 'install-zero.bat')"
 ```
 
 > **Note**: It's recommended to restart your terminal after installation to ensure environment variables take effect.
@@ -81,7 +81,7 @@ brew install zero-agent
 
 ```bash
 # Start ZERO Agent (interactive)
-qwen
+zero
 
 # Then, in the session:
 /help
@@ -114,7 +114,7 @@ Copy the prompt below and paste it into your agent:
 
 ```
 Use ZERO Agent as a coding agent. First, fetch and read this skill reference:
-https://raw.githubusercontent.com/ZEROLM/zero-agent/refs/heads/main/.qwen/skills/zero-agent-claw/SKILL.md
+https://raw.githubusercontent.com/ZEROLM/zero-agent/refs/heads/main/.zero/skills/zero-agent-claw/SKILL.md
 Then follow the instructions inside to install, authenticate, and use ZERO Agent via acpx for all coding tasks.
 ```
 
@@ -125,7 +125,7 @@ ZERO Agent supports the following authentication methods:
 - **API Key (recommended)**: use an API key from Alibaba Cloud Model Studio ([Beijing](https://bailian.console.aliyun.com/) / [intl](https://modelstudio.console.alibabacloud.com/)) or any supported provider (OpenAI, Anthropic, Google GenAI, and other compatible endpoints).
 - **Coding Plan**: subscribe to the Alibaba Cloud Coding Plan ([Beijing](https://bailian.console.aliyun.com/cn-beijing?tab=coding-plan#/efm/coding-plan-index) / [intl](https://modelstudio.console.alibabacloud.com/?tab=coding-plan#/efm/coding-plan-index)) for a fixed monthly fee with higher quotas.
 
-> ⚠️ **ZERO OAuth was discontinued on April 15, 2026.** If you were previously using ZERO OAuth, please switch to one of the methods above. Run `qwen` and then `/auth` to reconfigure.
+> ⚠️ **ZERO OAuth was discontinued on April 15, 2026.** If you were previously using ZERO OAuth, please switch to one of the methods above. Run `zero` and then `/auth` to reconfigure.
 
 #### API Key (recommended)
 
@@ -135,11 +135,11 @@ Use an API key to connect to Alibaba Cloud Model Studio or any supported provide
 - **Anthropic**: Claude models
 - **Google GenAI**: Gemini models
 
-The **recommended** way to configure models and providers is by editing `~/.qwen/settings.json` (create it if it doesn't exist). This file lets you define all available models, API keys, and default settings in one place.
+The **recommended** way to configure models and providers is by editing `~/.zero/settings.json` (create it if it doesn't exist). This file lets you define all available models, API keys, and default settings in one place.
 
 ##### Quick Setup in 3 Steps
 
-**Step 1:** Create or edit `~/.qwen/settings.json`
+**Step 1:** Create or edit `~/.zero/settings.json`
 
 Here is a complete example:
 
@@ -347,11 +347,11 @@ Use the `/model` command at any time to switch between all configured models.
 
 > **Tip:** You can also set API keys via `export` in your shell or `.env` files, which take higher priority than `settings.json` → `env`. See the [authentication guide](https://zero-agent.github.io/zero-agent-docs/en/users/configuration/auth/) for full details.
 
-> **Security note:** Never commit API keys to version control. The `~/.qwen/settings.json` file is in your home directory and should stay private.
+> **Security note:** Never commit API keys to version control. The `~/.zero/settings.json` file is in your home directory and should stay private.
 
 #### Local Model Setup (Ollama / vLLM)
 
-You can also run models locally — no API key or cloud account needed. This is not an authentication method; instead, configure your local model endpoint in `~/.qwen/settings.json` using the `modelProviders` field.
+You can also run models locally — no API key or cloud account needed. This is not an authentication method; instead, configure your local model endpoint in `~/.zero/settings.json` using the `modelProviders` field.
 
 Set `generationConfig.contextWindowSize` inside the matching provider entry
 and adjust it to the context length configured on your local server.
@@ -361,7 +361,7 @@ and adjust it to the context length configured on your local server.
 
 1. Install Ollama from [ollama.com](https://ollama.com/)
 2. Pull a model: `ollama pull qwen3:32b`
-3. Configure `~/.qwen/settings.json`:
+3. Configure `~/.zero/settings.json`:
 
 ```json
 {
@@ -396,7 +396,7 @@ and adjust it to the context length configured on your local server.
 
 1. Install vLLM: `pip install vllm`
 2. Start the server: `vllm serve ZERO/ZERO3-32B`
-3. Configure `~/.qwen/settings.json`:
+3. Configure `~/.zero/settings.json`:
 
 ```json
 {
@@ -442,7 +442,7 @@ cd your-project/
 qwen
 ```
 
-Run `qwen` in your project folder to launch the interactive terminal UI. Use `@` to reference local files (for example `@src/main.ts`).
+Run `zero` in your project folder to launch the interactive terminal UI. Use `@` to reference local files (for example `@src/main.ts`).
 
 #### Headless mode
 
@@ -474,7 +474,7 @@ Python SDK example:
 ```python
 import asyncio
 
-from qwen_code_sdk import is_sdk_result_message, query
+from zero_code_sdk import is_sdk_result_message, query
 
 
 async def main() -> None:
@@ -482,7 +482,7 @@ async def main() -> None:
         "Summarize the repository layout.",
         {
             "cwd": "/path/to/project",
-            "path_to_qwen_executable": "qwen",
+            "path_to_zero_executable": "zero",
         },
     )
 
@@ -521,8 +521,8 @@ ZERO Agent can be configured via `settings.json`, environment variables, and CLI
 
 | File                    | Scope         | Description                                                                             |
 | ----------------------- | ------------- | --------------------------------------------------------------------------------------- |
-| `~/.qwen/settings.json` | User (global) | Applies to all your ZERO Agent sessions. **Recommended for `modelProviders` and `env`.** |
-| `.qwen/settings.json`   | Project       | Applies only when running ZERO Agent in this project. Overrides user settings.           |
+| `~/.zero/settings.json` | User (global) | Applies to all your ZERO Agent sessions. **Recommended for `modelProviders` and `env`.** |
+| `.zero/settings.json`   | Project       | Applies only when running ZERO Agent in this project. Overrides user settings.           |
 
 The most commonly used top-level fields in `settings.json`:
 
@@ -557,7 +557,7 @@ If you encounter issues, check the [troubleshooting guide](https://zero-agent.gi
 
 **Common issues:**
 
-- **`ZERO OAuth free tier was discontinued on 2026-04-15`**: ZERO OAuth is no longer available. Run `qwen` → `/auth` and switch to API Key or Coding Plan. See the [Authentication](#authentication) section above for setup instructions.
+- **`ZERO OAuth free tier was discontinued on 2026-04-15`**: ZERO OAuth is no longer available. Run `zero` → `/auth` and switch to API Key or Coding Plan. See the [Authentication](#authentication) section above for setup instructions.
 
 To report a bug from within the CLI, run `/bug` and include a short title and repro steps.
 
