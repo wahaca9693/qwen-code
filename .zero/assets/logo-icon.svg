@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#00ff9d"/>
+  
+  <!-- Z letter -->
+  <path d="M35 30 L50 30 L65 72 L80 30 L95 30 L65 98 L50 98 L35 30" 
+        fill="#0d0d12"
+        stroke="none"/>
+  
+  <!-- O circle (for ZERO) - small accent -->
+  <circle cx="85" cy="85" r="12" 
+          fill="none" 
+          stroke="#0d0d12" 
+          stroke-width="4"/>
+</svg>
