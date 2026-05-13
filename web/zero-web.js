@@ -65,6 +65,9 @@ async function callAI(message, context = []) {
 
 function demoResponse(msg) {
   const responses = [
+    'مرحباً! ZERO Agent جاهز 🧠',
+    'أهلاً! How can I help?',
+    '🧠 Ready!',
     `🧠 **ZERO Agent** - الذكاء الاصطناعي!\n\nمرحباً! أنا جاهز للخدمة.\n\nللاستفادة من الذكاء الاصطناعي المجاني:\n• ثبت Ollama محلياً\n• أو استخدم Cloudflare\n\nما الذي تريده؟`,
     `👋 أهلاً!\n\nأنا **ZERO Agent** - وكلك الذكي.\n\n⚡我可以:\n- 💻 كتابة كود\n- 📝 كتابة نصوص\n- 🌐 ترجمة\n- 📚 شرح\n\nكيف أساعدك؟`,
     `مرحباً! 🧠\n\nجاهز للمساعدة!`,
