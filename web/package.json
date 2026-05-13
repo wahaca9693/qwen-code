@@ -1,0 +1,17 @@
+{
+  "name": "@zero-agent/web",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ZERO Agent Web Chat Interface",
+  "main": "zero-web.js",
+  "scripts": {
+    "start": "node zero-web.js",
+    "dev": "node --watch zero-web.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "keywords": ["zero-agent", "ai", "chat"],
+  "license": "Apache-2.0"
+}
