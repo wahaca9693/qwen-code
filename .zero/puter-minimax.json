@@ -1,0 +1,27 @@
+/**
+ * ZERO Agent - Puter.js Integration
+ * 
+ * Puter.js provides free access to MiniMax M2.7 with User-Pays model
+ * Developer doesn't pay - users pay for their own usage
+ * 
+ * Setup:
+ * 1. npm install @heyputer/puter.js
+ * 2. Set PUTER_AUTH_TOKEN in environment or get from https://puter.com
+ * 3. Use model "minimax/minimax-m2.7"
+ */
+
+{
+  "provider": "puter",
+  "model": "minimax/minimax-m2.7",
+  "displayName": "MiniMax M2.7 via Puter.js",
+  "apiKey": "${PUTER_AUTH_TOKEN}",
+  "apiBase": "https://api.puter.com",
+  "description": "Free AI model - users pay for their own usage",
+  "contextWindow": 32000,
+  "supportsStreaming": true,
+  "features": {
+    "vision": false,
+    "functionCalling": true,
+    "json": true
+  }
+}
