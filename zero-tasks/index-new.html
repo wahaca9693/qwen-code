@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZERO Tasks | مهام</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ════════════════════════════════════════════════════════════════
+       ZERO TASKS - PROFESSIONAL DESIGN
+      Built by ZERO Agent 🧠
+    ════════════════════════════════════════════════════════════════ */
+    
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    :root {
+      /* Colors - Professional Dark Theme */
+      --bg-primary: #09090b;
+      --bg-secondary: #18181b;
+      --bg-tertiary: #27272a;
+      --bg-card: #1c1c21;
+      --bg-hover: #2a2a32;
+      
+      /* Accent - ZERO Green */
+      --accent: #22d3ee;
+      --accent-hover: #06b6d4;
+      --accent-muted: rgba(34, 211, 238, 0.12);
+      
+      /* Text */
+      --text-primary: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      
+      /* Status Colors */
+      --status-todo: #3b82f6;
+      --status-progress: #f59e0b;
+      --status-review: #a855f7;
+      --status-done: #10b981;
+      
+      /* Priority */
+      --priority-high: #ef4444;
+      --priority-medium: #f59e0b;
+      --priority-low: #10b981;
+      
+      /* Borders */
+      --border: #3f3f46;
+      --border-light: #27272a;
+    }
+    
+    /* Base */
+    html { font-size: 16px; }
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    
+    /* ════════════════════════════════════════════════════════════════
+       HEADER
+    ════════════════════════════════════════════════════════════════ */
+    
+    .header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-light);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), #06b6d4);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--bg-primary);
+    }
+    
+    .logo-text {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .logo-text span {
+      color: var(--accent);
+    }
+    
+    /* Search */
+    .search {
+      position: relative;
+    }
+    
+    .search input {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px 10px 38px;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+      width: 240px;
+      transition: all 0.2s;
+    }
+    
+    .search input::placeholder {
+      color: var(--text-muted);
+    }
+    
+    .search input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-muted);
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    /* Actions */
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-primary);
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--bg-hover);
+    }
+    
+    /* Users */
+    .users {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .users-text {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+    
+    .user-avatars {
+      display: flex;
+    }
+    
+    .user-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--bg-secondary);
+      margin-left: -8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: white;
+    }
+    
+    .user-avatar:first-child { margin-left: 0; }
+    
+    /* ════════════════════════════════════════════════════════════════
+       BOARD
+    ════════════════════════════════════════════════════════════════ */
+    
+    .board {
+      display: flex;
+      gap: 20px;
+      padding: 24px;
+      min-height: calc(100vh - 73px - 56px);
+      overflow-x: auto;
+    }
+    
+    /* Column */
+    .column {
+      flex-shrink: 0;
+      width: 280px;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 145px);
+    }
+    
+    .column-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .column-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .column-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    
+    .column-dot.todo { background: var(--status-todo); }
+    .column-dot.progress { background: var(--status-progress); }
+    .column-dot.review { background: var(--status-review); }
+    .column-dot.done { background: var(--status-done); }
+    
+    .column-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .column-count {
+      background: var(--bg-tertiary);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    
+    .column-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    /* ════════════════════════════════════════════════════════════════
+       CARDS - Clean Design
+    ════════════════════════════════════════════════════════════════ */
+    
+    .card {
+      background: var(--bg-card);
+      border-radius: 10px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    
+    .card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    
+    /* Card Header - Priority */
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .priority {
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .priority.high { 
+      background: rgba(239, 68, 68, 0.12); 
+      color: var(--priority-high); 
+    }
+    .priority.medium { 
+      background: rgba(245, 158, 11, 0.12); 
+      color: var(--priority-medium); 
+    }
+    .priority.low { 
+      background: rgba(16, 185, 129, 0.12); 
+      color: var(--priority-low); 
+    }
+    
+    .card-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    
+    /* Card Title */
+    .card-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    
+    /* Card Tags */
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    
+    .tag {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+    }
+    
+    .tag.frontend { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
+    .tag.backend { background: rgba(168, 85, 247, 0.12); color: #a855f7; }
+    .tag.design { background: rgba(236, 72, 153, 0.12); color: #ec4899; }
+    .tag.bug { background: rgba(239, 68, 68, 0.12); color: #ef4444; }
+    .tag.devops { background: rgba(34, 211, 238, 0.12); color: var(--accent); }
+    .tag.docs { background: rgba(161, 161, 170, 0.12); color: #a1a1aa; }
+    
+    /* Card Footer */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-light);
+    }
+    
+    .card-date {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+    
+    .card-date.overdue {
+      color: var(--priority-high);
+    }
+    
+    .card-date.done {
+      color: var(--status-done);
+    }
+    
+    .card-avatars {
+      display: flex;
+    }
+    
+    /* Add Card Button */
+    .add-card {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    
+    .add-card:hover {
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+    }
+    
+    /* Add Column */
+    .add-column {
+      flex-shrink: 0;
+      width: 260px;
+      min-height: 100px;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 2px dashed var(--border);
+      transition: all 0.2s;
+    }
+    
+    .add-column:hover {
+      border-color: var(--accent);
+      background: var(--accent-muted);
+    }
+    
+    .add-column span {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    
+    /* ════════════════════════════════════════════════════════════════
+       STATS BAR
+    ════════════════════════════════════════════════════════════════ */
+    
+    .stats-bar {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 14px 24px;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-light);
+    }
+    
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    .stat-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+    }
+    
+    /* Progress Bar */
+    .progress-bar {
+      flex: 1;
+      max-width: 200px;
+      height: 8px;
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <div class="logo-icon">Z</div>
+        <div class="logo-text">ZERO <span>Tasks</span></div>
+      </div>
+      
+      <div class="search">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="بحث... (⌘K)">
+      </div>
+    </div>
+    
+    <div class="actions">
+      <div class="users">
+        <span class="users-text">فريق العمل</span>
+        <div class="user-avatars">
+          <div class="user-avatar" style="background:#22d3ee">AH</div>
+          <div class="user-avatar" style="background:#a855f7">MK</div>
+          <div class="user-avatar" style="background:#ec4899">SA</div>
+          <div class="user-avatar" style="background:#3b82f6">+2</div>
+        </div>
+      </div>
+      
+      <button class="btn btn-primary">
+        <span>+</span> مهمة جديدة
+      </button>
+    </div>
+  </header>
+
+  <!-- Kanban Board -->
+  <div class="board">
+    <!-- To Do Column -->
+    <div class="column">
+      <div class="column-header">
+        <div class="column-title-wrap">
+          <span class="column-dot todo"></span>
+          <span class="column-title">قيد الانتظار</span>
+        </div>
+        <span class="column-count">3</span>
+      </div>
+      <div class="column-body">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-header">
+            <span class="priority high">عالية</span>
+            <span class="card-id">#TSK-001</span>
+          </div>
+          <div class="card-title">تصميم نظام التصميم للوحة التحكم الجديدة</div>
+          <div class="card-tags">
+            <span class="tag frontend">Frontend</span>
+            <span class="tag design">Design</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date overdue">📅 10 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#22d3ee; width:24px; height:24px; font-size:0.6rem">AH</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-header">
+            <span class="priority medium">متوسطة</span>
+            <span class="card-id">#TSK-002</span>
+          </div>
+          <div class="card-title">دمج بوابة دفع Stripe للخطط المدفوعة</div>
+          <div class="card-tags">
+            <span class="tag backend">Backend</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date">📅 15 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#a855f7; width:24px; height:24px; font-size:0.6rem">MK</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-header">
+            <span class="priority low">منخفضة</span>
+            <span class="card-id">#TSK-003</span>
+          </div>
+          <div class="card-title">تحديث التوثيق مع نقاط API الجديدة</div>
+          <div class="card-tags">
+            <span class="tag docs">Docs</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date">📅 20 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#3b82f6; width:24px; height:24px; font-size:0.6rem">LO</div>
+            </div>
+          </div>
+        </div>
+        
+        <button class="add-card">
+          <span>+</span> إضافة مهمة
+        </button>
+      </div>
+    </div>
+    
+    <!-- In Progress Column -->
+    <div class="column">
+      <div class="column-header">
+        <div class="column-title-wrap">
+          <span class="column-dot progress"></span>
+          <span class="column-title">قيد التنفيذ</span>
+        </div>
+        <span class="column-count">3</span>
+      </div>
+      <div class="column-body">
+        <div class="card">
+          <div class="card-header">
+            <span class="priority high">عالية</span>
+            <span class="card-id">#TSK-004</span>
+          </div>
+          <div class="card-title">بناء نظام المصادقة مع OAuth2</div>
+          <div class="card-tags">
+            <span class="tag backend">Backend</span>
+            <span class="tag devops">Security</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date overdue">📅 8 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#22d3ee; width:24px; height:24px; font-size:0.6rem">AH</div>
+              <div class="user-avatar" style="background:#a855f7; width:24px; height:24px; font-size:0.6rem; margin-left:-8px">MK</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="priority medium">متوسطة</span>
+            <span class="card-id">#TSK-005</span>
+          </div>
+          <div class="card-title">إنشاء قصة استقبال متحركة للمستخدمين</div>
+          <div class="card-tags">
+            <span class="tag frontend">Frontend</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date">📅 12 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#ec4899; width:24px; height:24px; font-size:0.6rem">SA</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="priority medium">متوسطة</span>
+            <span class="card-id">#TSK-006</span>
+          </div>
+          <div class="card-title">تنفيذ إشعارات فورية مع WebSocket</div>
+          <div class="card-tags">
+            <span class="tag backend">Backend</span>
+            <span class="tag frontend">Frontend</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date">📅 14 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#a855f7; width:24px; height:24px; font-size:0.6rem">MK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- In Review Column -->
+    <div class="column">
+      <div class="column-header">
+        <div class="column-title-wrap">
+          <span class="column-dot review"></span>
+          <span class="column-title">بالمتابعة</span>
+        </div>
+        <span class="column-count">2</span>
+      </div>
+      <div class="column-body">
+        <div class="card">
+          <div class="card-header">
+            <span class="priority high">عالية</span>
+            <span class="card-id">#TSK-007</span>
+          </div>
+          <div class="card-title">إصلاح مشاكل تباين الوضع الداكن على الجوال</div>
+          <div class="card-tags">
+            <span class="tag frontend">Frontend</span>
+            <span class="tag bug">Bug</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date">📅 5 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#ec4899; width:24px; height:24px; font-size:0.6rem">SA</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="priority medium">متوسطة</span>
+            <span class="card-id">#TSK-008</span>
+          </div>
+          <div class="card-title">إضافة توثيق اختصارات لوحة المفاتيح</div>
+          <div class="card-tags">
+            <span class="tag docs">Docs</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date">📅 6 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#3b82f6; width:24px; height:24px; font-size:0.6rem">LO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Done Column -->
+    <div class="column">
+      <div class="column-header">
+        <div class="column-title-wrap">
+          <span class="column-dot done"></span>
+          <span class="column-title">مكتمل</span>
+        </div>
+        <span class="column-count">2</span>
+      </div>
+      <div class="column-body">
+        <div class="card" style="opacity:0.7">
+          <div class="card-header">
+            <span class="priority high">عالية</span>
+            <span class="card-id">#TSK-009</span>
+          </div>
+          <div class="card-title">إعداد مستودع المشروع و CI/CD</div>
+          <div class="card-tags">
+            <span class="tag devops">DevOps</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date done">✓ 1 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#22d3ee; width:24px; height:24px; font-size:0.6rem">AH</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card" style="opacity:0.7">
+          <div class="card-header">
+            <span class="priority medium">متوسطة</span>
+            <span class="card-id">#TSK-010</span>
+          </div>
+          <div class="card-title">إنشاء هوية العلامة التجارية</div>
+          <div class="card-tags">
+            <span class="tag design">Design</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-date done">✓ 2 ديسمبر</span>
+            <div class="card-avatars">
+              <div class="user-avatar" style="background:#ec4899; width:24px; height:24px; font-size:0.6rem">SA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add Column -->
+    <div class="add-column">
+      <span>+ إضافة عمود</span>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-value">10</span>
+      <span class="stat-label">إجمالي المهام</span>
+    </div>
+    
+    <div class="stat-divider"></div>
+    
+    <div class="stat">
+      <span class="stat-value">3</span>
+      <span class="stat-label">قيد التنفيذ</span>
+    </div>
+    
+    <div class="stat">
+      <span class="stat-value">2</span>
+      <span class="stat-label">مكتمل</span>
+    </div>
+    
+    <div class="stat-divider"></div>
+    
+    <div class="stat">
+      <span style="font-size: 0.8rem; color: var(--text-secondary)">التقدم</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 20%"></div>
+    </div>
+    <span style="font-size: 0.875rem; color: var(--accent)">20%</span>
+    
+    <div class="stat" style="margin-right: auto">
+      <span style="font-size: 0.8rem; color: var(--text-muted)">ZERO Agent 🧠</span>
+    </div>
+  </div>
+
+  <script>
+    // Simple interactions
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.style.transform = 'scale(0.98)';
+        setTimeout(() => card.style.transform = '', 100);
+      });
+    });
+    
+    // Keyboard shortcut
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        document.querySelector('.search input').focus();
+      }
+    });
+  </script>
+</body>
+</html>
