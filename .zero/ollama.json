@@ -1,0 +1,45 @@
+/**
+ * @license
+ * Copyright 2026 ZERO Agent
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
+ * Ollama Provider - 100% FREE on your device!
+ * 
+ * No internet needed after installation
+ * unlimited usage
+ * Your data stays local
+ * 
+ * INSTALL:
+ * curl -fsSL https://ollama.com/install | sh
+ * 
+ * RUN MODELS:
+ * ollama run qwen2.5
+ * ollama run llama3
+ * ollama run mistral
+ * ollama run phi
+ * ollama run deepseek-r1
+ */
+
+{
+  "provider": "ollama",
+  "model": "qwen2.5",
+  "displayName": "Qwen 2.5 (Ollama)",
+  "apiBase": "http://localhost:11434",
+  "description": "100% FREE on your device - No internet needed!",
+  "contextWindow": 32000,
+  "supportsVision": false,
+  "supportsStreaming": true,
+  "features": {
+    "local": true,
+    "offline": true
+  },
+  "installUrl": "https://ollama.com",
+  "runCommands": {
+    "qwen": "ollama run qwen2.5",
+    "llama": "ollama run llama3",
+    "mistral": "ollama run mistral",
+    "deepseek": "ollama run deepseek-r1"
+  }
+}

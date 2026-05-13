@@ -1,0 +1,38 @@
+/**
+ * @license
+ * Copyright 2026 ZERO Agent
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
+ * Cloudflare Workers AI Provider - Truly FREE!
+ * 
+ * 10,000 neurons/day مجاني بدون بطاقة!
+ * No API key needed for public endpoints
+ * 
+ * SETUP:
+ * 1. Create Cloudflare account (free)
+ * 2. Enable AI Workers in dashboard
+ * 3. Use the public endpoint or get your API key
+ */
+
+{
+  "provider": "cloudflare",
+  "model": "@cf/meta/llama-3.3-70b-instruct",
+  "displayName": "Llama 3.3 70B via Cloudflare",
+  "apiBase": "https://api.cloudflare.com/client/v4/accounts",
+  "description": "10,000 neurons/day FREE - No credit card!",
+  "contextWindow": 128000,
+  "supportsVision": false,
+  "supportsStreaming": true,
+  "free": true,
+  "signupUrl": "https://dash.cloudflare.com"
+}
+
+// Alternative models available:
+// - @cf/meta/llama-3.3-70b-instruct (recommended)
+// - @cf/meta/llama-3.1-8b-instruct
+// - @cf/google/gemma-4-26b-a4b (multimodal!)
+// - @cf/moonshotai/kimi-k2.5 (vision + tool calling)
+// - @cf/deepseek-ai/deepseek-r1
+// - @cf/qwen/qwen2.5-72b-instruct

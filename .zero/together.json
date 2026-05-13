@@ -1,0 +1,25 @@
+{
+  "provider": "together",
+  "model": "Qwen/Qwen2.5-72B-Instruct",
+  "displayName": "Qwen 2.5 72B via Together AI",
+  "description": "$25 free credits - No credit card required!",
+  "apiBase": "https://api.together.ai/v1",
+  "contextWindow": 32000,
+  "supportsStreaming": true,
+  "features": {
+    "vision": false,
+    "functionCalling": true
+  },
+  "signupUrl": "https://together.ai",
+  "pricing": {
+    "input": "Free for new users!",
+    "output": "Free for new users!"
+  }
+}
+
+// Alternative models:
+// - Qwen/Qwen2.5-72B-Instruct
+// - meta-llama/Llama-3.3-70B-Instruct
+// - mistralai/Mistral-7B-Instruct-v0.2
+// - google/gemma-4-26b-a4b-it
+// - DeepSeek/DeepSeek-R1

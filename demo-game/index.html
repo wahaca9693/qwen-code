@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZERO Agent - Demo Game</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    h1 { color: #00ff88; margin-bottom: 20px; font-size: 2rem; }
+    .game {
+      background: #0f0f23;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0,255,136,0.2);
+      text-align: center;
+    }
+    .score { font-size: 4rem; color: #00ff88; font-weight: bold; margin: 20px 0; }
+    .buttons { display: flex; gap: 10px; justify-content: center; }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    button:hover { transform: scale(1.05); }
+    .btn-minus { background: #ff6b6b; color: white; }
+    .btn-reset { background: #feca57; color: #1a1a2e; }
+    .btn-plus { background: #00ff88; color: #1a1a2e; }
+    .info { margin-top: 20px; color: #666; font-size: 0.9rem; }
+    .tag {
+      display: inline-block;
+      background: #00ff88;
+      color: #1a1a2e;
+      padding: 5px 15px;
+      border-radius: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="game">
+    <h1>🎮 ZERO Agent Demo</h1>
+    <p> بواسطة ZERO Agent - Code Agent</p>
+    <div class="score" id="score">0</div>
+    <div class="buttons">
+      <button class="btn-minus" onclick="change(-1)">➖ -1</button>
+      <button class="btn-reset" onclick="reset()">🔄 إعادة</button>
+      <button class="btn-plus" onclick="change(1)">+1 ➕</button>
+    </div>
+    <div class="tag">ZERO Agent 🧠</div>
+  </div>
+
+  <script>
+    let score = 0;
+    const scoreEl = document.getElementById('score');
+    
+    function change(delta) {
+      score += delta;
+      scoreEl.textContent = score;
+      scoreEl.style.transform = 'scale(1.2)';
+      setTimeout(() => scoreEl.style.transform = 'scale(1)', 100);
+    }
+    
+    function reset() {
+      score = 0;
+      scoreEl.textContent = 0;
+    }
+  </script>
+</body>
+</html>
